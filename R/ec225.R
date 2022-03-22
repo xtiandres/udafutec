@@ -16,7 +16,7 @@ library(ggridges)
 library(formattable)
 
 #Primera Etapa
-dat221 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/ec221.txt")
+dat225 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/ec225.txt")
 #data1
 
 #Segunda Etapa
@@ -29,7 +29,7 @@ dat221 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/ec221.txt"
 
 
 # 1ra Etapa - Rendimiento Local, Visita
-dat221_x <- dat221 %>%
+dat225_x <- dat225 %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
   mutate(EL = ifelse(GL == GV, 1, 0)) %>%
   mutate(DL = ifelse(GL < GV, 1, 0)) %>%
@@ -38,12 +38,12 @@ dat221_x <- dat221 %>%
   mutate(DV = ifelse(GV < GL, 1, 0)) %>%
   mutate(nL = percent(VL * 1 + EL * 0.25)) %>%
   mutate(nV = percent(VV * 1 + EV * 0.75))
-  #mutate(nL = VL * 1 + EL * 0.25) %>%
- 
+#mutate(nL = VL * 1 + EL * 0.25) %>%
+
 
 #Datos BSC
-datbsc <- filter(dat221,
-                  Local == "Barcelona SC" | Visita == "Barcelona SC")
+datbsc <- filter(dat225,
+                 Local == "Barcelona SC" | Visita == "Barcelona SC")
 datbsc_l <- datbsc %>%
   filter(Local == "Barcelona SC") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -56,7 +56,7 @@ datbsc_v <- datbsc %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
 
 #Datos Emelec
-datcse <- filter(dat221,
+datcse <- filter(dat225,
                  Local == "Emelec" | Visita == "Emelec")
 datcse_l <- datcse %>%
   filter(Local == "Emelec") %>%
@@ -70,7 +70,7 @@ datcse_v <- datcse %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
 
 #Datos Macará
-datmac <- filter(dat221,
+datmac <- filter(dat225,
                  Local == "Macará" | Visita == "Macará")
 datmac_l <- datmac %>%
   filter(Local == "Macará") %>%
@@ -84,7 +84,7 @@ datmac_v <- datmac %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
 
 #Datos Mushuc Runa
-datmus <- filter(dat221,
+datmus <- filter(dat225,
                  Local == "Mushuc Runa" | Visita == "Mushuc Runa")
 datmus_l <- datmus %>%
   filter(Local == "Mushuc Runa") %>%
@@ -98,7 +98,7 @@ datmus_v <- datmus %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
 
 #Datos Universidad Católica
-datuca <- filter(dat221,
+datuca <- filter(dat225,
                  Local == "Universidad Católica" | Visita == "Universidad Católica")
 datuca_l <- datuca %>%
   filter(Local == "Universidad Católica") %>%
@@ -112,7 +112,7 @@ datuca_v <- datuca %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
 
 #Datos LDU Quito
-datldu <- filter(dat221,
+datldu <- filter(dat225,
                  Local == "LDU Quito" | Visita == "LDU Quito")
 datldu_l <- datldu %>%
   filter(Local == "LDU Quito") %>%
@@ -126,7 +126,7 @@ datldu_v <- datldu %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
 
 #Datos Gualaceo SC
-datgua <- filter(dat221,
+datgua <- filter(dat225,
                  Local == "Gualaceo SC" | Visita == "Gualaceo SC")
 datgua_l <- datgua %>%
   filter(Local == "Gualaceo SC") %>%
@@ -140,7 +140,7 @@ datgua_v <- datgua %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
 
 #Datos Delfín SC
-datdel <- filter(dat221,
+datdel <- filter(dat225,
                  Local == "Delfín SC" | Visita == "Delfín SC")
 datdel_l <- datdel %>%
   filter(Local == "Delfín SC") %>%
@@ -154,7 +154,7 @@ datdel_v <- datdel %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
 
 #Datos Orense SC
-datore <- filter(dat221,
+datore <- filter(dat225,
                  Local == "Orense SC" | Visita == "Orense SC")
 datore_l <- datore %>%
   filter(Local == "Orense SC") %>%
@@ -168,7 +168,7 @@ datore_v <- datore %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
 
 #Datos Aucas
-datauc <- filter(dat221,
+datauc <- filter(dat225,
                  Local == "Aucas" | Visita == "Aucas")
 datauc_l <- datauc %>%
   filter(Local == "Aucas") %>%
@@ -182,7 +182,7 @@ datauc_v <- datauc %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
 
 #Datos Guayaquil City
-datgye <- filter(dat221,
+datgye <- filter(dat225,
                  Local == "Guayaquil City" | Visita == "Guayaquil City")
 datgye_l <- datgye %>%
   filter(Local == "Guayaquil City") %>%
@@ -196,7 +196,7 @@ datgye_v <- datgye %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
 
 #Datos Deportivo Cuenca
-datcue <- filter(dat221,
+datcue <- filter(dat225,
                  Local == "Deportivo Cuenca" | Visita == "Deportivo Cuenca")
 datcue_l <- datcue %>%
   filter(Local == "Deportivo Cuenca") %>%
@@ -210,7 +210,7 @@ datcue_v <- datcue %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
 
 #Datos Cumbayá FC
-datcum <- filter(dat221,
+datcum <- filter(dat225,
                  Local == "Cumbayá FC" | Visita == "Cumbayá FC")
 datcum_l <- datcum %>%
   filter(Local == "Cumbayá FC") %>%
@@ -224,7 +224,7 @@ datcum_v <- datcum %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
 
 #Datos Independiente del Valle
-datidv <- filter(dat221,
+datidv <- filter(dat225,
                  Local == "Independiente del Valle" | Visita == "Independiente del Valle")
 datidv_l <- datidv %>%
   filter(Local == "Independiente del Valle") %>%
@@ -238,7 +238,7 @@ datidv_v <- datidv %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
 
 #Datos Técnico Univ.
-dattec <- filter(dat221,
+dattec <- filter(dat225,
                  Local == "Técnico Univ." | Visita == "Técnico Univ.")
 dattec_l <- dattec %>%
   filter(Local == "Técnico Univ.") %>%
@@ -252,7 +252,7 @@ dattec_v <- dattec %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
 
 #Datos Nueve de Octubre
-datnue <- filter(dat221,
+datnue <- filter(dat225,
                  Local == "Nueve de Octubre" | Visita == "Nueve de Octubre")
 datnue_l <- datnue %>%
   filter(Local == "Nueve de Octubre") %>%
@@ -267,7 +267,7 @@ datnue_v <- datnue %>%
 
 
 #Tabla Acumulada 1raEtapa PJ-Ptos-G-E-D-GF-GC
-taba1 = data.frame("EQUIPOS" =
+taba5 = data.frame("EQUIPOS" =
                      c("Barcelona SC",
                        "LDU Quito",
                        "Emelec",
@@ -434,16 +434,16 @@ taba1 = data.frame("EQUIPOS" =
                            datcum_v$GL))
 )
 # Tabla Acumulada 1raEtapa EQUIPOS, PJ, PTOS, GF, GC, GD
-taba1 <- mutate(taba1, GD = GF - GC)
+taba5 <- mutate(taba5, GD = GF - GC)
 # Tabla Acumulada 1raEtapa ORDENAR
-taba1 <- taba1[order(-taba1$PTOS, -taba1$GD, -taba1$GF), ]
-taba1 <- select(taba1, EQUIPOS, PTOS, GD)
+taba5 <- taba5[order(-taba5$PTOS, -taba5$GD, -taba5$GF), ]
+taba5 <- select(taba5, EQUIPOS, PTOS, GD)
 # Tabla Acumulada 1raEtapa Filas ordenadas
-rownames(taba1) <- 1:nrow(taba1)
-taba1 <- mutate(taba1, J1 = rownames(taba1))
-#taba1$J1 <- as.numeric(taba1$J1)
-#a1 <- ggplot(taba1, aes(x = EQUIPOS, y = J1, color = EQUIPOS)) 
-#a1 +
+rownames(taba5) <- 1:nrow(taba5)
+taba5 <- mutate(taba5, J5 = rownames(taba5))
+#taba5$J2 <- as.numeric(taba5$J2)
+#a2 <- ggplot(taba5, aes(x = EQUIPOS, y = J2, color = EQUIPOS)) 
+#a2 +
 #  geom_point(size = 2) +
-  #aes(y = fct_inorder(row.names())) +
+#aes(y = fct_inorder(row.names())) +
 #  theme_minimal()

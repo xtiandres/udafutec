@@ -38,4 +38,4 @@ Jornada	Fecha	Local	GL	GV	Visita	OBS1	OBS2	OBS3	FG
 5	20/03	Nueve de Octubre	1	1	Gualaceo SC				FG
 5	20/03	Macará	2	0	Guayaquil City				FG
 5	21/03	Emelec	1	2	Delfín SC				FG
-5	21/03	Deportivo Cuenca	0	2	Universidad Catolica	
+5	21/03	Deportivo Cuenca	0	2	Universidad Católica

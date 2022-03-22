@@ -16,7 +16,7 @@ library(ggridges)
 library(formattable)
 
 #Primera Etapa
-dat222 <- read_tsv("/home/xut/Documents/udaviz/R/studio/futec/data/ec222.txt")
+dat222 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/ec222.txt")
 #data1
 
 #Segunda Etapa
