@@ -4,11 +4,12 @@ library(RColorBrewer)
 tota = full_join(taba1, taba2, by = "EQUIPOS")
 totb = full_join(tota, taba3, by = "EQUIPOS")
 totc = full_join(totb, taba4, by = "EQUIPOS")
-totx = select(totc, "EQUIPOS", "J1", "J2", "J3", "J4")
+totd = full_join(totc, taba5, by = "EQUIPOS")
+totx = select(totd, "EQUIPOS", "J1", "J2", "J3", "J4", "J5")
 totx <- gather(totx,
                key = "variable",
                value = "value",
-               J1:J4)
+               J1:J5)
 
 # Save totx data.frame as txt file
 write.table(totx,"totx.txt",sep="\t",row.names=FALSE)
