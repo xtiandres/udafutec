@@ -1,0 +1,41 @@
+bscvicl <- databsc %>%
+  filter(Local == "BarcelonaSC") %>%
+  mutate(VicLocal = ifelse(GolLocal > GolVisita, 3,0)) %>%
+  filter(VicLocal == 3)
+bscvicv <- databsc %>%
+  filter(Visita == "BarcelonaSC") %>%
+  mutate(VicVisita = ifelse(GolVisita > GolLocal, 3,0)) %>%
+  filter(VicVisita == 3)
+bscempl <- databsc %>%
+  filter(Local == "BarcelonaSC") %>%
+  mutate(EmpLocal = ifelse(GolLocal == GolVisita, 1,0)) %>%
+  filter(EmpLocal == 1)
+bscempv <- databsc %>%
+  filter(Visita == "BarcelonaSC") %>%
+  mutate(EmpVisita = ifelse(GolLocal == GolVisita, 1,0)) %>%
+  filter(EmpVisita == 1)
+bscderl <- databsc %>%
+  filter(Local == "BarcelonaSC") %>%
+  mutate(DerLocal = ifelse(GolLocal < GolVisita, 0,3)) %>%
+  filter(DerLocal == 0)
+bscderv <- databsc %>%
+  filter(Visita == "BarcelonaSC") %>%
+  mutate(DerVisita = ifelse(GolVisita < GolLocal, 0,3)) %>%
+  filter(DerVisita == 0)
+
+  "Barcelona SC",
+                         "LDU Quito",
+                         "Emelec",
+                         "Independiente del Valle",
+                         "Aucas",
+                         "Macará",
+                         "Técnico Univ.",
+                         "Guayaquil City",
+                         "Mushuc Runa",
+                         "Nueve de Octubre",
+                         "Deportivo Cuenca",
+                         "Universidad Católica",
+                         "Gualaceo SC",
+                         "Orense SC",
+                         "Delfín SC",
+                         "Cumbayá FC"
