@@ -1,0 +1,11 @@
+Equipos	V	P	E	GD	G	GP	Pts	Primero	Segundo	Tercero	Cuarto	Quinto	Sexto
+Brasil	12	0	3	27	32	15	39	98	2	0	0	0	0
+Argentina	10	0	5	16	23	15	35	2	98	0	0	0	0
+Ecuador	7	5	4	10	25	16	25	0	0	92	8	<1	0
+Uruguay	6	6	4	-3	19	16	22	0	0	5	54	21	20
+Peru	6	7	3	-4	17	16	21	0	0	3	35	45	17
+Chile	5	7	4	-1	19	16	19	0	0	<1	2	18	80
+Colombia	3	5	8	-3	16	16	17	0	0	0	1	16	83
+Bolivia	4	9	3	-12	23	16	15	0	0	0	0	<1	100
+Paraguay	2	7	7	-14	9	16	13	0	0	0	0	0	100
+Venezuela	3	12	1	-16	14	16	10	0	0	0	0	0	100
