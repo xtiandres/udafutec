@@ -78,6 +78,9 @@ eli$porce <- eli$valor/100
 #  labs(title = "Test3",
 #       subtitle = "Distribución de Puntaje por Equipos")
 
+# GUARDAR COMO SVG
+svg("conmebol.svg", width = 14, height = 7)
+
 #Cleveland Dot Charts - Gráfico Tabla Acumulada Equipos vs Puntos
 t4 <- ggplot(eli,
              aes(x = posicion,
@@ -102,6 +105,8 @@ t4 +
        y = NULL) +
   theme_minimal() +
   theme(legend.position = "none")
+
+dev.off()
 
 #Multivariables - Grouping
 #t5 <- ggplot(tablat,
