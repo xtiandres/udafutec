@@ -37,10 +37,6 @@ eli$Equipos <- factor(eli$Equipos,
 eli$valor <- as.numeric(eli$valor)
 eli$porce <- eli$valor/100
 
-#Tabla 2da Etapa PJ-Ptos-G-E-D-GF-GC-GD
-#tabla2 <- mutate(tabla2,
-#                 GolesDiferencia = GolesFavor - GolesContra)
-
 
 #Gráficos
 
@@ -79,7 +75,7 @@ eli$porce <- eli$valor/100
 #       subtitle = "Distribución de Puntaje por Equipos")
 
 # GUARDAR COMO SVG
-svg("conmebol.svg", width = 14, height = 7)
+#svg("conmebol.svg", width = 14, height = 7)
 
 #Cleveland Dot Charts - Gráfico Tabla Acumulada Equipos vs Puntos
 t4 <- ggplot(eli,
@@ -106,7 +102,7 @@ t4 +
   theme_minimal() +
   theme(legend.position = "none")
 
-dev.off()
+#dev.off()
 
 #Multivariables - Grouping
 #t5 <- ggplot(tablat,
