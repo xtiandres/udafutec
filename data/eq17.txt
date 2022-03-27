@@ -24,7 +24,6 @@ Jornada	Fecha	Local	GL	GV	Visita	OBS1	OBS2	OBS3	FG
 5	10/10	Colombia	0	0	Brasil				FG
 5	11/10	Argentina	3	0	Uruguay				FG
 5	11/10	Chile	2	0	Paraguay				FG
-6	05/09	Brasil	-	-	Argentina				h2h
 6	05/09	Ecuador	0	0	Chile				FG
 6	05/09	Uruguay	4	2	Bolivia				FG
 6	05/09	Paraguay	1	1	Colombia				FG
