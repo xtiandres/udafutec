@@ -19,22 +19,6 @@ library(forcats)
 library(RColorBrewer)
 
 # DATASET
-dateq1 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/eq1.txt")
-dateq2 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/eq2.txt")
-dateq3 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/eq3.txt")
-dateq4 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/eq4.txt")
-dateq5 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/eq5.txt")
-dateq6 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/eq6.txt")
-dateq7 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/eq7.txt")
-dateq8 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/eq8.txt")
-dateq9 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/eq9.txt")
-dateq10 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/eq10.txt")
-dateq11 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/eq11.txt")
-dateq12 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/eq12.txt")
-dateq13 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/eq13.txt")
-dateq14 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/eq14.txt")
-dateq15 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/eq15.txt")
-dateq16 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/eq16.txt")
 dateq17 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/eq17.txt")
 
 # ARGENTINA
