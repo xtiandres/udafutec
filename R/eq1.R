@@ -38,8 +38,11 @@ dateq16 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/eq16.txt"
 dateq17 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/eq17.txt")
 
 # ARGENTINA
-datarg <- filter(dateq1,
-                 Local == "Argentina" | Visita == "Argentina")
+#datarg <- filter(dateq1,
+#                 Local == "Argentina" | Visita == "Argentina")
+datarg <- dateq17 %>% 
+  filter(Local == "Argentina" | Visita == "Argentina") %>%
+  filter(Jornada == 1)
 datarg_l <- datarg %>%
   filter(Local == "Argentina") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -50,8 +53,9 @@ datarg_v <- datarg %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datarg2 <- filter(dateq2,
-                 Local == "Argentina" | Visita == "Argentina")
+datarg2 <- dateq17 %>% 
+  filter(Local == "Argentina" | Visita == "Argentina") %>%
+  filter(Jornada %in% c(1, 2))
 datarg2_l <- datarg2 %>%
   filter(Local == "Argentina") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -62,8 +66,9 @@ datarg2_v <- datarg2 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datarg3 <- filter(dateq3,
-                  Local == "Argentina" | Visita == "Argentina")
+datarg3 <- dateq17 %>% 
+  filter(Local == "Argentina" | Visita == "Argentina") %>%
+  filter(Jornada %in% c(1, 2, 3))
 datarg3_l <- datarg3 %>%
   filter(Local == "Argentina") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -74,8 +79,9 @@ datarg3_v <- datarg3 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datarg4 <- filter(dateq4,
-                  Local == "Argentina" | Visita == "Argentina")
+datarg4 <- dateq17 %>% 
+  filter(Local == "Argentina" | Visita == "Argentina") %>%
+  filter(Jornada %in% c(1, 2, 3, 4))
 datarg4_l <- datarg4 %>%
   filter(Local == "Argentina") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -86,8 +92,9 @@ datarg4_v <- datarg4 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datarg5 <- filter(dateq5,
-                  Local == "Argentina" | Visita == "Argentina")
+datarg5 <- dateq17 %>% 
+  filter(Local == "Argentina" | Visita == "Argentina") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5))
 datarg5_l <- datarg5 %>%
   filter(Local == "Argentina") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -98,8 +105,9 @@ datarg5_v <- datarg5 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datarg6 <- filter(dateq6,
-                  Local == "Argentina" | Visita == "Argentina")
+datarg6 <- dateq17 %>% 
+  filter(Local == "Argentina" | Visita == "Argentina") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6))
 datarg6_l <- datarg6 %>%
   filter(Local == "Argentina") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -110,8 +118,9 @@ datarg6_v <- datarg6 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datarg7 <- filter(dateq7,
-                  Local == "Argentina" | Visita == "Argentina")
+datarg7 <- dateq17 %>% 
+  filter(Local == "Argentina" | Visita == "Argentina") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7))
 datarg7_l <- datarg7 %>%
   filter(Local == "Argentina") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -122,8 +131,9 @@ datarg7_v <- datarg7 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datarg8 <- filter(dateq8,
-                  Local == "Argentina" | Visita == "Argentina")
+datarg8 <- dateq17 %>% 
+  filter(Local == "Argentina" | Visita == "Argentina") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8))
 datarg8_l <- datarg8 %>%
   filter(Local == "Argentina") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -134,8 +144,9 @@ datarg8_v <- datarg8 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datarg9 <- filter(dateq9,
-                  Local == "Argentina" | Visita == "Argentina")
+datarg9 <- dateq17 %>% 
+  filter(Local == "Argentina" | Visita == "Argentina") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9))
 datarg9_l <- datarg9 %>%
   filter(Local == "Argentina") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -146,8 +157,9 @@ datarg9_v <- datarg9 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datarg10 <- filter(dateq10,
-                   Local == "Argentina" | Visita == "Argentina")
+datarg10 <- dateq17 %>% 
+  filter(Local == "Argentina" | Visita == "Argentina") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
 datarg10_l <- datarg10 %>%
   filter(Local == "Argentina") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -158,8 +170,9 @@ datarg10_v <- datarg10 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datarg11 <- filter(dateq11,
-                   Local == "Argentina" | Visita == "Argentina")
+datarg11 <- dateq17 %>% 
+  filter(Local == "Argentina" | Visita == "Argentina") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11))
 datarg11_l <- datarg11 %>%
   filter(Local == "Argentina") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -170,8 +183,9 @@ datarg11_v <- datarg11 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datarg12 <- filter(dateq12,
-                   Local == "Argentina" | Visita == "Argentina")
+datarg12 <- dateq17 %>% 
+  filter(Local == "Argentina" | Visita == "Argentina") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12))
 datarg12_l <- datarg12 %>%
   filter(Local == "Argentina") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -182,8 +196,9 @@ datarg12_v <- datarg12 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datarg13 <- filter(dateq13,
-                   Local == "Argentina" | Visita == "Argentina")
+datarg13 <- dateq17 %>% 
+  filter(Local == "Argentina" | Visita == "Argentina") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13))
 datarg13_l <- datarg13 %>%
   filter(Local == "Argentina") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -194,8 +209,9 @@ datarg13_v <- datarg13 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datarg14 <- filter(dateq14,
-                   Local == "Argentina" | Visita == "Argentina")
+datarg14 <- dateq17 %>% 
+  filter(Local == "Argentina" | Visita == "Argentina") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
 datarg14_l <- datarg14 %>%
   filter(Local == "Argentina") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -206,8 +222,9 @@ datarg14_v <- datarg14 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datarg15 <- filter(dateq15,
-                   Local == "Argentina" | Visita == "Argentina")
+datarg15 <- dateq17 %>% 
+  filter(Local == "Argentina" | Visita == "Argentina") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15))
 datarg15_l <- datarg15 %>%
   filter(Local == "Argentina") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -218,8 +235,9 @@ datarg15_v <- datarg15 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datarg16 <- filter(dateq16,
-                   Local == "Argentina" | Visita == "Argentina")
+datarg16 <- dateq17 %>% 
+  filter(Local == "Argentina" | Visita == "Argentina") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16))
 datarg16_l <- datarg16 %>%
   filter(Local == "Argentina") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -230,8 +248,9 @@ datarg16_v <- datarg16 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datarg17 <- filter(dateq17,
-                   Local == "Argentina" | Visita == "Argentina")
+datarg17 <- dateq17 %>% 
+  filter(Local == "Argentina" | Visita == "Argentina") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17))
 datarg17_l <- datarg17 %>%
   filter(Local == "Argentina") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -242,8 +261,9 @@ datarg17_v <- datarg17 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-#datarg18 <- filter(dateq18,
-#                   Local == "Argentina" | Visita == "Argentina")
+#datarg18 <- dateq17 %>% 
+#  filter(Local == "Argentina" | Visita == "Argentina") %>%
+#  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18))
 #datarg18_l <- datarg18 %>%
 #  filter(Local == "Argentina") %>%
 #  mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -256,8 +276,9 @@ datarg17_v <- datarg17 %>%
 #  mutate(DV = ifelse(GV < GL, 1, 0))
 
 # BOLIVIA
-datbol <- filter(dateq1,
-                 Local == "Bolivia" | Visita == "Bolivia")
+datbol <- dateq17 %>% 
+  filter(Local == "Bolivia" | Visita == "Bolivia") %>%
+  filter(Jornada == 1)
 datbol_l <- datbol %>%
   filter(Local == "Bolivia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -268,8 +289,9 @@ datbol_v <- datbol %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbol2 <- filter(dateq2,
-                 Local == "Bolivia" | Visita == "Bolivia")
+datbol2 <- dateq17 %>% 
+  filter(Local == "Bolivia" | Visita == "Bolivia") %>%
+  filter(Jornada %in% c(1, 2))
 datbol2_l <- datbol2 %>%
   filter(Local == "Bolivia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -280,8 +302,9 @@ datbol2_v <- datbol2 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbol3 <- filter(dateq3,
-                  Local == "Bolivia" | Visita == "Bolivia")
+datbol3 <- dateq17 %>% 
+  filter(Local == "Bolivia" | Visita == "Bolivia") %>%
+  filter(Jornada %in% c(1, 2, 3))
 datbol3_l <- datbol3 %>%
   filter(Local == "Bolivia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -292,8 +315,9 @@ datbol3_v <- datbol3 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbol4 <- filter(dateq4,
-                  Local == "Bolivia" | Visita == "Bolivia")
+datbol4 <- dateq17 %>% 
+  filter(Local == "Bolivia" | Visita == "Bolivia") %>%
+  filter(Jornada %in% c(1, 2, 3, 4))
 datbol4_l <- datbol4 %>%
   filter(Local == "Bolivia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -304,8 +328,9 @@ datbol4_v <- datbol4 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbol5 <- filter(dateq5,
-                  Local == "Bolivia" | Visita == "Bolivia")
+datbol5 <- dateq17 %>% 
+  filter(Local == "Bolivia" | Visita == "Bolivia") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5))
 datbol5_l <- datbol5 %>%
   filter(Local == "Bolivia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -316,8 +341,9 @@ datbol5_v <- datbol5 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbol6 <- filter(dateq6,
-                  Local == "Bolivia" | Visita == "Bolivia")
+datbol6 <- dateq17 %>% 
+  filter(Local == "Bolivia" | Visita == "Bolivia") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6))
 datbol6_l <- datbol6 %>%
   filter(Local == "Bolivia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -328,8 +354,9 @@ datbol6_v <- datbol6 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbol7 <- filter(dateq7,
-                  Local == "Bolivia" | Visita == "Bolivia")
+datbol7 <- dateq17 %>% 
+  filter(Local == "Bolivia" | Visita == "Bolivia") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7))
 datbol7_l <- datbol7 %>%
   filter(Local == "Bolivia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -340,8 +367,9 @@ datbol7_v <- datbol7 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbol8 <- filter(dateq8,
-                  Local == "Bolivia" | Visita == "Bolivia")
+datbol8 <- dateq17 %>% 
+  filter(Local == "Bolivia" | Visita == "Bolivia") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8))
 datbol8_l <- datbol8 %>%
   filter(Local == "Bolivia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -352,8 +380,9 @@ datbol8_v <- datbol8 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbol9 <- filter(dateq9,
-                  Local == "Bolivia" | Visita == "Bolivia")
+datbol9 <- dateq17 %>% 
+  filter(Local == "Bolivia" | Visita == "Bolivia") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9))
 datbol9_l <- datbol9 %>%
   filter(Local == "Bolivia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -364,8 +393,9 @@ datbol9_v <- datbol9 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbol10 <- filter(dateq10,
-                   Local == "Bolivia" | Visita == "Bolivia")
+datbol10 <- dateq17 %>% 
+  filter(Local == "Bolivia" | Visita == "Bolivia") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
 datbol10_l <- datbol10 %>%
   filter(Local == "Bolivia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -376,8 +406,9 @@ datbol10_v <- datbol10 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbol11 <- filter(dateq11,
-                   Local == "Bolivia" | Visita == "Bolivia")
+datbol11 <- dateq17 %>% 
+  filter(Local == "Bolivia" | Visita == "Bolivia") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11))
 datbol11_l <- datbol11 %>%
   filter(Local == "Bolivia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -388,8 +419,9 @@ datbol11_v <- datbol11 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbol12 <- filter(dateq12,
-                   Local == "Bolivia" | Visita == "Bolivia")
+datbol12 <- dateq17 %>% 
+  filter(Local == "Bolivia" | Visita == "Bolivia") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12))
 datbol12_l <- datbol12 %>%
   filter(Local == "Bolivia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -400,8 +432,9 @@ datbol12_v <- datbol12 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbol13 <- filter(dateq13,
-                   Local == "Bolivia" | Visita == "Bolivia")
+datbol13 <- dateq17 %>% 
+  filter(Local == "Bolivia" | Visita == "Bolivia") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13))
 datbol13_l <- datbol13 %>%
   filter(Local == "Bolivia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -412,8 +445,9 @@ datbol13_v <- datbol13 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbol14 <- filter(dateq14,
-                   Local == "Bolivia" | Visita == "Bolivia")
+datbol14 <- dateq17 %>% 
+  filter(Local == "Bolivia" | Visita == "Bolivia") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
 datbol14_l <- datbol14 %>%
   filter(Local == "Bolivia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -424,8 +458,9 @@ datbol14_v <- datbol14 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbol15 <- filter(dateq15,
-                   Local == "Bolivia" | Visita == "Bolivia")
+datbol15 <- dateq17 %>% 
+  filter(Local == "Bolivia" | Visita == "Bolivia") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15))
 datbol15_l <- datbol15 %>%
   filter(Local == "Bolivia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -436,8 +471,9 @@ datbol15_v <- datbol15 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbol16 <- filter(dateq16,
-                   Local == "Bolivia" | Visita == "Bolivia")
+datbol16 <- dateq17 %>% 
+  filter(Local == "Bolivia" | Visita == "Bolivia") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16))
 datbol16_l <- datbol16 %>%
   filter(Local == "Bolivia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -448,8 +484,9 @@ datbol16_v <- datbol16 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbol17 <- filter(dateq17,
-                   Local == "Bolivia" | Visita == "Bolivia")
+datbol17 <- dateq17 %>% 
+  filter(Local == "Bolivia" | Visita == "Bolivia") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17))
 datbol17_l <- datbol17 %>%
   filter(Local == "Bolivia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -460,8 +497,9 @@ datbol17_v <- datbol17 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-#datbol18 <- filter(dateq18,
-#                   Local == "Bolivia" | Visita == "Bolivia")
+#datbol18 <- dateq17 %>% 
+#  filter(Local == "Bolivia" | Visita == "Bolivia") %>%
+#  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18))
 #datbol18_l <- datbol18 %>%
 #  filter(Local == "Bolivia") %>%
 #  mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -474,8 +512,9 @@ datbol17_v <- datbol17 %>%
 #  mutate(DV = ifelse(GV < GL, 1, 0))
 
 # BRASIL
-datbra <- filter(dateq1,
-                 Local == "Brasil" | Visita == "Brasil")
+datbra <- dateq17 %>% 
+  filter(Local == "Brasil" | Visita == "Brasil") %>%
+  filter(Jornada == 1)
 datbra_l <- datbra %>%
   filter(Local == "Brasil") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -486,8 +525,9 @@ datbra_v <- datbra %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbra2 <- filter(dateq2,
-                 Local == "Brasil" | Visita == "Brasil")
+datbra2 <- dateq17 %>% 
+  filter(Local == "Brasil" | Visita == "Brasil") %>%
+  filter(Jornada %in% c(1, 2))
 datbra2_l <- datbra2 %>%
   filter(Local == "Brasil") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -498,8 +538,9 @@ datbra2_v <- datbra2 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbra3 <- filter(dateq3,
-                  Local == "Brasil" | Visita == "Brasil")
+datbra3 <- dateq17 %>% 
+  filter(Local == "Brasil" | Visita == "Brasil") %>%
+  filter(Jornada %in% c(1, 2, 3))
 datbra3_l <- datbra3 %>%
   filter(Local == "Brasil") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -510,8 +551,9 @@ datbra3_v <- datbra3 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbra4 <- filter(dateq4,
-                  Local == "Brasil" | Visita == "Brasil")
+datbra4 <- dateq17 %>% 
+  filter(Local == "Brasil" | Visita == "Brasil") %>%
+  filter(Jornada %in% c(1, 2, 3, 4))
 datbra4_l <- datbra4 %>%
   filter(Local == "Brasil") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -522,8 +564,9 @@ datbra4_v <- datbra4 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbra5 <- filter(dateq5,
-                  Local == "Brasil" | Visita == "Brasil")
+datbra5 <- dateq17 %>% 
+  filter(Local == "Brasil" | Visita == "Brasil") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5))
 datbra5_l <- datbra5 %>%
   filter(Local == "Brasil") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -534,8 +577,9 @@ datbra5_v <- datbra5 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbra6 <- filter(dateq6,
-                  Local == "Brasil" | Visita == "Brasil")
+datbra6 <- dateq17 %>% 
+  filter(Local == "Brasil" | Visita == "Brasil") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6))
 datbra6_l <- datbra6 %>%
   filter(Local == "Brasil") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -546,8 +590,9 @@ datbra6_v <- datbra6 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbra7 <- filter(dateq7,
-                  Local == "Brasil" | Visita == "Brasil")
+datbra7 <- dateq17 %>% 
+  filter(Local == "Brasil" | Visita == "Brasil") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7))
 datbra7_l <- datbra7 %>%
   filter(Local == "Brasil") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -558,8 +603,9 @@ datbra7_v <- datbra7 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbra8 <- filter(dateq8,
-                  Local == "Brasil" | Visita == "Brasil")
+datbra8 <- dateq17 %>% 
+  filter(Local == "Brasil" | Visita == "Brasil") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8))
 datbra8_l <- datbra8 %>%
   filter(Local == "Brasil") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -570,8 +616,9 @@ datbra8_v <- datbra8 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbra9 <- filter(dateq9,
-                  Local == "Brasil" | Visita == "Brasil")
+datbra9 <- dateq17 %>% 
+  filter(Local == "Brasil" | Visita == "Brasil") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9))
 datbra9_l <- datbra9 %>%
   filter(Local == "Brasil") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -582,8 +629,9 @@ datbra9_v <- datbra9 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbra10 <- filter(dateq10,
-                   Local == "Brasil" | Visita == "Brasil")
+datbra10 <- dateq17 %>% 
+  filter(Local == "Brasil" | Visita == "Brasil") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
 datbra10_l <- datbra10 %>%
   filter(Local == "Brasil") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -594,8 +642,9 @@ datbra10_v <- datbra10 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbra11 <- filter(dateq11,
-                   Local == "Brasil" | Visita == "Brasil")
+datbra11 <- dateq17 %>% 
+  filter(Local == "Brasil" | Visita == "Brasil") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11))
 datbra11_l <- datbra11 %>%
   filter(Local == "Brasil") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -606,8 +655,9 @@ datbra11_v <- datbra11 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbra12 <- filter(dateq12,
-                   Local == "Brasil" | Visita == "Brasil")
+datbra12 <- dateq17 %>% 
+  filter(Local == "Brasil" | Visita == "Brasil") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12))
 datbra12_l <- datbra12 %>%
   filter(Local == "Brasil") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -618,8 +668,9 @@ datbra12_v <- datbra12 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbra13 <- filter(dateq13,
-                   Local == "Brasil" | Visita == "Brasil")
+datbra13 <- dateq17 %>% 
+  filter(Local == "Brasil" | Visita == "Brasil") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13))
 datbra13_l <- datbra13 %>%
   filter(Local == "Brasil") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -630,8 +681,9 @@ datbra13_v <- datbra13 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbra14 <- filter(dateq14,
-                   Local == "Brasil" | Visita == "Brasil")
+datbra14 <- dateq17 %>% 
+  filter(Local == "Brasil" | Visita == "Brasil") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
 datbra14_l <- datbra14 %>%
   filter(Local == "Brasil") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -642,8 +694,9 @@ datbra14_v <- datbra14 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbra15 <- filter(dateq15,
-                   Local == "Brasil" | Visita == "Brasil")
+datbra15 <- dateq17 %>% 
+  filter(Local == "Brasil" | Visita == "Brasil") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15))
 datbra15_l <- datbra15 %>%
   filter(Local == "Brasil") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -654,8 +707,9 @@ datbra15_v <- datbra15 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbra16 <- filter(dateq16,
-                   Local == "Brasil" | Visita == "Brasil")
+datbra16 <- dateq17 %>% 
+  filter(Local == "Brasil" | Visita == "Brasil") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16))
 datbra16_l <- datbra16 %>%
   filter(Local == "Brasil") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -666,8 +720,9 @@ datbra16_v <- datbra16 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datbra17 <- filter(dateq17,
-                   Local == "Brasil" | Visita == "Brasil")
+datbra17 <- dateq17 %>% 
+  filter(Local == "Brasil" | Visita == "Brasil") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17))
 datbra17_l <- datbra17 %>%
   filter(Local == "Brasil") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -678,8 +733,9 @@ datbra17_v <- datbra17 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-#datbra18 <- filter(dateq18,
-#                   Local == "Brasil" | Visita == "Brasil")
+#datbra18 <- dateq17 %>% 
+#  filter(Local == "Brasil" | Visita == "Brasil") %>%
+#  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18))
 #datbra18_l <- datbra18 %>%
 #  filter(Local == "Brasil") %>%
 #  mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -692,8 +748,9 @@ datbra17_v <- datbra17 %>%
 #  mutate(DV = ifelse(GV < GL, 1, 0))
 
 # COLOMBIA
-datcol <- filter(dateq1,
-                 Local == "Colombia" | Visita == "Colombia")
+datcol <- dateq17 %>% 
+  filter(Local == "Colombia" | Visita == "Colombia") %>%
+  filter(Jornada == 1)
 datcol_l <- datcol %>%
   filter(Local == "Colombia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -704,8 +761,9 @@ datcol_v <- datcol %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datcol2 <- filter(dateq2,
-                 Local == "Colombia" | Visita == "Colombia")
+datcol2 <- dateq17 %>% 
+  filter(Local == "Colombia" | Visita == "Colombia") %>%
+  filter(Jornada %in% c(1, 2))
 datcol2_l <- datcol2 %>%
   filter(Local == "Colombia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -716,8 +774,9 @@ datcol2_v <- datcol2 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datcol3 <- filter(dateq3,
-                  Local == "Colombia" | Visita == "Colombia")
+datcol3 <- dateq17 %>% 
+  filter(Local == "Colombia" | Visita == "Colombia") %>%
+  filter(Jornada %in% c(1, 2, 3))
 datcol3_l <- datcol3 %>%
   filter(Local == "Colombia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -728,8 +787,9 @@ datcol3_v <- datcol3 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datcol4 <- filter(dateq4,
-                  Local == "Colombia" | Visita == "Colombia")
+datcol4 <- dateq17 %>% 
+  filter(Local == "Colombia" | Visita == "Colombia") %>%
+  filter(Jornada %in% c(1, 2, 3, 4))
 datcol4_l <- datcol4 %>%
   filter(Local == "Colombia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -740,8 +800,9 @@ datcol4_v <- datcol4 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datcol5 <- filter(dateq5,
-                  Local == "Colombia" | Visita == "Colombia")
+datcol5 <- dateq17 %>% 
+  filter(Local == "Colombia" | Visita == "Colombia") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5))
 datcol5_l <- datcol5 %>%
   filter(Local == "Colombia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -752,8 +813,9 @@ datcol5_v <- datcol5 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datcol6 <- filter(dateq6,
-                  Local == "Colombia" | Visita == "Colombia")
+datcol6 <- dateq17 %>% 
+  filter(Local == "Colombia" | Visita == "Colombia") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6))
 datcol6_l <- datcol6 %>%
   filter(Local == "Colombia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -764,8 +826,9 @@ datcol6_v <- datcol6 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datcol7 <- filter(dateq7,
-                  Local == "Colombia" | Visita == "Colombia")
+datcol7 <- dateq17 %>% 
+  filter(Local == "Colombia" | Visita == "Colombia") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7))
 datcol7_l <- datcol7 %>%
   filter(Local == "Colombia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -776,8 +839,9 @@ datcol7_v <- datcol7 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datcol8 <- filter(dateq8,
-                  Local == "Colombia" | Visita == "Colombia")
+datcol8 <- dateq17 %>% 
+  filter(Local == "Colombia" | Visita == "Colombia") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8))
 datcol8_l <- datcol8 %>%
   filter(Local == "Colombia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -788,8 +852,9 @@ datcol8_v <- datcol8 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datcol9 <- filter(dateq9,
-                  Local == "Colombia" | Visita == "Colombia")
+datcol9 <- dateq17 %>% 
+  filter(Local == "Colombia" | Visita == "Colombia") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9))
 datcol9_l <- datcol9 %>%
   filter(Local == "Colombia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -800,8 +865,9 @@ datcol9_v <- datcol9 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datcol10 <- filter(dateq10,
-                   Local == "Colombia" | Visita == "Colombia")
+datcol10 <- dateq17 %>% 
+  filter(Local == "Colombia" | Visita == "Colombia") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
 datcol10_l <- datcol10 %>%
   filter(Local == "Colombia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -812,8 +878,9 @@ datcol10_v <- datcol10 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datcol11 <- filter(dateq11,
-                   Local == "Colombia" | Visita == "Colombia")
+datcol11 <- dateq17 %>% 
+  filter(Local == "Colombia" | Visita == "Colombia") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11))
 datcol11_l <- datcol11 %>%
   filter(Local == "Colombia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -824,8 +891,9 @@ datcol11_v <- datcol11 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datcol12 <- filter(dateq12,
-                   Local == "Colombia" | Visita == "Colombia")
+datcol12 <- dateq17 %>% 
+  filter(Local == "Colombia" | Visita == "Colombia") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12))
 datcol12_l <- datcol12 %>%
   filter(Local == "Colombia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -836,8 +904,9 @@ datcol12_v <- datcol12 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datcol13 <- filter(dateq13,
-                   Local == "Colombia" | Visita == "Colombia")
+datcol13 <- dateq17 %>% 
+  filter(Local == "Colombia" | Visita == "Colombia") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13))
 datcol13_l <- datcol13 %>%
   filter(Local == "Colombia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -848,8 +917,9 @@ datcol13_v <- datcol13 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datcol14 <- filter(dateq14,
-                   Local == "Colombia" | Visita == "Colombia")
+datcol14 <- dateq17 %>% 
+  filter(Local == "Colombia" | Visita == "Colombia") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
 datcol14_l <- datcol14 %>%
   filter(Local == "Colombia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -860,8 +930,9 @@ datcol14_v <- datcol14 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datcol15 <- filter(dateq15,
-                   Local == "Colombia" | Visita == "Colombia")
+datcol15 <- dateq17 %>% 
+  filter(Local == "Colombia" | Visita == "Colombia") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15))
 datcol15_l <- datcol15 %>%
   filter(Local == "Colombia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -872,8 +943,9 @@ datcol15_v <- datcol15 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datcol16 <- filter(dateq16,
-                   Local == "Colombia" | Visita == "Colombia")
+datcol16 <- dateq17 %>% 
+  filter(Local == "Colombia" | Visita == "Colombia") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16))
 datcol16_l <- datcol16 %>%
   filter(Local == "Colombia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -884,8 +956,9 @@ datcol16_v <- datcol16 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datcol17 <- filter(dateq17,
-                   Local == "Colombia" | Visita == "Colombia")
+datcol17 <- dateq17 %>% 
+  filter(Local == "Colombia" | Visita == "Colombia") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17))
 datcol17_l <- datcol17 %>%
   filter(Local == "Colombia") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -896,8 +969,9 @@ datcol17_v <- datcol17 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-#datcol18 <- filter(dateq18,
-#                   Local == "Colombia" | Visita == "Colombia")
+#datcol18 <- dateq17 %>% 
+#  filter(Local == "Colombia" | Visita == "Colombia") %>%
+#  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18))
 #datcol18_l <- datcol18 %>%
 #  filter(Local == "Colombia") %>%
 #  mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -910,8 +984,9 @@ datcol17_v <- datcol17 %>%
 #  mutate(DV = ifelse(GV < GL, 1, 0))
 
 # CHILE
-datchi <- filter(dateq1,
-                 Local == "Chile" | Visita == "Chile")
+datchi <- dateq17 %>% 
+  filter(Local == "Chile" | Visita == "Chile") %>%
+  filter(Jornada == 1)
 datchi_l <- datchi %>%
   filter(Local == "Chile") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -922,8 +997,9 @@ datchi_v <- datchi %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datchi2 <- filter(dateq2,
-                 Local == "Chile" | Visita == "Chile")
+datchi2 <- dateq17 %>% 
+  filter(Local == "Chile" | Visita == "Chile") %>%
+  filter(Jornada %in% c(1, 2))
 datchi2_l <- datchi2 %>%
   filter(Local == "Chile") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -934,8 +1010,9 @@ datchi2_v <- datchi2 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datchi3 <- filter(dateq3,
-                  Local == "Chile" | Visita == "Chile")
+datchi3 <- dateq17 %>% 
+  filter(Local == "Chile" | Visita == "Chile") %>%
+  filter(Jornada %in% c(1, 2, 3))
 datchi3_l <- datchi3 %>%
   filter(Local == "Chile") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -946,8 +1023,9 @@ datchi3_v <- datchi3 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datchi4 <- filter(dateq4,
-                  Local == "Chile" | Visita == "Chile")
+datchi4 <- dateq17 %>% 
+  filter(Local == "Chile" | Visita == "Chile") %>%
+  filter(Jornada %in% c(1, 2, 3, 4))
 datchi4_l <- datchi4 %>%
   filter(Local == "Chile") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -958,8 +1036,9 @@ datchi4_v <- datchi4 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datchi5 <- filter(dateq5,
-                  Local == "Chile" | Visita == "Chile")
+datchi5 <- dateq17 %>% 
+  filter(Local == "Chile" | Visita == "Chile") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5))
 datchi5_l <- datchi5 %>%
   filter(Local == "Chile") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -970,8 +1049,9 @@ datchi5_v <- datchi5 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datchi6 <- filter(dateq6,
-                  Local == "Chile" | Visita == "Chile")
+datchi6 <- dateq17 %>% 
+  filter(Local == "Chile" | Visita == "Chile") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6))
 datchi6_l <- datchi6 %>%
   filter(Local == "Chile") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -982,8 +1062,9 @@ datchi6_v <- datchi6 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datchi7 <- filter(dateq7,
-                  Local == "Chile" | Visita == "Chile")
+datchi7 <- dateq17 %>% 
+  filter(Local == "Chile" | Visita == "Chile") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7))
 datchi7_l <- datchi7 %>%
   filter(Local == "Chile") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -994,8 +1075,9 @@ datchi7_v <- datchi7 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datchi8 <- filter(dateq8,
-                  Local == "Chile" | Visita == "Chile")
+datchi8 <- dateq17 %>% 
+  filter(Local == "Chile" | Visita == "Chile") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8))
 datchi8_l <- datchi8 %>%
   filter(Local == "Chile") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1006,8 +1088,9 @@ datchi8_v <- datchi8 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datchi9 <- filter(dateq9,
-                  Local == "Chile" | Visita == "Chile")
+datchi9 <- dateq17 %>% 
+  filter(Local == "Chile" | Visita == "Chile") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9))
 datchi9_l <- datchi9 %>%
   filter(Local == "Chile") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1018,8 +1101,9 @@ datchi9_v <- datchi9 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datchi10 <- filter(dateq10,
-                   Local == "Chile" | Visita == "Chile")
+datchi10 <- dateq17 %>% 
+  filter(Local == "Chile" | Visita == "Chile") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
 datchi10_l <- datchi10 %>%
   filter(Local == "Chile") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1030,8 +1114,9 @@ datchi10_v <- datchi10 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datchi11 <- filter(dateq11,
-                   Local == "Chile" | Visita == "Chile")
+datchi11 <- dateq17 %>% 
+  filter(Local == "Chile" | Visita == "Chile") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11))
 datchi11_l <- datchi11 %>%
   filter(Local == "Chile") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1042,8 +1127,9 @@ datchi11_v <- datchi11 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datchi12 <- filter(dateq12,
-                   Local == "Chile" | Visita == "Chile")
+datchi12 <- dateq17 %>% 
+  filter(Local == "Chile" | Visita == "Chile") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12))
 datchi12_l <- datchi12 %>%
   filter(Local == "Chile") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1054,8 +1140,9 @@ datchi12_v <- datchi12 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datchi13 <- filter(dateq13,
-                   Local == "Chile" | Visita == "Chile")
+datchi13 <- dateq17 %>% 
+  filter(Local == "Chile" | Visita == "Chile") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13))
 datchi13_l <- datchi13 %>%
   filter(Local == "Chile") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1066,8 +1153,9 @@ datchi13_v <- datchi13 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datchi14 <- filter(dateq14,
-                   Local == "Chile" | Visita == "Chile")
+datchi14 <- dateq17 %>% 
+  filter(Local == "Chile" | Visita == "Chile") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
 datchi14_l <- datchi14 %>%
   filter(Local == "Chile") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1078,8 +1166,9 @@ datchi14_v <- datchi14 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datchi15 <- filter(dateq15,
-                   Local == "Chile" | Visita == "Chile")
+datchi15 <- dateq17 %>% 
+  filter(Local == "Chile" | Visita == "Chile") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15))
 datchi15_l <- datchi15 %>%
   filter(Local == "Chile") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1090,8 +1179,9 @@ datchi15_v <- datchi15 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datchi16 <- filter(dateq16,
-                   Local == "Chile" | Visita == "Chile")
+datchi16 <- dateq17 %>% 
+  filter(Local == "Chile" | Visita == "Chile") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16))
 datchi16_l <- datchi16 %>%
   filter(Local == "Chile") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1102,8 +1192,9 @@ datchi16_v <- datchi16 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datchi17 <- filter(dateq17,
-                   Local == "Chile" | Visita == "Chile")
+datchi17 <- dateq17 %>% 
+  filter(Local == "Chile" | Visita == "Chile") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17))
 datchi17_l <- datchi17 %>%
   filter(Local == "Chile") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1114,8 +1205,9 @@ datchi17_v <- datchi17 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-#datchi18 <- filter(dateq18,
-#                   Local == "Chile" | Visita == "Chile")
+#datchi18 <- dateq17 %>% 
+#  filter(Local == "Chile" | Visita == "Chile") %>%
+#  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18))
 #datchi18_l <- datchi18 %>%
 #  filter(Local == "Chile") %>%
 #  mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1128,8 +1220,9 @@ datchi17_v <- datchi17 %>%
 #  mutate(DV = ifelse(GV < GL, 1, 0))
 
 # ECUADOR
-datecu <- filter(dateq1,
-                 Local == "Ecuador" | Visita == "Ecuador")
+datecu <- dateq17 %>% 
+  filter(Local == "Ecuador" | Visita == "Ecuador") %>%
+  filter(Jornada == 1)
 datecu_l <- datecu %>%
   filter(Local == "Ecuador") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1140,8 +1233,9 @@ datecu_v <- datecu %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datecu2 <- filter(dateq2,
-                 Local == "Ecuador" | Visita == "Ecuador")
+datecu2 <- dateq17 %>% 
+  filter(Local == "Ecuador" | Visita == "Ecuador") %>%
+  filter(Jornada %in% c(1, 2))
 datecu2_l <- datecu2 %>%
   filter(Local == "Ecuador") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1152,8 +1246,9 @@ datecu2_v <- datecu2 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datecu3 <- filter(dateq3,
-                  Local == "Ecuador" | Visita == "Ecuador")
+datecu3 <- dateq17 %>% 
+  filter(Local == "Ecuador" | Visita == "Ecuador") %>%
+  filter(Jornada %in% c(1, 2, 3))
 datecu3_l <- datecu3 %>%
   filter(Local == "Ecuador") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1164,8 +1259,9 @@ datecu3_v <- datecu3 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datecu4 <- filter(dateq4,
-                  Local == "Ecuador" | Visita == "Ecuador")
+datecu4 <- dateq17 %>% 
+  filter(Local == "Ecuador" | Visita == "Ecuador") %>%
+  filter(Jornada %in% c(1, 2, 3, 4))
 datecu4_l <- datecu4 %>%
   filter(Local == "Ecuador") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1176,8 +1272,9 @@ datecu4_v <- datecu4 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datecu5 <- filter(dateq5,
-                  Local == "Ecuador" | Visita == "Ecuador")
+datecu5 <- dateq17 %>% 
+  filter(Local == "Ecuador" | Visita == "Ecuador") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5))
 datecu5_l <- datecu5 %>%
   filter(Local == "Ecuador") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1188,8 +1285,9 @@ datecu5_v <- datecu5 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datecu6 <- filter(dateq6,
-                  Local == "Ecuador" | Visita == "Ecuador")
+datecu6 <- dateq17 %>% 
+  filter(Local == "Ecuador" | Visita == "Ecuador") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6))
 datecu6_l <- datecu6 %>%
   filter(Local == "Ecuador") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1200,8 +1298,9 @@ datecu6_v <- datecu6 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datecu7 <- filter(dateq7,
-                  Local == "Ecuador" | Visita == "Ecuador")
+datecu7 <- dateq17 %>% 
+  filter(Local == "Ecuador" | Visita == "Ecuador") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7))
 datecu7_l <- datecu7 %>%
   filter(Local == "Ecuador") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1212,8 +1311,9 @@ datecu7_v <- datecu7 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datecu8 <- filter(dateq8,
-                  Local == "Ecuador" | Visita == "Ecuador")
+datecu8 <- dateq17 %>% 
+  filter(Local == "Ecuador" | Visita == "Ecuador") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8))
 datecu8_l <- datecu8 %>%
   filter(Local == "Ecuador") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1224,8 +1324,9 @@ datecu8_v <- datecu8 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datecu9 <- filter(dateq9,
-                  Local == "Ecuador" | Visita == "Ecuador")
+datecu9 <- dateq17 %>% 
+  filter(Local == "Ecuador" | Visita == "Ecuador") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 8, 9))
 datecu9_l <- datecu9 %>%
   filter(Local == "Ecuador") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1236,8 +1337,9 @@ datecu9_v <- datecu9 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datecu10 <- filter(dateq10,
-                   Local == "Ecuador" | Visita == "Ecuador")
+datecu10 <- dateq17 %>% 
+  filter(Local == "Ecuador" | Visita == "Ecuador") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 8, 9, 10))
 datecu10_l <- datecu10 %>%
   filter(Local == "Ecuador") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1248,8 +1350,9 @@ datecu10_v <- datecu10 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datecu11 <- filter(dateq11,
-                   Local == "Ecuador" | Visita == "Ecuador")
+datecu11 <- dateq17 %>% 
+  filter(Local == "Ecuador" | Visita == "Ecuador") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 8, 9, 10, 11))
 datecu11_l <- datecu11 %>%
   filter(Local == "Ecuador") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1260,8 +1363,9 @@ datecu11_v <- datecu11 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datecu12 <- filter(dateq12,
-                   Local == "Ecuador" | Visita == "Ecuador")
+datecu12 <- dateq17 %>% 
+  filter(Local == "Ecuador" | Visita == "Ecuador") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12))
 datecu12_l <- datecu12 %>%
   filter(Local == "Ecuador") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1272,8 +1376,9 @@ datecu12_v <- datecu12 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datecu13 <- filter(dateq13,
-                   Local == "Ecuador" | Visita == "Ecuador")
+datecu13 <- dateq17 %>% 
+  filter(Local == "Ecuador" | Visita == "Ecuador") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13))
 datecu13_l <- datecu13 %>%
   filter(Local == "Ecuador") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1284,8 +1389,9 @@ datecu13_v <- datecu13 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datecu14 <- filter(dateq14,
-                   Local == "Ecuador" | Visita == "Ecuador")
+datecu14 <- dateq17 %>% 
+  filter(Local == "Ecuador" | Visita == "Ecuador") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14))
 datecu14_l <- datecu14 %>%
   filter(Local == "Ecuador") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1296,8 +1402,9 @@ datecu14_v <- datecu14 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datecu15 <- filter(dateq15,
-                   Local == "Ecuador" | Visita == "Ecuador")
+datecu15 <- dateq17 %>% 
+  filter(Local == "Ecuador" | Visita == "Ecuador") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15))
 datecu15_l <- datecu15 %>%
   filter(Local == "Ecuador") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1308,8 +1415,9 @@ datecu15_v <- datecu15 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datecu16 <- filter(dateq16,
-                   Local == "Ecuador" | Visita == "Ecuador")
+datecu16 <- dateq17 %>% 
+  filter(Local == "Ecuador" | Visita == "Ecuador") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16))
 datecu16_l <- datecu16 %>%
   filter(Local == "Ecuador") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1320,8 +1428,9 @@ datecu16_v <- datecu16 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datecu17 <- filter(dateq17,
-                   Local == "Ecuador" | Visita == "Ecuador")
+datecu17 <- dateq17 %>% 
+  filter(Local == "Ecuador" | Visita == "Ecuador") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17))
 datecu17_l <- datecu17 %>%
   filter(Local == "Ecuador") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1332,8 +1441,9 @@ datecu17_v <- datecu17 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-#datecu18 <- filter(dateq18,
-#                   Local == "Ecuador" | Visita == "Ecuador")
+#datecu18 <- dateq17 %>% 
+#  filter(Local == "Ecuador" | Visita == "Ecuador") %>%
+#  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18))
 #datecu18_l <- datecu18 %>%
 #  filter(Local == "Ecuador") %>%
 #  mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1346,8 +1456,9 @@ datecu17_v <- datecu17 %>%
 #  mutate(DV = ifelse(GV < GL, 1, 0))
 
 # PARAGUAY
-datpar <- filter(dateq1,
-                 Local == "Paraguay" | Visita == "Paraguay")
+datpar <- dateq17 %>% 
+  filter(Local == "Paraguay" | Visita == "Paraguay") %>%
+  filter(Jornada == 1)
 datpar_l <- datpar %>%
   filter(Local == "Paraguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1358,8 +1469,9 @@ datpar_v <- datpar %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datpar2 <- filter(dateq2,
-                 Local == "Paraguay" | Visita == "Paraguay")
+datpar2 <- dateq17 %>% 
+  filter(Local == "Paraguay" | Visita == "Paraguay") %>%
+  filter(Jornada %in% c(1, 2))
 datpar2_l <- datpar2 %>%
   filter(Local == "Paraguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1370,8 +1482,9 @@ datpar2_v <- datpar2 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datpar3 <- filter(dateq3,
-                  Local == "Paraguay" | Visita == "Paraguay")
+datpar3 <- dateq17 %>% 
+  filter(Local == "Paraguay" | Visita == "Paraguay") %>%
+  filter(Jornada %in% c(1, 2, 3))
 datpar3_l <- datpar3 %>%
   filter(Local == "Paraguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1382,8 +1495,9 @@ datpar3_v <- datpar3 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datpar4 <- filter(dateq4,
-                  Local == "Paraguay" | Visita == "Paraguay")
+datpar4 <- dateq17 %>% 
+  filter(Local == "Paraguay" | Visita == "Paraguay") %>%
+  filter(Jornada %in% c(1, 2, 3, 4))
 datpar4_l <- datpar4 %>%
   filter(Local == "Paraguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1394,8 +1508,9 @@ datpar4_v <- datpar4 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datpar5 <- filter(dateq5,
-                  Local == "Paraguay" | Visita == "Paraguay")
+datpar5 <- dateq17 %>% 
+  filter(Local == "Paraguay" | Visita == "Paraguay") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5))
 datpar5_l <- datpar5 %>%
   filter(Local == "Paraguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1406,8 +1521,9 @@ datpar5_v <- datpar5 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datpar6 <- filter(dateq6,
-                  Local == "Paraguay" | Visita == "Paraguay")
+datpar6 <- dateq17 %>% 
+  filter(Local == "Paraguay" | Visita == "Paraguay") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6))
 datpar6_l <- datpar6 %>%
   filter(Local == "Paraguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1418,8 +1534,9 @@ datpar6_v <- datpar6 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datpar7 <- filter(dateq7,
-                  Local == "Paraguay" | Visita == "Paraguay")
+datpar7 <- dateq17 %>% 
+  filter(Local == "Paraguay" | Visita == "Paraguay") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7))
 datpar7_l <- datpar7 %>%
   filter(Local == "Paraguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1430,8 +1547,9 @@ datpar7_v <- datpar7 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datpar8 <- filter(dateq8,
-                  Local == "Paraguay" | Visita == "Paraguay")
+datpar8 <- dateq17 %>% 
+  filter(Local == "Paraguay" | Visita == "Paraguay") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8))
 datpar8_l <- datpar8 %>%
   filter(Local == "Paraguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1442,8 +1560,9 @@ datpar8_v <- datpar8 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datpar9 <- filter(dateq9,
-                  Local == "Paraguay" | Visita == "Paraguay")
+datpar9 <- dateq17 %>% 
+  filter(Local == "Paraguay" | Visita == "Paraguay") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9))
 datpar9_l <- datpar9 %>%
   filter(Local == "Paraguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1454,8 +1573,9 @@ datpar9_v <- datpar9 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datpar10 <- filter(dateq10,
-                   Local == "Paraguay" | Visita == "Paraguay")
+datpar10 <- dateq17 %>% 
+  filter(Local == "Paraguay" | Visita == "Paraguay") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
 datpar10_l <- datpar10 %>%
   filter(Local == "Paraguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1466,8 +1586,9 @@ datpar10_v <- datpar10 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datpar11 <- filter(dateq11,
-                   Local == "Paraguay" | Visita == "Paraguay")
+datpar11 <- dateq17 %>% 
+  filter(Local == "Paraguay" | Visita == "Paraguay") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11))
 datpar11_l <- datpar11 %>%
   filter(Local == "Paraguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1478,8 +1599,9 @@ datpar11_v <- datpar11 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datpar12 <- filter(dateq12,
-                   Local == "Paraguay" | Visita == "Paraguay")
+datpar12 <- dateq17 %>% 
+  filter(Local == "Paraguay" | Visita == "Paraguay") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12))
 datpar12_l <- datpar12 %>%
   filter(Local == "Paraguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1490,8 +1612,9 @@ datpar12_v <- datpar12 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datpar13 <- filter(dateq13,
-                   Local == "Paraguay" | Visita == "Paraguay")
+datpar13 <- dateq17 %>% 
+  filter(Local == "Paraguay" | Visita == "Paraguay") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13))
 datpar13_l <- datpar13 %>%
   filter(Local == "Paraguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1502,8 +1625,9 @@ datpar13_v <- datpar13 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datpar14 <- filter(dateq14,
-                   Local == "Paraguay" | Visita == "Paraguay")
+datpar14 <- dateq17 %>% 
+  filter(Local == "Paraguay" | Visita == "Paraguay") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
 datpar14_l <- datpar14 %>%
   filter(Local == "Paraguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1514,8 +1638,9 @@ datpar14_v <- datpar14 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datpar15 <- filter(dateq15,
-                   Local == "Paraguay" | Visita == "Paraguay")
+datpar15 <- dateq17 %>% 
+  filter(Local == "Paraguay" | Visita == "Paraguay") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15))
 datpar15_l <- datpar15 %>%
   filter(Local == "Paraguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1526,8 +1651,9 @@ datpar15_v <- datpar15 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datpar16 <- filter(dateq16,
-                   Local == "Paraguay" | Visita == "Paraguay")
+datpar16 <- dateq17 %>% 
+  filter(Local == "Paraguay" | Visita == "Paraguay") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16))
 datpar16_l <- datpar16 %>%
   filter(Local == "Paraguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1538,8 +1664,9 @@ datpar16_v <- datpar16 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datpar17 <- filter(dateq17,
-                   Local == "Paraguay" | Visita == "Paraguay")
+datpar17 <- dateq17 %>% 
+  filter(Local == "Paraguay" | Visita == "Paraguay") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17))
 datpar17_l <- datpar17 %>%
   filter(Local == "Paraguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1550,8 +1677,9 @@ datpar17_v <- datpar17 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-#datpar18 <- filter(dateq18,
-#                   Local == "Paraguay" | Visita == "Paraguay")
+#datpar18 <- dateq17 %>% 
+#  filter(Local == "Paraguay" | Visita == "Paraguay") %>%
+#  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18))
 #datpar18_l <- datpar18 %>%
 #  filter(Local == "Paraguay") %>%
 #  mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1564,8 +1692,9 @@ datpar17_v <- datpar17 %>%
 #  mutate(DV = ifelse(GV < GL, 1, 0))
 
 # PERÚ
-datper <- filter(dateq1,
-                 Local == "Perú" | Visita == "Perú")
+datper <- dateq17 %>% 
+  filter(Local == "Perú" | Visita == "Perú") %>%
+  filter(Jornada == 1)
 datper_l <- datper %>%
   filter(Local == "Perú") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1576,8 +1705,9 @@ datper_v <- datper %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datper2 <- filter(dateq2,
-                 Local == "Perú" | Visita == "Perú")
+datper2 <- dateq17 %>% 
+  filter(Local == "Perú" | Visita == "Perú") %>%
+  filter(Jornada %in% c(1, 2))
 datper2_l <- datper2 %>%
   filter(Local == "Perú") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1588,8 +1718,9 @@ datper2_v <- datper2 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datper3 <- filter(dateq3,
-                  Local == "Perú" | Visita == "Perú")
+datper3 <- dateq17 %>% 
+  filter(Local == "Perú" | Visita == "Perú") %>%
+  filter(Jornada %in% c(1, 2, 3))
 datper3_l <- datper3 %>%
   filter(Local == "Perú") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1600,8 +1731,9 @@ datper3_v <- datper3 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datper4 <- filter(dateq4,
-                  Local == "Perú" | Visita == "Perú")
+datper4 <- dateq17 %>% 
+  filter(Local == "Perú" | Visita == "Perú") %>%
+  filter(Jornada %in% c(1, 2, 3, 4))
 datper4_l <- datper4 %>%
   filter(Local == "Perú") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1612,8 +1744,9 @@ datper4_v <- datper4 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datper5 <- filter(dateq5,
-                  Local == "Perú" | Visita == "Perú")
+datper5 <- dateq17 %>% 
+  filter(Local == "Perú" | Visita == "Perú") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5))
 datper5_l <- datper5 %>%
   filter(Local == "Perú") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1624,8 +1757,9 @@ datper5_v <- datper5 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datper6 <- filter(dateq6,
-                  Local == "Perú" | Visita == "Perú")
+datper6 <- dateq17 %>% 
+  filter(Local == "Perú" | Visita == "Perú") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6))
 datper6_l <- datper6 %>%
   filter(Local == "Perú") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1636,8 +1770,9 @@ datper6_v <- datper6 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datper7 <- filter(dateq7,
-                  Local == "Perú" | Visita == "Perú")
+datper7 <- dateq17 %>% 
+  filter(Local == "Perú" | Visita == "Perú") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7))
 datper7_l <- datper7 %>%
   filter(Local == "Perú") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1648,8 +1783,9 @@ datper7_v <- datper7 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datper8 <- filter(dateq8,
-                  Local == "Perú" | Visita == "Perú")
+datper8 <- dateq17 %>% 
+  filter(Local == "Perú" | Visita == "Perú") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8))
 datper8_l <- datper8 %>%
   filter(Local == "Perú") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1660,8 +1796,9 @@ datper8_v <- datper8 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datper9 <- filter(dateq9,
-                  Local == "Perú" | Visita == "Perú")
+datper9 <- dateq17 %>% 
+  filter(Local == "Perú" | Visita == "Perú") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9))
 datper9_l <- datper9 %>%
   filter(Local == "Perú") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1672,8 +1809,9 @@ datper9_v <- datper9 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datper10 <- filter(dateq10,
-                   Local == "Perú" | Visita == "Perú")
+datper10 <- dateq17 %>% 
+  filter(Local == "Perú" | Visita == "Perú") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
 datper10_l <- datper10 %>%
   filter(Local == "Perú") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1684,8 +1822,9 @@ datper10_v <- datper10 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datper11 <- filter(dateq11,
-                   Local == "Perú" | Visita == "Perú")
+datper11 <- dateq17 %>% 
+  filter(Local == "Perú" | Visita == "Perú") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11))
 datper11_l <- datper11 %>%
   filter(Local == "Perú") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1696,8 +1835,9 @@ datper11_v <- datper11 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datper12 <- filter(dateq12,
-                   Local == "Perú" | Visita == "Perú")
+datper12 <- dateq17 %>% 
+  filter(Local == "Perú" | Visita == "Perú") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12))
 datper12_l <- datper12 %>%
   filter(Local == "Perú") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1708,8 +1848,9 @@ datper12_v <- datper12 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datper13 <- filter(dateq13,
-                   Local == "Perú" | Visita == "Perú")
+datper13 <- dateq17 %>% 
+  filter(Local == "Perú" | Visita == "Perú") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13))
 datper13_l <- datper13 %>%
   filter(Local == "Perú") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1720,8 +1861,9 @@ datper13_v <- datper13 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datper14 <- filter(dateq14,
-                   Local == "Perú" | Visita == "Perú")
+datper14 <- dateq17 %>% 
+  filter(Local == "Perú" | Visita == "Perú") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
 datper14_l <- datper14 %>%
   filter(Local == "Perú") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1732,8 +1874,9 @@ datper14_v <- datper14 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datper15 <- filter(dateq15,
-                   Local == "Perú" | Visita == "Perú")
+datper15 <- dateq17 %>% 
+  filter(Local == "Perú" | Visita == "Perú") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15))
 datper15_l <- datper15 %>%
   filter(Local == "Perú") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1744,8 +1887,9 @@ datper15_v <- datper15 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datper16 <- filter(dateq16,
-                   Local == "Perú" | Visita == "Perú")
+datper16 <- dateq17 %>% 
+  filter(Local == "Perú" | Visita == "Perú") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16))
 datper16_l <- datper16 %>%
   filter(Local == "Perú") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1756,8 +1900,9 @@ datper16_v <- datper16 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datper17 <- filter(dateq17,
-                   Local == "Perú" | Visita == "Perú")
+datper17 <- dateq17 %>% 
+  filter(Local == "Perú" | Visita == "Perú") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17))
 datper17_l <- datper17 %>%
   filter(Local == "Perú") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1768,8 +1913,9 @@ datper17_v <- datper17 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-#datper18 <- filter(dateq18,
-#                   Local == "Perú" | Visita == "Perú")
+#datper18 <- dateq17 %>% 
+#  filter(Local == "Perú" | Visita == "Perú") %>%
+#  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18))
 #datper18_l <- datper18 %>%
 #  filter(Local == "Perú") %>%
 #  mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1782,8 +1928,9 @@ datper17_v <- datper17 %>%
 #  mutate(DV = ifelse(GV < GL, 1, 0))
 
 # URUGUAY
-daturu <- filter(dateq1,
-                 Local == "Uruguay" | Visita == "Uruguay")
+daturu <- dateq17 %>% 
+  filter(Local == "Uruguay" | Visita == "Uruguay") %>%
+  filter(Jornada == 1)
 daturu_l <- daturu %>%
   filter(Local == "Uruguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1794,8 +1941,9 @@ daturu_v <- daturu %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-daturu2 <- filter(dateq2,
-                 Local == "Uruguay" | Visita == "Uruguay")
+daturu2 <- dateq17 %>% 
+  filter(Local == "Uruguay" | Visita == "Uruguay") %>%
+  filter(Jornada %in% c(1, 2))
 daturu2_l <- daturu2 %>%
   filter(Local == "Uruguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1806,8 +1954,9 @@ daturu2_v <- daturu2 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-daturu3 <- filter(dateq3,
-                  Local == "Uruguay" | Visita == "Uruguay")
+daturu3 <- dateq17 %>% 
+  filter(Local == "Uruguay" | Visita == "Uruguay") %>%
+  filter(Jornada %in% c(1, 2, 3))
 daturu3_l <- daturu3 %>%
   filter(Local == "Uruguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1818,8 +1967,9 @@ daturu3_v <- daturu3 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-daturu4 <- filter(dateq4,
-                  Local == "Uruguay" | Visita == "Uruguay")
+daturu4 <- dateq17 %>% 
+  filter(Local == "Uruguay" | Visita == "Uruguay") %>%
+  filter(Jornada %in% c(1, 2, 3, 4))
 daturu4_l <- daturu4 %>%
   filter(Local == "Uruguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1830,8 +1980,9 @@ daturu4_v <- daturu4 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-daturu5 <- filter(dateq5,
-                  Local == "Uruguay" | Visita == "Uruguay")
+daturu5 <- dateq17 %>% 
+  filter(Local == "Uruguay" | Visita == "Uruguay") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5))
 daturu5_l <- daturu5 %>%
   filter(Local == "Uruguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1842,8 +1993,9 @@ daturu5_v <- daturu5 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-daturu6 <- filter(dateq6,
-                  Local == "Uruguay" | Visita == "Uruguay")
+daturu6 <- dateq17 %>% 
+  filter(Local == "Uruguay" | Visita == "Uruguay") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6))
 daturu6_l <- daturu6 %>%
   filter(Local == "Uruguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1854,8 +2006,9 @@ daturu6_v <- daturu6 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-daturu7 <- filter(dateq7,
-                  Local == "Uruguay" | Visita == "Uruguay")
+daturu7 <- dateq17 %>% 
+  filter(Local == "Uruguay" | Visita == "Uruguay") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7))
 daturu7_l <- daturu7 %>%
   filter(Local == "Uruguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1866,8 +2019,9 @@ daturu7_v <- daturu7 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-daturu8 <- filter(dateq8,
-                  Local == "Uruguay" | Visita == "Uruguay")
+daturu8 <- dateq17 %>% 
+  filter(Local == "Uruguay" | Visita == "Uruguay") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8))
 daturu8_l <- daturu8 %>%
   filter(Local == "Uruguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1878,8 +2032,9 @@ daturu8_v <- daturu8 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-daturu9 <- filter(dateq9,
-                  Local == "Uruguay" | Visita == "Uruguay")
+daturu9 <- dateq17 %>% 
+  filter(Local == "Uruguay" | Visita == "Uruguay") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9))
 daturu9_l <- daturu9 %>%
   filter(Local == "Uruguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1890,8 +2045,9 @@ daturu9_v <- daturu9 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-daturu10 <- filter(dateq10,
-                   Local == "Uruguay" | Visita == "Uruguay")
+daturu10 <- dateq17 %>% 
+  filter(Local == "Uruguay" | Visita == "Uruguay") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
 daturu10_l <- daturu10 %>%
   filter(Local == "Uruguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1902,8 +2058,9 @@ daturu10_v <- daturu10 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-daturu11 <- filter(dateq11,
-                   Local == "Uruguay" | Visita == "Uruguay")
+daturu11 <- dateq17 %>% 
+  filter(Local == "Uruguay" | Visita == "Uruguay") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11))
 daturu11_l <- daturu11 %>%
   filter(Local == "Uruguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1914,8 +2071,9 @@ daturu11_v <- daturu11 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-daturu12 <- filter(dateq12,
-                   Local == "Uruguay" | Visita == "Uruguay")
+daturu12 <- dateq17 %>% 
+  filter(Local == "Uruguay" | Visita == "Uruguay") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12))
 daturu12_l <- daturu12 %>%
   filter(Local == "Uruguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1926,8 +2084,9 @@ daturu12_v <- daturu12 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-daturu13 <- filter(dateq13,
-                   Local == "Uruguay" | Visita == "Uruguay")
+daturu13 <- dateq17 %>% 
+  filter(Local == "Uruguay" | Visita == "Uruguay") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13))
 daturu13_l <- daturu13 %>%
   filter(Local == "Uruguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1938,8 +2097,9 @@ daturu13_v <- daturu13 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-daturu14 <- filter(dateq14,
-                   Local == "Uruguay" | Visita == "Uruguay")
+daturu14 <- dateq17 %>% 
+  filter(Local == "Uruguay" | Visita == "Uruguay") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
 daturu14_l <- daturu14 %>%
   filter(Local == "Uruguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1950,8 +2110,9 @@ daturu14_v <- daturu14 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-daturu15 <- filter(dateq15,
-                   Local == "Uruguay" | Visita == "Uruguay")
+daturu15 <- dateq17 %>% 
+  filter(Local == "Uruguay" | Visita == "Uruguay") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15))
 daturu15_l <- daturu15 %>%
   filter(Local == "Uruguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1962,8 +2123,9 @@ daturu15_v <- daturu15 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-daturu16 <- filter(dateq16,
-                   Local == "Uruguay" | Visita == "Uruguay")
+daturu16 <- dateq17 %>% 
+  filter(Local == "Uruguay" | Visita == "Uruguay") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16))
 daturu16_l <- daturu16 %>%
   filter(Local == "Uruguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1974,8 +2136,9 @@ daturu16_v <- daturu16 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-daturu17 <- filter(dateq17,
-                   Local == "Uruguay" | Visita == "Uruguay")
+daturu17 <- dateq17 %>% 
+  filter(Local == "Uruguay" | Visita == "Uruguay") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17))
 daturu17_l <- daturu17 %>%
   filter(Local == "Uruguay") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -1986,8 +2149,9 @@ daturu17_v <- daturu17 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-#daturu18 <- filter(dateq18,
-#                   Local == "Uruguay" | Visita == "Uruguay")
+#daturu18 <- dateq17 %>% 
+#  filter(Local == "Uruguay" | Visita == "Uruguay") %>%
+#  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18))
 #daturu18_l <- daturu18 %>%
 #  filter(Local == "Uruguay") %>%
 #  mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -2000,8 +2164,9 @@ daturu17_v <- daturu17 %>%
 #  mutate(DV = ifelse(GV < GL, 1, 0))
 
 # VENEZUELA
-datven <- filter(dateq1,
-                 Local == "Venezuela" | Visita == "Venezuela")
+datven <- dateq17 %>% 
+  filter(Local == "Venezuela" | Visita == "Venezuela") %>%
+  filter(Jornada == 1)
 datven_l <- datven %>%
   filter(Local == "Venezuela") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -2012,8 +2177,9 @@ datven_v <- datven %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datven2 <- filter(dateq2,
-                 Local == "Venezuela" | Visita == "Venezuela")
+datven2 <- dateq17 %>% 
+  filter(Local == "Venezuela" | Visita == "Venezuela") %>%
+  filter(Jornada %in% c(1, 2))
 datven2_l <- datven2 %>%
   filter(Local == "Venezuela") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -2024,8 +2190,9 @@ datven2_v <- datven2 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datven3 <- filter(dateq3,
-                  Local == "Venezuela" | Visita == "Venezuela")
+datven3 <- dateq17 %>% 
+  filter(Local == "Venezuela" | Visita == "Venezuela") %>%
+  filter(Jornada %in% c(1, 2, 3))
 datven3_l <- datven3 %>%
   filter(Local == "Venezuela") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -2036,8 +2203,9 @@ datven3_v <- datven3 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datven4 <- filter(dateq4,
-                  Local == "Venezuela" | Visita == "Venezuela")
+datven4 <- dateq17 %>% 
+  filter(Local == "Venezuela" | Visita == "Venezuela") %>%
+  filter(Jornada %in% c(1, 2, 3, 4))
 datven4_l <- datven4 %>%
   filter(Local == "Venezuela") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -2048,8 +2216,9 @@ datven4_v <- datven4 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datven5 <- filter(dateq5,
-                  Local == "Venezuela" | Visita == "Venezuela")
+datven5 <- dateq17 %>% 
+  filter(Local == "Venezuela" | Visita == "Venezuela") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5))
 datven5_l <- datven5 %>%
   filter(Local == "Venezuela") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -2060,8 +2229,9 @@ datven5_v <- datven5 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datven6 <- filter(dateq6,
-                  Local == "Venezuela" | Visita == "Venezuela")
+datven6 <- dateq17 %>% 
+  filter(Local == "Venezuela" | Visita == "Venezuela") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6))
 datven6_l <- datven6 %>%
   filter(Local == "Venezuela") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -2072,8 +2242,9 @@ datven6_v <- datven6 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datven7 <- filter(dateq7,
-                  Local == "Venezuela" | Visita == "Venezuela")
+datven7 <- dateq17 %>% 
+  filter(Local == "Venezuela" | Visita == "Venezuela") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7))
 datven7_l <- datven7 %>%
   filter(Local == "Venezuela") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -2084,8 +2255,9 @@ datven7_v <- datven7 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datven8 <- filter(dateq8,
-                  Local == "Venezuela" | Visita == "Venezuela")
+datven8 <- dateq17 %>% 
+  filter(Local == "Venezuela" | Visita == "Venezuela") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8))
 datven8_l <- datven8 %>%
   filter(Local == "Venezuela") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -2096,8 +2268,9 @@ datven8_v <- datven8 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datven9 <- filter(dateq9,
-                  Local == "Venezuela" | Visita == "Venezuela")
+datven9 <- dateq17 %>% 
+  filter(Local == "Venezuela" | Visita == "Venezuela") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9))
 datven9_l <- datven9 %>%
   filter(Local == "Venezuela") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -2108,8 +2281,9 @@ datven9_v <- datven9 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datven10 <- filter(dateq10,
-                   Local == "Venezuela" | Visita == "Venezuela")
+datven10 <- dateq17 %>% 
+  filter(Local == "Venezuela" | Visita == "Venezuela") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
 datven10_l <- datven10 %>%
   filter(Local == "Venezuela") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -2120,8 +2294,9 @@ datven10_v <- datven10 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datven11 <- filter(dateq11,
-                   Local == "Venezuela" | Visita == "Venezuela")
+datven11 <- dateq17 %>% 
+  filter(Local == "Venezuela" | Visita == "Venezuela") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11))
 datven11_l <- datven11 %>%
   filter(Local == "Venezuela") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -2132,8 +2307,9 @@ datven11_v <- datven11 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datven12 <- filter(dateq12,
-                   Local == "Venezuela" | Visita == "Venezuela")
+datven12 <- dateq17 %>% 
+  filter(Local == "Venezuela" | Visita == "Venezuela") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12))
 datven12_l <- datven12 %>%
   filter(Local == "Venezuela") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -2144,8 +2320,9 @@ datven12_v <- datven12 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datven13 <- filter(dateq13,
-                   Local == "Venezuela" | Visita == "Venezuela")
+datven13 <- dateq17 %>% 
+  filter(Local == "Venezuela" | Visita == "Venezuela") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13))
 datven13_l <- datven13 %>%
   filter(Local == "Venezuela") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -2156,8 +2333,9 @@ datven13_v <- datven13 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datven14 <- filter(dateq14,
-                   Local == "Venezuela" | Visita == "Venezuela")
+datven14 <- dateq17 %>% 
+  filter(Local == "Venezuela" | Visita == "Venezuela") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
 datven14_l <- datven14 %>%
   filter(Local == "Venezuela") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -2168,8 +2346,9 @@ datven14_v <- datven14 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datven15 <- filter(dateq15,
-                   Local == "Venezuela" | Visita == "Venezuela")
+datven15 <- dateq17 %>% 
+  filter(Local == "Venezuela" | Visita == "Venezuela") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15))
 datven15_l <- datven15 %>%
   filter(Local == "Venezuela") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -2180,8 +2359,9 @@ datven15_v <- datven15 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datven16 <- filter(dateq16,
-                   Local == "Venezuela" | Visita == "Venezuela")
+datven16 <- dateq17 %>% 
+  filter(Local == "Venezuela" | Visita == "Venezuela") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16))
 datven16_l <- datven16 %>%
   filter(Local == "Venezuela") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -2192,8 +2372,9 @@ datven16_v <- datven16 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-datven17 <- filter(dateq17,
-                   Local == "Venezuela" | Visita == "Venezuela")
+datven17 <- dateq17 %>% 
+  filter(Local == "Venezuela" | Visita == "Venezuela") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17))
 datven17_l <- datven17 %>%
   filter(Local == "Venezuela") %>%
   mutate(VL = ifelse(GL > GV, 1, 0)) %>%
@@ -2204,8 +2385,9 @@ datven17_v <- datven17 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
-#datven18 <- filter(dateq18,
-#                   Local == "Venezuela" | Visita == "Venezuela")
+#datven18 <- dateq17 %>% 
+#  filter(Local == "Venezuela" | Visita == "Venezuela") %>%
+#  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18))
 #datven18_l <- datven18 %>%
 #  filter(Local == "Venezuela") %>%
 #  mutate(VL = ifelse(GL > GV, 1, 0)) %>%
