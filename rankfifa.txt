@@ -1,0 +1,111 @@
+"Seleccion"	"2022"	"2021"	"2020"	"2019"	"2018"
+"Belgium"	1	1	1	1	1
+"Brazil"	2	2	3	3	3
+"France"	3	3	2	2	2
+"Argentina"	4	5	7	9	11
+"England"	5	4	4	4	5
+"Italy"	6	6	10	13	18
+"Spain"	7	7	6	8	9
+"Portugal"	8	8	5	7	6
+"Denmark"	9	9	12	16	10
+"Netherlands"	10	10	14	14	14
+"Germany"	11	12	13	15	16
+"Mexico"	12	14	9	11	17
+"USA"	13	11	22	22	25
+"Switzerland"	14	13	16	12	8
+"Croatia"	15	15	11	6	4
+"Uruguay"	16	17	8	5	7
+"Sweden"	17	18	20	17	14
+"Senegal"	18	20	20	20	23
+"Colombia"	19	16	15	10	12
+"Wales"	20	19	18	22	19
+"IR Iran"	21	21	29	33	29
+"Peru"	22	22	25	21	20
+"Japan"	23	26	27	28	50
+"Morocco"	24	28	35	43	40
+"Serbia"	25	23	30	29	29
+"Chile"	26	24	17	17	13
+"Ukraine"	27	25	24	24	28
+"Poland"	28	27	19	19	20
+"Korea Republic"	29	33	38	40	53
+"Austria"	30	31	23	26	22
+"Czech Republic"	31	32	42	45	42
+"Nigeria"	32	36	35	31	44
+"Canada"	33	40	72	73	78
+"Egypt"	34	45	49	51	56
+"Russia"	35	34	39	38	48
+"Tunisia"	36	30	26	27	26
+"Australia"	37	35	41	42	41
+"Cameroon"	38	50	50	53	55
+"Turkey"	39	37	32	29	39
+"Scotland"	40	38	48	50	38
+"Hungary"	41	39	40	52	51
+"Costa Rica"	42	49	51	46	36
+"Algeria"	43	29	31	35	67
+"Ecuador"	44	46	56	63	57
+"Norway"	45	41	44	44	46
+"Slovakia"	46	42	33	32	27
+"Romania"	47	44	37	37	24
+"Mali"	48	53	57	56	64
+"Republic of Ireland"	49	47	42	34	33
+"Paraguay"	50	43	34	40	32
+"Côte d'Ivoire"	51	56	61	61	65
+"Qatar"	52	48	58	55	93
+"Saudi Arabia"	53	51	67	67	69
+"Northern Ireland"	54	54	45	36	35
+"Greece"	55	55	53	54	43
+"Burkina Faso"	56	60	58	59	61
+"Finland"	57	58	54	58	58
+"Venezuela"	58	59	28	25	31
+"Bosnia and Herzegovina"	59	61	55	49	34
+"Iceland"	60	62	46	39	37
+"Ghana"	61	52	52	47	51
+"Jamaica"	62	57	47	48	54
+"Panama"	63	63	78	81	71
+"Slovenia"	64	65	62	64	62
+"Albania"	65	66	66	66	60
+"Congo DR"	66	64	60	56	49
+"North Macedonia"	67	67	65	68	NA
+"South Africa"	68	68	71	71	72
+"United Arab Emirates"	69	69	74	71	79
+"El Salvador"	70	70	70	69	70
+"Bulgaria"	71	71	68	59	46
+"Montenegro"	72	72	63	64	44
+"Cabo Verde"	73	73	81	78	NA
+"Iraq"	74	75	69	70	88
+"China PR"	75	74	75	76	76
+"Bolivia"	76	77	79	75	59
+"Israel"	77	78	87	93	90
+"Honduras"	78	76	64	62	62
+"Oman"	79	79	82	82	82
+"Curaçao"	80	80	76	80	NA
+"Guinea"	81	81	73	74	66
+"Gabon"	82	89	86	83	85
+"Benin"	83	83	83	84	94
+"Uganda"	84	82	79	77	75
+"Uzbekistan"	85	84	85	85	95
+"Georgia"	86	85	89	91	89
+"Haiti"	87	87	84	86	NA
+"Zambia"	88	88	90	88	83
+"Bahrain"	89	91	97	99	NA
+"Jordan"	90	90	95	97	NA
+"Syria"	91	86	76	79	74
+"Armenia"	92	92	99	NA	NA
+"Luxembourg"	93	93	98	98	86
+"Belarus"	94	94	88	87	76
+"Lebanon"	95	95	92	89	81
+"Kyrgyz Republic"	96	96	96	96	91
+"Congo"	97	97	91	89	84
+"Vietnam"	98	98	93	94	100
+"Equatorial Guinea"	99	NA	NA	NA	NA
+"Palestine"	100	99	NA	NA	99
+"Trinidad and Tobago"	NA	100	NA	NA	92
+"Madagascar"	NA	NA	94	91	NA
+"Cyprus"	NA	NA	100	95	86
+"Mauritania"	NA	NA	NA	100	NA
+"FYR Macedonia"	NA	NA	NA	NA	68
+"Cape Verde Islands"	NA	NA	NA	NA	72
+"Curacao"	NA	NA	NA	NA	80
+"Estonia"	NA	NA	NA	NA	96
+"India"	NA	NA	NA	NA	97
+"Faroe Islands"	NA	NA	NA	NA	98
