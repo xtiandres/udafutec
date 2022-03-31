@@ -1,4 +1,5 @@
-# ELIMINATORIAS CONMEBOL RUMBO QATAR JORNADA 1
+# ELIMINATORIAS CONMEBOL RUMBO QATAR 
+# TODAS LAS JORNADAS
 
 # LIBRERIAS
 library(readr)
@@ -18,7 +19,7 @@ library(formattable)
 library(forcats)
 library(RColorBrewer)
 
-# DATASET
+# DATASET - HISTORICO DE TODAS LAS JORNADAS
 dateq17 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/eq17.txt")
 
 # ARGENTINA
