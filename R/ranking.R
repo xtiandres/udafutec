@@ -63,19 +63,16 @@ drft <- full_join(drf1, drf2, by = "Nombre") %>%
   full_join(., drf31, by = "Nombre")
 
 colnames(drft) <- c("Seleccion", 
-                    "Ago18", "F1", "Sep18", "F2", "Oct18", "F3", "Nov18", "F4", "Dic18", "F5",
-                    "Feb19", "F6", "Abr19", "F7", "Jun19", "F8", "Jul19", "F9",
-                    "Sep19", "F10", "Oct19", "F11", "Nov19", "F12", "Dic19", "F13",
-                    "Feb20", "F14", "Abr20", "F15", "Jun20", "F16", "Jul20", "F17",
-                    "Sep20", "F18", "Oct20", "F19", "Nov20", "F20", "Dic20", "F21",
-                    "Feb21", "F22", "Abr21", "F23", "May21", "F24", "Ago21", "F25",
-                    "Sep21", "F26", "Oct21", "F27", "Nov21", "F28", "Dic21", "F29",
-                    "Feb22", "F30", "Mar22", "F31")
+                    "Ago18", "X1", "Sep18", "X2", "Oct18", "X3", "Nov18", "X4", "Dic18", "X5",
+                    "Feb19", "X6", "Abr19", "X7", "Jun19", "X8", "Jul19", "X9",
+                    "Sep19", "X10", "Oct19", "X11", "Nov19", "X12", "Dic19", "X13",
+                    "Feb20", "X14", "Abr20", "X15", "Jun20", "X16", "Jul20", "X17",
+                    "Sep20", "X18", "Oct20", "X19", "Nov20", "X20", "Dic20", "X21",
+                    "Feb21", "X22", "Abr21", "X23", "May21", "X24", "Ago21", "X25",
+                    "Sep21", "X26", "Oct21", "X27", "Nov21", "X28", "Dic21", "X29",
+                    "Feb22", "X30", "Mar22", "X31")
 
-drftt <- select(drft, -F1, -F2, -F3, -F4, -F5, -F6, -F7, -F8, -F9, -F10,
-                -F11, -F12, -F13, -F14, -F15, -F16, -F17, -F18, -F19, -F20,
-                -F21, -F22, -F23, -F24, -F25, -F26, -F27, -F28, -F29, -F30,
-                -F31)
+drftt <- select(drft, -starts_with("X"))
 
 write.table(drftt,"fifa.txt",sep="\t",row.names=FALSE)
 
