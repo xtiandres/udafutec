@@ -35,6 +35,7 @@ drf27 <- read.csv("/home/xut/Documents/udaviz/R/studio/udafutec/data/fifa/foct21
 drf28 <- read.csv("/home/xut/Documents/udaviz/R/studio/udafutec/data/fifa/fnov21.csv")
 drf29 <- read.csv("/home/xut/Documents/udaviz/R/studio/udafutec/data/fifa/fdic21.csv")
 drf30 <- read.csv("/home/xut/Documents/udaviz/R/studio/udafutec/data/fifa/ffeb22.csv")
+drf31 <- read.csv("/home/xut/Documents/udaviz/R/studio/udafutec/data/fifa/fmar22.csv")
 
 
 #drf <- gather(drf,
@@ -58,7 +59,8 @@ drft <- full_join(drf1, drf2, by = "Nombre") %>%
   full_join(., drf23, by = "Nombre") %>% full_join(., drf24, by = "Nombre") %>%
   full_join(., drf25, by = "Nombre") %>% full_join(., drf26, by = "Nombre") %>%
   full_join(., drf27, by = "Nombre") %>% full_join(., drf28, by = "Nombre") %>%
-  full_join(., drf29, by = "Nombre") %>% full_join(., drf30, by = "Nombre")
+  full_join(., drf29, by = "Nombre") %>% full_join(., drf30, by = "Nombre") %>%
+  full_join(., drf31, by = "Nombre")
 
 colnames(drft) <- c("Seleccion", 
                     "Ago18", "F1", "Sep18", "F2", "Oct18", "F3", "Nov18", "F4", "Dic18", "F5",
@@ -68,11 +70,12 @@ colnames(drft) <- c("Seleccion",
                     "Sep20", "F18", "Oct20", "F19", "Nov20", "F20", "Dic20", "F21",
                     "Feb21", "F22", "Abr21", "F23", "May21", "F24", "Ago21", "F25",
                     "Sep21", "F26", "Oct21", "F27", "Nov21", "F28", "Dic21", "F29",
-                    "Feb22", "F30")
+                    "Feb22", "F30", "Mar22", "F31")
 
 drftt <- select(drft, -F1, -F2, -F3, -F4, -F5, -F6, -F7, -F8, -F9, -F10,
                 -F11, -F12, -F13, -F14, -F15, -F16, -F17, -F18, -F19, -F20,
-                -F21, -F22, -F23, -F24, -F25, -F26, -F27, -F28, -F29, -F30)
+                -F21, -F22, -F23, -F24, -F25, -F26, -F27, -F28, -F29, -F30,
+                -F31)
 
 write.table(drftt,"fifa.txt",sep="\t",row.names=FALSE)
 
