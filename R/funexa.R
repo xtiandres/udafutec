@@ -57,4 +57,34 @@ ROC <- function(test, disease){
 }
 
 ROC(c(x, y), isx)
+
+
+# OTRO EJEMPLO
+df <- data.frame("pri" = 1:3, "seg" = 4:6)
+
+#f <- function(df, ocol, ncol) {
+#  dfn <- df
+#  dfn[, ncol] <- dfn[, ocol] * 3
+#  return(dfn)
+#}
+#ocol <- "seg"
+#ncol <- "ter"
+#f(df, ocol, ncol)
+
+#f.tidy <- function(df, oldc, newc) {
+#  df %>%
+#    mutate_at(vars(oldc),  funs(new = .* 2)) %>%
+#    rename_at(vars(matches("new")), ~ newc)
+#  }
+#oldc <- "seg"
+#newc <- "trr"
+#f.tidy(df, oldc, newc)
+
+f.tidy <- function(df, ocl, ncl) {
+  df %>%
+    mutate(!! (ncl) := !!rlang::sym(ocl) - 1)
+}
+ocl <- "pri"
+ncl <- "cua"
+f.tidy(df, ocl, ncl)
   
