@@ -2637,7 +2637,3 @@ ggplot(tjx, aes(x = variable, y = value, group = EQUIPOS)) +
                                 "#2F8AC3", "#026645", "#D82C20", "#70B0E0"))
 
 
-
-
-
-
