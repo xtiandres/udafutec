@@ -1,5 +1,5 @@
-# CAMPEONATO ECUATORIANO 2022
-# TODAS LAS JORNADAS
+# CAMPEONATO ECUATORIANO DE FÚTBOL - 2022
+# SCRIPT DE TODAS LAS JORNADAS
 
 # LIBRERIAS
 library(readr)
@@ -127,6 +127,19 @@ dbsc8_v <- dbsc8 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
+dbsc9 <- dace22 %>% 
+  filter(Local == "Barcelona SC" | Visita == "Barcelona SC") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9))
+dbsc9_l <- dbsc9 %>%
+  filter(Local == "Barcelona SC") %>%
+  mutate(VL = ifelse(GL > GV, 1, 0)) %>%
+  mutate(EL = ifelse(GL == GV, 1, 0)) %>%
+  mutate(DL = ifelse(GL < GV, 1, 0))
+dbsc9_v <- dbsc9 %>%
+  filter(Visita == "Barcelona SC") %>%
+  mutate(VV = ifelse(GV > GL, 1, 0)) %>%
+  mutate(EV = ifelse(GV == GL, 1, 0)) %>%
+  mutate(DV = ifelse(GV < GL, 1, 0))
 
 # LIGA DE QUITO
 dldu <- dace22 %>% 
@@ -229,6 +242,19 @@ dldu8_l <- dldu8 %>%
   mutate(EL = ifelse(GL == GV, 1, 0)) %>%
   mutate(DL = ifelse(GL < GV, 1, 0))
 dldu8_v <- dldu8 %>%
+  filter(Visita == "LDU Quito") %>%
+  mutate(VV = ifelse(GV > GL, 1, 0)) %>%
+  mutate(EV = ifelse(GV == GL, 1, 0)) %>%
+  mutate(DV = ifelse(GV < GL, 1, 0))
+dldu9 <- dace22 %>% 
+  filter(Local == "LDU Quito" | Visita == "LDU Quito") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9))
+dldu9_l <- dldu9 %>%
+  filter(Local == "LDU Quito") %>%
+  mutate(VL = ifelse(GL > GV, 1, 0)) %>%
+  mutate(EL = ifelse(GL == GV, 1, 0)) %>%
+  mutate(DL = ifelse(GL < GV, 1, 0))
+dldu9_v <- dldu9 %>%
   filter(Visita == "LDU Quito") %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
@@ -339,6 +365,19 @@ didv8_v <- didv8 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
+didv9 <- dace22 %>% 
+  filter(Local == "Independiente del Valle" | Visita == "Independiente del Valle") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9))
+didv9_l <- didv9 %>%
+  filter(Local == "Independiente del Valle") %>%
+  mutate(VL = ifelse(GL > GV, 1, 0)) %>%
+  mutate(EL = ifelse(GL == GV, 1, 0)) %>%
+  mutate(DL = ifelse(GL < GV, 1, 0))
+didv9_v <- didv9 %>%
+  filter(Visita == "Independiente del Valle") %>%
+  mutate(VV = ifelse(GV > GL, 1, 0)) %>%
+  mutate(EV = ifelse(GV == GL, 1, 0)) %>%
+  mutate(DV = ifelse(GV < GL, 1, 0))
 
 # EMELEC
 deme <- dace22 %>% 
@@ -441,6 +480,19 @@ deme8_l <- deme8 %>%
   mutate(EL = ifelse(GL == GV, 1, 0)) %>%
   mutate(DL = ifelse(GL < GV, 1, 0))
 deme8_v <- deme8 %>%
+  filter(Visita == "Emelec") %>%
+  mutate(VV = ifelse(GV > GL, 1, 0)) %>%
+  mutate(EV = ifelse(GV == GL, 1, 0)) %>%
+  mutate(DV = ifelse(GV < GL, 1, 0))
+deme9 <- dace22 %>% 
+  filter(Local == "Emelec" | Visita == "Emelec") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9))
+deme9_l <- deme9 %>%
+  filter(Local == "Emelec") %>%
+  mutate(VL = ifelse(GL > GV, 1, 0)) %>%
+  mutate(EL = ifelse(GL == GV, 1, 0)) %>%
+  mutate(DL = ifelse(GL < GV, 1, 0))
+deme9_v <- deme9 %>%
   filter(Visita == "Emelec") %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
@@ -551,6 +603,19 @@ dauc8_v <- dauc8 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
+dauc9 <- dace22 %>% 
+  filter(Local == "Aucas" | Visita == "Aucas") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9))
+dauc9_l <- dauc9 %>%
+  filter(Local == "Aucas") %>%
+  mutate(VL = ifelse(GL > GV, 1, 0)) %>%
+  mutate(EL = ifelse(GL == GV, 1, 0)) %>%
+  mutate(DL = ifelse(GL < GV, 1, 0))
+dauc9_v <- dauc9 %>%
+  filter(Visita == "Aucas") %>%
+  mutate(VV = ifelse(GV > GL, 1, 0)) %>%
+  mutate(EV = ifelse(GV == GL, 1, 0)) %>%
+  mutate(DV = ifelse(GV < GL, 1, 0))
 
 # MACARÁ
 dmac <- dace22 %>% 
@@ -653,6 +718,19 @@ dmac8_l <- dmac8 %>%
   mutate(EL = ifelse(GL == GV, 1, 0)) %>%
   mutate(DL = ifelse(GL < GV, 1, 0))
 dmac8_v <- dmac8 %>%
+  filter(Visita == "Macará") %>%
+  mutate(VV = ifelse(GV > GL, 1, 0)) %>%
+  mutate(EV = ifelse(GV == GL, 1, 0)) %>%
+  mutate(DV = ifelse(GV < GL, 1, 0))
+dmac9 <- dace22 %>% 
+  filter(Local == "Macará" | Visita == "Macará") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9))
+dmac9_l <- dmac9 %>%
+  filter(Local == "Macará") %>%
+  mutate(VL = ifelse(GL > GV, 1, 0)) %>%
+  mutate(EL = ifelse(GL == GV, 1, 0)) %>%
+  mutate(DL = ifelse(GL < GV, 1, 0))
+dmac9_v <- dmac9 %>%
   filter(Visita == "Macará") %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
@@ -763,6 +841,19 @@ dore8_v <- dore8 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
+dore9 <- dace22 %>% 
+  filter(Local == "Orense SC" | Visita == "Orense SC") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9))
+dore9_l <- dore9 %>%
+  filter(Local == "Orense SC") %>%
+  mutate(VL = ifelse(GL > GV, 1, 0)) %>%
+  mutate(EL = ifelse(GL == GV, 1, 0)) %>%
+  mutate(DL = ifelse(GL < GV, 1, 0))
+dore9_v <- dore9 %>%
+  filter(Visita == "Orense SC") %>%
+  mutate(VV = ifelse(GV > GL, 1, 0)) %>%
+  mutate(EV = ifelse(GV == GL, 1, 0)) %>%
+  mutate(DV = ifelse(GV < GL, 1, 0))
 
 # CUENCA
 dcue <- dace22 %>% 
@@ -865,6 +956,19 @@ dcue8_l <- dcue8 %>%
   mutate(EL = ifelse(GL == GV, 1, 0)) %>%
   mutate(DL = ifelse(GL < GV, 1, 0))
 dcue8_v <- dcue8 %>%
+  filter(Visita == "Deportivo Cuenca") %>%
+  mutate(VV = ifelse(GV > GL, 1, 0)) %>%
+  mutate(EV = ifelse(GV == GL, 1, 0)) %>%
+  mutate(DV = ifelse(GV < GL, 1, 0))
+dcue9 <- dace22 %>% 
+  filter(Local == "Deportivo Cuenca" | Visita == "Deportivo Cuenca") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9))
+dcue9_l <- dcue9 %>%
+  filter(Local == "Deportivo Cuenca") %>%
+  mutate(VL = ifelse(GL > GV, 1, 0)) %>%
+  mutate(EL = ifelse(GL == GV, 1, 0)) %>%
+  mutate(DL = ifelse(GL < GV, 1, 0))
+dcue9_v <- dcue9 %>%
   filter(Visita == "Deportivo Cuenca") %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
@@ -975,6 +1079,19 @@ dgci8_v <- dgci8 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
+dgci9 <- dace22 %>% 
+  filter(Local == "Guayaquil City" | Visita == "Guayaquil City") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9))
+dgci9_l <- dgci9 %>%
+  filter(Local == "Guayaquil City") %>%
+  mutate(VL = ifelse(GL > GV, 1, 0)) %>%
+  mutate(EL = ifelse(GL == GV, 1, 0)) %>%
+  mutate(DL = ifelse(GL < GV, 1, 0))
+dgci9_v <- dgci9 %>%
+  filter(Visita == "Guayaquil City") %>%
+  mutate(VV = ifelse(GV > GL, 1, 0)) %>%
+  mutate(EV = ifelse(GV == GL, 1, 0)) %>%
+  mutate(DV = ifelse(GV < GL, 1, 0))
 
 # CUMBAYA
 dcum <- dace22 %>% 
@@ -1077,6 +1194,19 @@ dcum8_l <- dcum8 %>%
   mutate(EL = ifelse(GL == GV, 1, 0)) %>%
   mutate(DL = ifelse(GL < GV, 1, 0))
 dcum8_v <- dcum8 %>%
+  filter(Visita == "Cumbayá FC") %>%
+  mutate(VV = ifelse(GV > GL, 1, 0)) %>%
+  mutate(EV = ifelse(GV == GL, 1, 0)) %>%
+  mutate(DV = ifelse(GV < GL, 1, 0))
+dcum9 <- dace22 %>% 
+  filter(Local == "Cumbayá FC" | Visita == "Cumbayá FC") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9))
+dcum9_l <- dcum9 %>%
+  filter(Local == "Cumbayá FC") %>%
+  mutate(VL = ifelse(GL > GV, 1, 0)) %>%
+  mutate(EL = ifelse(GL == GV, 1, 0)) %>%
+  mutate(DL = ifelse(GL < GV, 1, 0))
+dcum9_v <- dcum9 %>%
   filter(Visita == "Cumbayá FC") %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
@@ -1187,6 +1317,19 @@ duca8_v <- duca8 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
+duca9 <- dace22 %>% 
+  filter(Local == "Universidad Católica" | Visita == "Universidad Católica") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9))
+duca9_l <- duca9 %>%
+  filter(Local == "Universidad Católica") %>%
+  mutate(VL = ifelse(GL > GV, 1, 0)) %>%
+  mutate(EL = ifelse(GL == GV, 1, 0)) %>%
+  mutate(DL = ifelse(GL < GV, 1, 0))
+duca9_v <- duca9 %>%
+  filter(Visita == "Universidad Católica") %>%
+  mutate(VV = ifelse(GV > GL, 1, 0)) %>%
+  mutate(EV = ifelse(GV == GL, 1, 0)) %>%
+  mutate(DV = ifelse(GV < GL, 1, 0))
 
 # NUEVE
 dnoc <- dace22 %>% 
@@ -1289,6 +1432,19 @@ dnoc8_l <- dnoc8 %>%
   mutate(EL = ifelse(GL == GV, 1, 0)) %>%
   mutate(DL = ifelse(GL < GV, 1, 0))
 dnoc8_v <- dnoc8 %>%
+  filter(Visita == "Nueve de Octubre") %>%
+  mutate(VV = ifelse(GV > GL, 1, 0)) %>%
+  mutate(EV = ifelse(GV == GL, 1, 0)) %>%
+  mutate(DV = ifelse(GV < GL, 1, 0))
+dnoc9 <- dace22 %>% 
+  filter(Local == "Nueve de Octubre" | Visita == "Nueve de Octubre") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9))
+dnoc9_l <- dnoc9 %>%
+  filter(Local == "Nueve de Octubre") %>%
+  mutate(VL = ifelse(GL > GV, 1, 0)) %>%
+  mutate(EL = ifelse(GL == GV, 1, 0)) %>%
+  mutate(DL = ifelse(GL < GV, 1, 0))
+dnoc9_v <- dnoc9 %>%
   filter(Visita == "Nueve de Octubre") %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
@@ -1399,6 +1555,19 @@ ddel8_v <- ddel8 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
+ddel9 <- dace22 %>% 
+  filter(Local == "Delfín SC" | Visita == "Delfín SC") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9))
+ddel9_l <- ddel9 %>%
+  filter(Local == "Delfín SC") %>%
+  mutate(VL = ifelse(GL > GV, 1, 0)) %>%
+  mutate(EL = ifelse(GL == GV, 1, 0)) %>%
+  mutate(DL = ifelse(GL < GV, 1, 0))
+ddel9_v <- ddel9 %>%
+  filter(Visita == "Delfín SC") %>%
+  mutate(VV = ifelse(GV > GL, 1, 0)) %>%
+  mutate(EV = ifelse(GV == GL, 1, 0)) %>%
+  mutate(DV = ifelse(GV < GL, 1, 0))
 
 # MUSHUC RUNA
 dmus <- dace22 %>% 
@@ -1501,6 +1670,19 @@ dmus8_l <- dmus8 %>%
   mutate(EL = ifelse(GL == GV, 1, 0)) %>%
   mutate(DL = ifelse(GL < GV, 1, 0))
 dmus8_v <- dmus8 %>%
+  filter(Visita == "Mushuc Runa") %>%
+  mutate(VV = ifelse(GV > GL, 1, 0)) %>%
+  mutate(EV = ifelse(GV == GL, 1, 0)) %>%
+  mutate(DV = ifelse(GV < GL, 1, 0))
+dmus9 <- dace22 %>% 
+  filter(Local == "Mushuc Runa" | Visita == "Mushuc Runa") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9))
+dmus9_l <- dmus9 %>%
+  filter(Local == "Mushuc Runa") %>%
+  mutate(VL = ifelse(GL > GV, 1, 0)) %>%
+  mutate(EL = ifelse(GL == GV, 1, 0)) %>%
+  mutate(DL = ifelse(GL < GV, 1, 0))
+dmus9_v <- dmus9 %>%
   filter(Visita == "Mushuc Runa") %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
@@ -1611,6 +1793,19 @@ dgsc8_v <- dgsc8 %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
   mutate(DV = ifelse(GV < GL, 1, 0))
+dgsc9 <- dace22 %>% 
+  filter(Local == "Gualaceo SC" | Visita == "Gualaceo SC") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9))
+dgsc9_l <- dgsc9 %>%
+  filter(Local == "Gualaceo SC") %>%
+  mutate(VL = ifelse(GL > GV, 1, 0)) %>%
+  mutate(EL = ifelse(GL == GV, 1, 0)) %>%
+  mutate(DL = ifelse(GL < GV, 1, 0))
+dgsc9_v <- dgsc9 %>%
+  filter(Visita == "Gualaceo SC") %>%
+  mutate(VV = ifelse(GV > GL, 1, 0)) %>%
+  mutate(EV = ifelse(GV == GL, 1, 0)) %>%
+  mutate(DV = ifelse(GV < GL, 1, 0))
 
 # TECNICO U
 dtun <- dace22 %>% 
@@ -1713,6 +1908,19 @@ dtun8_l <- dtun8 %>%
   mutate(EL = ifelse(GL == GV, 1, 0)) %>%
   mutate(DL = ifelse(GL < GV, 1, 0))
 dtun8_v <- dtun8 %>%
+  filter(Visita == "Técnico Univ.") %>%
+  mutate(VV = ifelse(GV > GL, 1, 0)) %>%
+  mutate(EV = ifelse(GV == GL, 1, 0)) %>%
+  mutate(DV = ifelse(GV < GL, 1, 0))
+dtun9 <- dace22 %>% 
+  filter(Local == "Técnico Univ." | Visita == "Técnico Univ.") %>%
+  filter(Jornada %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9))
+dtun9_l <- dtun9 %>%
+  filter(Local == "Técnico Univ.") %>%
+  mutate(VL = ifelse(GL > GV, 1, 0)) %>%
+  mutate(EL = ifelse(GL == GV, 1, 0)) %>%
+  mutate(DL = ifelse(GL < GV, 1, 0))
+dtun9_v <- dtun9 %>%
   filter(Visita == "Técnico Univ.") %>%
   mutate(VV = ifelse(GV > GL, 1, 0)) %>%
   mutate(EV = ifelse(GV == GL, 1, 0)) %>%
@@ -2864,6 +3072,150 @@ tj8 = data.frame("EQUIPOS" =
                          dtun8_v$GL))
 )
 
+tj9 = data.frame("EQUIPOS" =
+                   c("Barcelona SC", "LDU Quito", "Independiente del Valle", "Emelec",
+                     "Aucas", "Macará", "Orense SC", "Deportivo Cuenca",
+                     "Guayaquil City", "Cumbayá FC", "Universidad Católica", "Nueve de Octubre",
+                     "Delfín SC", "Mushuc Runa", "Gualaceo SC", "Técnico Univ."),
+                 "PJ" =
+                   c(NROW(dbsc9$Jornada), NROW(dldu9$Jornada), NROW(didv9$Jornada), NROW(deme9$Jornada),
+                     NROW(dauc9$Jornada), NROW(dmac9$Jornada), NROW(dore9$Jornada), NROW(dcue9$Jornada),
+                     NROW(dgci9$Jornada), NROW(dcum9$Jornada), NROW(duca9$Jornada), NROW(dnoc9$Jornada),
+                     NROW(ddel9$Jornada), NROW(dmus9$Jornada), NROW(dgsc9$Jornada), NROW(dtun9$Jornada)),
+                 "PTOS"=
+                   c(sum(dbsc9_l$VL*3,
+                         dbsc9_v$VV*3,
+                         dbsc9_l$EL*1,
+                         dbsc9_v$EV*1),
+                     sum(dldu9_l$VL*3,
+                         dldu9_v$VV*3,
+                         dldu9_l$EL*1,
+                         dldu9_v$EV*1),
+                     sum(didv9_l$VL*3,
+                         didv9_v$VV*3,
+                         didv9_l$EL*1,
+                         didv9_v$EV*1),
+                     sum(deme9_l$VL*3,
+                         deme9_v$VV*3,
+                         deme9_l$EL*1,
+                         deme9_v$EV*1),
+                     sum(dauc9_l$VL*3,
+                         dauc9_v$VV*3,
+                         dauc9_l$EL*1,
+                         dauc9_v$EV*1),
+                     sum(dmac9_l$VL*3,
+                         dmac9_v$VV*3,
+                         dmac9_l$EL*1,
+                         dmac9_v$EV*1),
+                     sum(dore9_l$VL*3,
+                         dore9_v$VV*3,
+                         dore9_l$EL*1,
+                         dore9_v$EV*1),
+                     sum(dcue9_l$VL*3,
+                         dcue9_v$VV*3,
+                         dcue9_l$EL*1,
+                         dcue9_v$EV*1),
+                     sum(dgci9_l$VL*3,
+                         dgci9_v$VV*3,
+                         dgci9_l$EL*1,
+                         dgci9_v$EV*1),
+                     sum(dcum9_l$VL*3,
+                         dcum9_v$VV*3,
+                         dcum9_l$EL*1,
+                         dcum9_v$EV*1),
+                     sum(duca9_l$VL*3,
+                         duca9_v$VV*3,
+                         duca9_l$EL*1,
+                         duca9_v$EV*1),
+                     sum(dnoc9_l$VL*3,
+                         dnoc9_v$VV*3,
+                         dnoc9_l$EL*1,
+                         dnoc9_v$EV*1),
+                     sum(ddel9_l$VL*3,
+                         ddel9_v$VV*3,
+                         ddel9_l$EL*1,
+                         ddel9_v$EV*1),
+                     sum(dmus9_l$VL*3,
+                         dmus9_v$VV*3,
+                         dmus9_l$EL*1,
+                         dmus9_v$EV*1),
+                     sum(dgsc9_l$VL*3,
+                         dgsc9_v$VV*3,
+                         dgsc9_l$EL*1,
+                         dgsc9_v$EV*1),
+                     sum(dtun9_l$VL*3,
+                         dtun9_v$VV*3,
+                         dtun9_l$EL*1,
+                         dtun9_v$EV*1)),
+                 "GF"=
+                   c(sum(dbsc9_l$GL,
+                         dbsc9_v$GV),
+                     sum(dldu9_l$GL,
+                         dldu9_v$GV),
+                     sum(didv9_l$GL,
+                         didv9_v$GV),
+                     sum(deme9_l$GL,
+                         deme9_v$GV),
+                     sum(dauc9_l$GL,
+                         dauc9_v$GV),
+                     sum(dmac9_l$GL,
+                         dmac9_v$GV),
+                     sum(dore9_l$GL,
+                         dore9_v$GV),
+                     sum(dcue9_l$GL,
+                         dcue9_v$GV),
+                     sum(dgci9_l$GL,
+                         dgci9_v$GV),
+                     sum(dcum9_l$GL,
+                         dcum9_v$GV),
+                     sum(duca9_l$GL,
+                         duca9_v$GV),
+                     sum(dnoc9_l$GL,
+                         dnoc9_v$GV),
+                     sum(ddel9_l$GL,
+                         ddel9_v$GV),
+                     sum(dmus9_l$GL,
+                         dmus9_v$GV),
+                     sum(dgsc9_l$GL,
+                         dgsc9_v$GV),
+                     sum(dtun9_l$GL,
+                         dtun9_v$GV)),
+                 "GC"=
+                   c(sum(dbsc9_l$GV,
+                         dbsc9_v$GL),
+                     sum(dldu9_l$GV,
+                         dldu9_v$GL),
+                     sum(didv9_l$GV,
+                         didv9_v$GL),
+                     sum(deme9_l$GV,
+                         deme9_v$GL),
+                     sum(dauc9_l$GV,
+                         dauc9_v$GL),
+                     sum(dmac9_l$GV,
+                         dmac9_v$GL),
+                     sum(dore9_l$GV,
+                         dore9_v$GL),
+                     sum(dcue9_l$GV,
+                         dcue9_v$GL),
+                     sum(dgci9_l$GV,
+                         dgci9_v$GL),
+                     sum(dcum9_l$GV,
+                         dcum9_v$GL),
+                     sum(duca9_l$GV,
+                         duca9_v$GL),
+                     sum(dnoc9_l$GV,
+                         dnoc9_v$GL),
+                     sum(ddel9_l$GV,
+                         ddel9_v$GL),
+                     sum(dmus9_l$GV,
+                         dmus9_v$GL),
+                     sum(dgsc9_l$GV,
+                         dgsc9_v$GL),
+                     sum(dtun9_l$GV,
+                         dtun9_v$GL))
+)
+
+
 
 # NO. FILAS EN ACUMULADAS
 rownames(tj1) <- 1:nrow(tj1)
@@ -2874,7 +3226,7 @@ rownames(tj5) <- 1:nrow(tj5)
 rownames(tj6) <- 1:nrow(tj6)
 rownames(tj7) <- 1:nrow(tj7)
 rownames(tj8) <- 1:nrow(tj8)
-#rownames(tj9) <- 1:nrow(tj9)
+rownames(tj9) <- 1:nrow(tj9)
 #rownames(tj10) <- 1:nrow(tj10)
 #rownames(tj11) <- 1:nrow(tj11)
 #rownames(tj12) <- 1:nrow(tj12)
@@ -2889,7 +3241,7 @@ tj5 <- mutate(tj5, GD = GF - GC)
 tj6 <- mutate(tj6, GD = GF - GC)
 tj7 <- mutate(tj7, GD = GF - GC)
 tj8 <- mutate(tj8, GD = GF - GC)
-#tj9 <- mutate(tj9, GD = GF - GC)
+tj9 <- mutate(tj9, GD = GF - GC)
 #tj10 <- mutate(tj10, GD = GF - GC)
 #tj11 <- mutate(tj11, GD = GF - GC)
 #tj12 <- mutate(tj12, GD = GF - GC)
@@ -2922,9 +3274,9 @@ tj7 <- tj7[order(-tj7$PTOS, -tj7$GD, -tj7$GF, tj7$EQUIPOS), ] %>%
 tj8 <- tj8[order(-tj8$PTOS, -tj8$GD, -tj8$GF, tj8$EQUIPOS), ] %>%
   select(EQUIPOS, PTOS, GD) %>%
   mutate(J8 = rownames(tj8))
-#tj9 <- tj9[order(-tj9$PTOS, -tj9$GD, -tj9$GF, tj9$EQUIPOS), ] %>%
-#  select(EQUIPOS, PTOS, GD) %>%
-#  mutate(J9 = rownames(tj9))
+tj9 <- tj9[order(-tj9$PTOS, -tj9$GD, -tj9$GF, tj9$EQUIPOS), ] %>%
+  select(EQUIPOS, PTOS, GD) %>%
+  mutate(J9 = rownames(tj9))
 #tj10 <- tj10[order(-tj10$PTOS, -tj10$GD, -tj10$GF, tj10$EQUIPOS), ] %>%
 #  select(EQUIPOS, PTOS, GD) %>%
 #  mutate(J10 = rownames(tj10))
@@ -2946,14 +3298,15 @@ tjd = full_join(tjc, tj5, by = "EQUIPOS")
 tje = full_join(tjd, tj6, by = "EQUIPOS")
 tjf = full_join(tje, tj7, by = "EQUIPOS")
 tjg = full_join(tjf, tj8, by = "EQUIPOS")
-tjx = select(tjg, "EQUIPOS", "J1", "J2", "J3", "J4", "J5", "J6","J7", "J8")
+tjh = full_join(tjg, tj9, by = "EQUIPOS")
+tjx = select(tjh, "EQUIPOS", "J1", "J2", "J3", "J4", "J5", "J6","J7", "J8", "J9")
 tjx <- gather(tjx,
                key = "variable",
                value = "value",
-               J1:J8)
+               J1:J9)
 
 # SAVE "tjx" data.frame as txt file
-write.table(tjx,"tj1_8.txt",sep="\t",row.names=FALSE)
+write.table(tjx,"tj1_9.txt",sep="\t",row.names=FALSE)
 
 
 # GRÁFICO BUMP CHART
@@ -3007,7 +3360,7 @@ ggplot(tjx, aes(x = variable, y = value, group = EQUIPOS)) +
   labs(title = "CAMPEONATO ECUATORIANO DE FÚTBOL 2022",
        subtitle = "Comportamiento por Jornada de los Equipos en la tabla de posiciones",
        caption = "powered by Udaviz",
-       x = "Jornadas de Campeonato 1 - 8",
+       x = "Jornadas de Campeonato 1 - 9",
        y = "Posiciones Tabla Acumulada") +
   my_theme() +
   scale_color_manual(values = c("#FFD86C", "#F3C911", "#663399", "#3257A8",
