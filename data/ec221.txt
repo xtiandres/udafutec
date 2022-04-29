@@ -1,9 +1,0 @@
-Jornada	Fecha	Local	GL	GV	Visita	OBS1	OBS2	OBS3	FG
-1	19/02	Emelec	4	0	Macará				FG
-1	19/02	Mushuc Runa	1	2	Universidad Católica				FG
-1	19/02	LDU Quito	1	0	Gualaceo SC				FG
-1	20/02	Delfín SC	0	1	Barcelona SC				FG
-1	20/02	Orense SC	1	1	Aucas				FG
-1	20/02	Guayaquil City	3	0	Deportivo Cuenca				FG
-1	21/02	Cumbayá FC	0	1	Independiente del Valle				FG
-1	22/02	Técnico Univ.	2	1	Nueve de Octubre
