@@ -1,4 +1,5 @@
-#Campeonato Ecuatoriano 2021 - Total, 1ra Etapa y 2da Etapa
+# CAMPEONATO ECUATORIANO FUTBOL 2021
+# TOTAL TABLA ACUMULADA, 1ra Etapa y 2da Etapa
 
 library(readr)
 library(dplyr)
@@ -16,11 +17,11 @@ library(ggridges)
 library(formattable)
 
 #Primera Etapa
-data1 <- read.csv("/home/xut/Documents/udaviz/R/studio/camerica/data/ec20211.csv")
+data1 <- read.csv("/home/xut/Documents/udaviz/R/studio/udafutec/data/ec20211.csv")
 #data1
 
 #Segunda Etapa
-data2 <- read.csv("/home/xut/Documents/udaviz/R/studio/camerica/data/ec20212.csv")
+data2 <- read.csv("/home/xut/Documents/udaviz/R/studio/udafutec/data/ec20212.csv")
 #data2
 
 #Primera y Segunda Etapa
