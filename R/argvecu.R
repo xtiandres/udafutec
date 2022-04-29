@@ -46,7 +46,7 @@ colors_border=c("#ffff00", "#0000ff")
 colors_in=c( rgb(0.2,0.5,0.5,0.4), rgb(0.8,0.2,0.5,0.4) , rgb(0.7,0.5,0.1,0.4) )
 
 
-svg("argvecu.svg", width = 14, height = 7)
+#svg("argvecu.svg", width = 14, height = 7)
 
 #RADARCHART
 radarchart(dae, 
@@ -78,4 +78,4 @@ legend(x=1.1, y=1,
        cex=1, 
        pt.cex=3)
 
-dev.off()
+#dev.off()
