@@ -1,4 +1,6 @@
-#Gráfico Tabla Acumulada Eficacia vs Equipos
+# GRAFICO RELACIONADO CON SCRIPT "ec211.R"
+# TABLA ACUMULADA EFICIACIA vs EQUIPOS
+
 
 t8 <- ggplot(tabla2e,
              aes(x = reorder(Equipos,Eficacia), 
