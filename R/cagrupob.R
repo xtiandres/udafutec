@@ -1,4 +1,5 @@
 # CAMERICA BRASIL - ZEROZERO.PT - LECTURA "BRASIL2021.CSV"
+# RENDIMIENTO DE GRUPOS A, B
 
 library(readr)
 library(dplyr)
@@ -9,7 +10,7 @@ library(ggradar)
 library(data.table)
 library(gridExtra)
 
-data <- read.csv("/home/xut/Documents/udaviz/R/studio/camerica/data/brasil2021.csv")
+data <- read.csv("/home/xut/Documents/udaviz/R/studio/udafutec/data/brasil2021.csv")
 #data
 dtotal <- data %>% mutate(PTOS = (V * 3) + (E *1), GD = (G - GS))
 #dtotal
