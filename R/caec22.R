@@ -3932,6 +3932,8 @@ rownames(tj10) <- 1:nrow(tj10)
 rownames(tj11) <- 1:nrow(tj11)
 #rownames(tj12) <- 1:nrow(tj12)
 #rownames(tj13) <- 1:nrow(tj13)
+#rownames(tj14) <- 1:nrow(tj14)
+#rownames(tj15) <- 1:nrow(tj15)
 
 # ACUMULADAS - MUTATE "GD"
 tj1 <- mutate(tj1, GD = GF - GC)
@@ -3947,6 +3949,8 @@ tj10 <- mutate(tj10, GD = GF - GC)
 tj11 <- mutate(tj11, GD = GF - GC)
 #tj12 <- mutate(tj12, GD = GF - GC)
 #tj13 <- mutate(tj13, GD = GF - GC)
+#tj14 <- mutate(tj14, GD = GF - GC)
+#tj15 <- mutate(tj15, GD = GF - GC)
 
 # ACUMULADAS - ORDENAR: PTOS-GD-GF 
 # ACUMULADAS - SELECT: EQUIPOS-PTOS-GD
@@ -3990,6 +3994,12 @@ tj11 <- tj11[order(-tj11$PTOS, -tj11$GD, -tj11$GF, tj11$EQUIPOS), ] %>%
 #tj13 <- tj13[order(-tj13$PTOS, -tj13$GD, -tj13$GF, tj13$EQUIPOS), ] %>%
 #  select(EQUIPOS, PTOS, GD) %>%
 #  mutate(J13 = rownames(tj13))
+#tj14 <- tj14[order(-tj14$PTOS, -tj14$GD, -tj14$GF, tj14$EQUIPOS), ] %>%
+#  select(EQUIPOS, PTOS, GD) %>%
+#  mutate(J14 = rownames(tj14))
+#tj15 <- tj15[order(-tj15$PTOS, -tj15$GD, -tj15$GF, tj15$EQUIPOS), ] %>%
+#  select(EQUIPOS, PTOS, GD) %>%
+#  mutate(J15 = rownames(tj15))
 
 # ORDENAR TABLAS ACUMULADAS DE JORNADAS
 tja = full_join(tj1, tj2, by = "EQUIPOS")
