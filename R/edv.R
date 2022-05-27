@@ -431,10 +431,29 @@ palette()
 length(palette())
 
 # viewing the default colours
-show_col(palette(), border = "red")
+show_col(palette(), border = "white")
 
+# setting the default colour palette
+palette(c('yellow', 'orange', 'red', 
+          'pink', 'purple', 'blue', 
+          'green', 'brown', 'black'))
+palette()
 
+# viewing the new default colours
+show_col(palette(), border = "white")
 
+# reset to the default colour palette
+palette('default')
+palette()
 
+# get predefined palettes
+palette.pals()
 
+# get colours from predefined palettes
+palette.colors()
 
+palette.colors(palette = 'Dark 2')
+palette.colors(palette = 'Tableau 10')
+
+# viewing some predefined palettes
+show_col(palette.colors())
