@@ -283,9 +283,155 @@ col2rgb('green')
 # rgb2hsv() converts from RGB to HSV
 rgb2hsv(0, 1, 0)
 
+# Colouring points by groups (categories)
+
+# gráfico 8
+plot(
+  lifeExp ~ gdpPercap,
+  gapminder_2007,
+  pch = 19,
+  cex = 1.3,
+  col = continent
+)
+
+# gráfico 8
+plot(
+  lifeExp ~ gdpPercap,
+  gapminder_2007,
+  pch = 19,
+  cex = 1.5,
+  col = ifelse(
+    continent == 'Africa',
+    'brown',
+    ifelse(
+      continent == 'Asia',
+      'darkgreen',
+      ifelse(
+        continent == 'Americas',
+        'purple',
+        ifelse(continent == 'Europe', 'orange', 'blue')
+      )
+    )
+  )
+)
+
+# creating a vector of colours - gráfico 8
+colours <- c('brown', 'darkgreen', 'purple', 'orange', 'blue')
+plot(
+  lifeExp ~ gdpPercap,
+  gapminder_2007,
+  pch = 19,
+  cex = 1.5,
+  col = colours[continent]
+)
+
+# using integers - gráfico 8
+plot(
+  lifeExp ~ gdpPercap,
+  gapminder_2007,
+  pch = 19,
+  cex = 1.5,
+  col = as.integer(continent)
+)
 
 
+# 2.4.6 Colouring by a continuous variable /pg64
 
+# viewing the default colour palette (viridis)
+show_col(hcl.colors(16))
+
+# contiguous green colours
+show_col(hcl.colors(16, 'Greens', rev = TRUE))
+
+# contiguous grey colours
+show_col(grey.colors(16, start = 0.1, end = 0.9))
+
+# colouring by gdpPercap (green) - gráfico 9
+colour <- hcl.colors(5, 'Greens', rev = TRUE)
+plot(
+  lifeExp ~ gdpPercap,
+  gapminder_2007,
+  pch = 19,
+  cex = 1.3,
+  col = colour[cut(gdpPercap, 5)]
+)
+
+# colouring by gdpPercap (grey) - gráfico 9
+grays <- grey.colors(5, start = 0.9, end = 0.1)
+plot(
+  lifeExp ~ gdpPercap,
+  gapminder_2007,
+  pch = 19,
+  cex = 1.3,
+  col = grays[cut(gdpPercap, 5)]
+)
+
+# 2.4.7 Transparency /pg68
+
+# creating a transparency function
+col_transparency <-
+  function(colour = 'lightblue',
+           transparency = 50) {
+    rgb_col <- col2rgb(colour)
+    rgb(
+      rgb_col[1, ],
+      rgb_col[2, ],
+      rgb_col[3, ],
+      max = 255,
+      alpha = (100 - transparency) * 255 / 100
+    )
+  }
+
+# using the function
+col_transparency()
+
+col_transparency('lightgreen', 75)
+
+colour <- c('#66C2A5', '#FC8D62', '#8DA0CB', '#E78AC3', '#A6D854', '#E5C494')
+
+col_transparency(colour)
+
+plot(
+  lifeExp ~ gdpPercap,
+  gapminder_2007,
+  cex = 1.2,
+  pch = 21,
+  bg = col_transparency('lightgreen', 75),
+  col = 'lightgreen'
+)
+
+plot(
+  lifeExp ~ gdpPercap, 
+  gapminder_2007,
+  cex = 1.2,
+  pch = 21,
+  bg = col_transparency(colour)[continent],
+  col = colour[continent]
+)
+
+# modifying transparency
+scales::alpha(colour, 0.5)
+
+plot(
+  lifeExp ~ gdpPercap,
+  gapminder_2007,
+  cex = 1.2,
+  pch = 21,
+  bg = scales::alpha(colour, 0.5)[continent],
+  col = colour[continent]
+  )
+
+# 2.5 Colour palettes /pg72
+
+# 2.5.1 R Default colour palette
+
+# getting the default colour palette
+palette()
+
+length(palette())
+
+# viewing the default colours
+show_col(palette(), border = "red")
 
 
 
