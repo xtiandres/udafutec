@@ -5133,8 +5133,8 @@ ggplot(tjx, aes(x = variable, y = value, group = EQUIPOS)) +
        x = "Jornadas de Campeonato 1 - 14",
        y = "Posiciones Tabla Acumulada") +
   my_theme() +
-  scale_color_manual(values = c("#FFD86C", "#F3C911", "#663399", "#3257A8",
-                                "#D83B01", "#12239E", "#95DABB", "#42F9F9",
+  scale_color_manual(values = c("#F5C710", "#F3C911", "#663399", "#2297E6",
+                                "#D83B01", "#28E2E5", "#61D04F", "#42F9F9",
                                 "#EF008C", "#F3F3F3", "#B5DAFE", "#009292",
                                 "#2F8AC3", "#026645", "#D82C20", "#70B0E0"))
 
