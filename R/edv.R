@@ -1,17 +1,20 @@
 # Effective Data Visualization with R: Volume I - Base Graphics
 
 
-# Preparing Data
+# 2 Introduction to plotting with base graphics /pg24
 
-# attaching dataset - pag 26
+# Preparing Data /pg26
+
+# attaching dataset
 data(gapminder, package = 'gapminder')
 # inspecting the data
-#head(gapminder)
+head(gapminder)
+# preparing the data
 gapminder_2007 <- subset(gapminder, year == 2007, select = -3)
-#head(gapminder_2007)
+head(gapminder_2007)
 
 
-# Función plot()
+# 2.1 The plot() function /pg27
 
 # producing a plot using x and y coordinates - gráfico 1
 plot(y = gapminder_2007$lifeExp, x = gapminder_2007$gdpPercap)
@@ -25,20 +28,22 @@ b <- gapminder_2007$gdpPercap
 # plotting variables - gráfico 1
 plot(a ~ b)
 
-# using with() - avoid using the $ - gráfico 1
+# using with() - avoid using the dollar sign $ - gráfico 1
 with(gapminder_2007, plot(gdpPercap, lifeExp))
 
 
-# Filtering data
+# 2.1.1 Filtering data /pg30
 
+# argument "subset" is used to filter data 
 # producing a scatter plot for African countries only for 2007 - gráfico 2
 plot(lifeExp ~ gdpPercap,
      data = gapminder,
      subset = continent == 'Africa' & year == 2007)
 
 
-# Shape - pch
+# 2.2 Shape /pg32
 
+# argument "pch" is used to control shapes
 # viewing all 25 shapes
 y = c(rep(5, 5),rep(4, 5), rep(3, 5), rep(2, 5), rep(1, 5))
 x = c(rep(1:5, 5))
@@ -48,7 +53,7 @@ text(y = y, x = x, label = 1:25, pos = 3, cex = 0.8, col = 'red')
 # using an integer - gráfico 3
 plot(lifeExp ~ gdpPercap,
      gapminder_2007,
-     pch = 23)
+     pch = 19)
 
 # using an ASCII character - gráfico 3
 plot(lifeExp ~ gdpPercap,
@@ -61,7 +66,7 @@ plot(lifeExp ~ gdpPercap,
      pch = 42)
 
 
-# Shape by groups - Categories
+# 2.2.1 Shape by groups (Categories) /pg36
 
 shapes <- 15:19
 # shapes by continent - gráfico 4
@@ -75,26 +80,32 @@ plot(lifeExp ~ gdpPercap,
      pch = as.integer(continent))
 
 
-# Size - cex
+# 2.3 Size /pg39
+# argument "cex" is used to control size
+
 # gráfico 5
 plot(lifeExp ~ gdpPercap,
      gapminder_2007,
      pch = 19,
      cex = 1.5)
 
-# size as variable, pass the column to be sized - gráfico 5
+# 2.3.1 Size as variable
+# pass the column to be sized - gráfico 5
 plot(lifeExp ~ gdpPercap,
      gapminder_2007,
      pch = 19,
      cex = pop/200e6)
 
 
-# Colour - colours() colors()
+# 2.4 Colour /pg41
+# colours(), colors()
 
-# get all the colour names available in
+# get all the colour names available in R
 colours()[1:20]
+# get built-in colours - 657
 length(colours())
 
+# function show_col() from package "scales" allow view colours
 library(scales)
 # viewing colours
 show_col(c('red', 'yellow', 'blue', 'green', 'purple',
@@ -106,12 +117,13 @@ show_col(colours(), labels = FALSE, border = "white")
 # viewing just a section of colours
 show_col(colours()[32:47], border = "white")
 
-# default colours
+# default colours are 8
 show_col(1:8, border = "white")
 
 # recycling of default colours
 show_col(1:16, border = "white")
 
+# argument "col" is used to add colours to a plot
 # using colour names - gráfico 6
 plot(
   lifeExp ~ gdpPercap,
@@ -148,6 +160,11 @@ plot(
   col = 3
 )
 
+# the shapes 21 to 25 have both an interior and a border
+# argument "col" is used to colour their border
+# argument "bg" is used to fill their interior
+# argument "lwd" is used to control outline or border size
+
 # col colours borders - gráfico 7
 plot(
   lifeExp ~ gdpPercap,
@@ -166,7 +183,7 @@ plot(
   bg = 'lightgreen'
 )
 
-# using bg, col and lwd
+# using bg, col and lwd - gráfico 7
 plot(
   lifeExp ~ gdpPercap,
   gapminder_2007,
@@ -187,6 +204,14 @@ plot(
   col = NA
 )
 
+
+# 2.4.1 Gray colours /pg52
+
+# gray() or grey()
+# it takes a numeric value
+# 0 - white
+# 1 - black
+
 # generating a vector of grey colours
 grey(seq(0, 1, length.out = 16))
 #> [1] "#000000" "#111111" "#222222" "#333333" "#444444" "#555555" "#666666
@@ -203,6 +228,10 @@ plot(
   bg = grey(0.7),
   col = grey(0.2)
 )
+
+# argument "alpha" is used to control transparency
+# 0 - no transparency (black)
+# 1 - full transparency (white)
 
 # adding alpha
 grey(seq(0, 1, length.out = 16), alpha = 0.5)
@@ -222,13 +251,15 @@ plot(
 )
 
 
-# RGB rgb()
+# 2.4.2 RGB /pg56
+
+# Red Green Blue
+# rgb() converts RGB values to HEX code
 
 # converting from RGB to hex code
 rgb(0, 1, 0)
-#> [1] "#00FF00"
 rgb(0, 1, 0, alpha = 0.5)
-#> [1] "#00FF0080"
+
 # adding colour by using RGB
 plot(
   lifeExp ~ gdpPercap,
@@ -247,9 +278,10 @@ plot(
   bg = rgb(0, 1, 0, alpha = 0.5)
 )
 
+# in real life, RGB are specified by using 0 - 255
 # converting from RGB to hex code
 rgb(0, 255, 0, maxColorValue = 255)
-#> [1] "#00FF00"
+
 plot(
   lifeExp ~ gdpPercap,
   gapminder_2007,
@@ -259,13 +291,14 @@ plot(
 )
 
 
-# HSV, hue, saturation and value hsv()
+# 2.4.3 HSV /pg59
+# Hue, Saturation and Value 
+# hsv() converts from HSV to hex code
 
 # converting from HSV to hex code
 hsv(0.3, 1, 1)
-#> [1] "#33FF00"
 hsv(0.3, 1, 1, alpha = 0.5)
-#> [1] "#33FF0080"
+
 # adding colours by using HSV
 plot(
   lifeExp ~ gdpPercap,
@@ -276,16 +309,17 @@ plot(
 )
 
 
-# Converting between different colour models - col2rgb()
-
+# 2.4.4 Converting between different colour models /pg60
+# col2rgb() converts from colour to RGB
 col2rgb('green')
 
 # rgb2hsv() converts from RGB to HSV
 rgb2hsv(0, 1, 0)
 
-# Colouring points by groups (categories)
 
-# gráfico 8
+# 2.4.5 Colouring points by groups (categories) /pg61
+# pass a categorical column or variable to the "col" argument
+
 plot(
   lifeExp ~ gdpPercap,
   gapminder_2007,
@@ -294,7 +328,7 @@ plot(
   col = continent
 )
 
-# gráfico 8
+# ifelse() select colours for each category
 plot(
   lifeExp ~ gdpPercap,
   gapminder_2007,
@@ -384,11 +418,8 @@ col_transparency <-
 
 # using the function
 col_transparency()
-
 col_transparency('lightgreen', 75)
-
 colour <- c('#66C2A5', '#FC8D62', '#8DA0CB', '#E78AC3', '#A6D854', '#E5C494')
-
 col_transparency(colour)
 
 plot(
@@ -409,7 +440,7 @@ plot(
   col = colour[continent]
 )
 
-# modifying transparency
+# modifying transparency with alpha()
 scales::alpha(colour, 0.5)
 
 plot(
@@ -421,13 +452,13 @@ plot(
   col = colour[continent]
   )
 
+
 # 2.5 Colour palettes /pg72
 
 # 2.5.1 R Default colour palette
 
 # getting the default colour palette
 palette()
-
 length(palette())
 
 # viewing the default colours
@@ -446,6 +477,7 @@ show_col(palette(), border = "white")
 palette('default')
 palette()
 
+# R 4.0.0 and later has two functions
 # get predefined palettes
 palette.pals()
 
@@ -457,3 +489,27 @@ palette.colors(palette = 'Tableau 10')
 
 # viewing some predefined palettes
 show_col(palette.colors())
+show_col(palette.colors(palette = 'Set 2'))
+show_col(palette.colors(palette = 'Dark 2'))
+show_col(palette.colors(n = 8, palette = 'Tableau 10'))
+
+# setting the default palette to Tableau 10
+palette('Tableau 10')
+# viewing the default palette
+show_col(palette())
+# using the default palette
+plot(
+  lifeExp ~ gdpPercap,
+  gapminder_2007,
+  pch = 19,
+  cex = 1.3,
+  col = continent
+)
+
+# reset to the default colour palette
+palette('default')
+
+
+
+
+
