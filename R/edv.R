@@ -510,6 +510,6 @@ plot(
 palette('default')
 
 
-
+# 2.5.2 The grDevices colour palettes /pg79
 
 
