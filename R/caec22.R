@@ -5321,6 +5321,47 @@ tj15 = data.frame("EQUIPOS" =
                           dtun15_v$GL))
 )
 
+tjlv = data.frame("EQUIPOS" =
+                    c("Barcelona SC", "LDU Quito", "Independiente del Valle", "Emelec",
+                      "Aucas", "Macará", "Orense SC", "Deportivo Cuenca",
+                      "Guayaquil City", "Cumbayá FC", "Universidad Católica", "Nueve de Octubre",
+                      "Delfín SC", "Mushuc Runa", "Gualaceo SC", "Técnico Univ."),
+                  "PJ" =
+                    c(NROW(dbsc15$Jornada), NROW(dldu15$Jornada), NROW(didv15$Jornada), NROW(deme15$Jornada),
+                      NROW(dauc15$Jornada), NROW(dmac15$Jornada), NROW(dore15$Jornada), NROW(dcue15$Jornada),
+                      NROW(dgci15$Jornada), NROW(dcum15$Jornada), NROW(duca15$Jornada), NROW(dnoc15$Jornada),
+                      NROW(ddel15$Jornada), NROW(dmus15$Jornada), NROW(dgsc15$Jornada), NROW(dtun15$Jornada)),
+                  "VL"=
+                    c(sum(dbsc15_l$VL), sum(dldu15_l$VL), sum(didv15_l$VL), sum(deme15_l$VL),
+                      sum(dauc15_l$VL), sum(dmac15_l$VL), sum(dore15_l$VL), sum(dcue15_l$VL),
+                      sum(dgci15_l$VL), sum(dcum15_l$VL), sum(duca15_l$VL), sum(dnoc15_l$VL),
+                      sum(ddel15_l$VL), sum(dmus15_l$VL), sum(dgsc15_l$VL), sum(dtun15_l$VL)),
+                  "EL"=
+                    c(sum(dbsc15_l$EL), sum(dldu15_l$EL), sum(didv15_l$EL), sum(deme15_l$EL),
+                      sum(dauc15_l$EL), sum(dmac15_l$EL), sum(dore15_l$EL), sum(dcue15_l$EL),
+                      sum(dgci15_l$EL), sum(dcum15_l$EL), sum(duca15_l$EL), sum(dnoc15_l$EL),
+                      sum(ddel15_l$EL), sum(dmus15_l$EL), sum(dgsc15_l$EL), sum(dtun15_l$EL)),
+                  "DL"=
+                    c(sum(dbsc15_l$DL), sum(dldu15_l$DL), sum(didv15_l$DL), sum(deme15_l$DL),
+                      sum(dauc15_l$DL), sum(dmac15_l$DL), sum(dore15_l$DL), sum(dcue15_l$DL),
+                      sum(dgci15_l$DL), sum(dcum15_l$DL), sum(duca15_l$DL), sum(dnoc15_l$DL),
+                      sum(ddel15_l$DL), sum(dmus15_l$DL), sum(dgsc15_l$DL), sum(dtun15_l$DL)),
+                  "VV"=
+                    c(sum(dbsc15_v$VV), sum(dldu15_v$VV), sum(didv15_v$VV), sum(deme15_v$VV),
+                      sum(dauc15_v$VV), sum(dmac15_v$VV), sum(dore15_v$VV), sum(dcue15_v$VV),
+                      sum(dgci15_v$VV), sum(dcum15_v$VV), sum(duca15_v$VV), sum(dnoc15_v$VV),
+                      sum(ddel15_v$VV), sum(dmus15_v$VV), sum(dgsc15_v$VV), sum(dtun15_v$VV)),
+                  "EV"=
+                    c(sum(dbsc15_v$EV), sum(dldu15_v$EV), sum(didv15_v$EV), sum(deme15_v$EV),
+                      sum(dauc15_v$EV), sum(dmac15_v$EV), sum(dore15_v$EV), sum(dcue15_v$EV),
+                      sum(dgci15_v$EV), sum(dcum15_v$EV), sum(duca15_v$EV), sum(dnoc15_v$EV),
+                      sum(ddel15_v$EV), sum(dmus15_v$EV), sum(dgsc15_v$EV), sum(dtun15_v$EV)),
+                  "DV"=
+                    c(sum(dbsc15_v$DV), sum(dldu15_v$DV), sum(didv15_v$DV), sum(deme15_v$DV),
+                      sum(dauc15_v$DV), sum(dmac15_v$DV), sum(dore15_v$DV), sum(dcue15_v$DV),
+                      sum(dgci15_v$DV), sum(dcum15_v$DV), sum(duca15_v$DV), sum(dnoc15_v$DV),
+                      sum(ddel15_v$DV), sum(dmus15_v$DV), sum(dgsc15_v$DV), sum(dtun15_v$DV))
+)
 
 # NO. FILAS EN ACUMULADAS
 rownames(tj1) <- 1:nrow(tj1)
@@ -5402,7 +5443,7 @@ tj14 <- tj14[order(-tj14$PTOS, -tj14$GD, -tj14$GF, tj14$EQUIPOS), ] %>%
   select(EQUIPOS, PTOS, GD) %>%
   mutate(J14 = rownames(tj14))
 tj15 <- tj15[order(-tj15$PTOS, -tj15$GD, -tj15$GF, tj15$EQUIPOS), ] %>%
-  select(EQUIPOS, PTOS, GD) %>%
+#  select(EQUIPOS, PTOS, GD) %>%
   mutate(J15 = rownames(tj15))
 
 # ORDENAR TABLAS ACUMULADAS DE JORNADAS
