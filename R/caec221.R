@@ -1,4 +1,4 @@
-# CAMPEONATO ECUATORIANO DE FÚTBOL - 2022 - FASE 2
+# CAMPEONATO ECUATORIANO DE FÚTBOL - 2022 - FASE 1
 # SCRIPT DE TODAS LAS JORNADAS
 
 # LIBRERIAS
@@ -20,7 +20,7 @@ library(forcats)
 library(RColorBrewer)
 
 # DATASET - COMPILADO DE TODAS LAS JORNADAS 2022
-dace22 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/ec20222.csv")
+dace22 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/ec2022.csv")
 
 # BARCELONA
 dbsc <- dace22 %>% 
@@ -5521,7 +5521,7 @@ ggplot(tjx, aes(x = variable, y = value, group = EQUIPOS)) +
   #  theme(panel.grid.major = element_blank(),
   #        panel.grid.minor = element_blank()) + 
   labs(title = "CAMPEONATO ECUATORIANO DE FÚTBOL 2022",
-       subtitle = "FASE 2 - Comportamiento por Jornada de los Equipos",
+       subtitle = "FASE 1 - Comportamiento por Jornada de los Equipos",
        caption = "powered by Udaviz",
        x = "Jornadas de Campeonato 1 - 15",
        y = "Posiciones Tabla Acumulada") +
