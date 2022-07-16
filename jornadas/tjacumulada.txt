@@ -1,0 +1,17 @@
+"EQUIPOS"	"PTOS"	"GD"
+"Barcelona SC"	30	12
+"Universidad Católica"	32	15
+"LDU Quito"	32	5
+"Independiente del Valle"	30	6
+"Aucas"	29	8
+"Emelec"	26	10
+"Delfín SC"	25	-1
+"Deportivo Cuenca"	24	-1
+"Gualaceo SC"	20	-6
+"Mushuc Runa"	19	-3
+"Guayaquil City"	18	1
+"Orense SC"	18	-1
+"Macará"	13	-9
+"Cumbayá FC"	13	-13
+"Técnico Univ."	10	-14
+"Nueve de Octubre"	12	-9

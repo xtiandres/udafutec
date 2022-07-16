@@ -3462,7 +3462,7 @@ tj17 = data.frame("EQUIPOS" =
                          dtun17_v$GL))
 )
 
-tj3 = data.frame("EQUIPOS" =
+tj18 = data.frame("EQUIPOS" =
                    c("Barcelona SC", "LDU Quito", "Independiente del Valle", "Emelec",
                      "Aucas", "Macará", "Orense SC", "Deportivo Cuenca",
                      "Guayaquil City", "Cumbayá FC", "Universidad Católica", "Nueve de Octubre",
@@ -3605,7 +3605,7 @@ tj3 = data.frame("EQUIPOS" =
                          dtun3_v$GL))
 )
 
-tj4 = data.frame("EQUIPOS" =
+tj19 = data.frame("EQUIPOS" =
                    c("Barcelona SC", "LDU Quito", "Independiente del Valle", "Emelec",
                      "Aucas", "Macará", "Orense SC", "Deportivo Cuenca",
                      "Guayaquil City", "Cumbayá FC", "Universidad Católica", "Nueve de Octubre",
@@ -3748,7 +3748,7 @@ tj4 = data.frame("EQUIPOS" =
                          dtun4_v$GL))
 )
 
-tj5 = data.frame("EQUIPOS" =
+tj20 = data.frame("EQUIPOS" =
                    c("Barcelona SC", "LDU Quito", "Independiente del Valle", "Emelec",
                      "Aucas", "Macará", "Orense SC", "Deportivo Cuenca",
                      "Guayaquil City", "Cumbayá FC", "Universidad Católica", "Nueve de Octubre",
@@ -3891,7 +3891,7 @@ tj5 = data.frame("EQUIPOS" =
                          dtun5_v$GL))
 )
 
-tj6 = data.frame("EQUIPOS" =
+tj21 = data.frame("EQUIPOS" =
                    c("Barcelona SC", "LDU Quito", "Independiente del Valle", "Emelec",
                      "Aucas", "Macará", "Orense SC", "Deportivo Cuenca",
                      "Guayaquil City", "Cumbayá FC", "Universidad Católica", "Nueve de Octubre",
@@ -4034,7 +4034,7 @@ tj6 = data.frame("EQUIPOS" =
                          dtun6_v$GL))
 )
 
-tj7 = data.frame("EQUIPOS" =
+tj22 = data.frame("EQUIPOS" =
                    c("Barcelona SC", "LDU Quito", "Independiente del Valle", "Emelec",
                      "Aucas", "Macará", "Orense SC", "Deportivo Cuenca",
                      "Guayaquil City", "Cumbayá FC", "Universidad Católica", "Nueve de Octubre",
@@ -4177,7 +4177,7 @@ tj7 = data.frame("EQUIPOS" =
                          dtun7_v$GL))
 )
 
-tj8 = data.frame("EQUIPOS" =
+tj23 = data.frame("EQUIPOS" =
                    c("Barcelona SC", "LDU Quito", "Independiente del Valle", "Emelec",
                      "Aucas", "Macará", "Orense SC", "Deportivo Cuenca",
                      "Guayaquil City", "Cumbayá FC", "Universidad Católica", "Nueve de Octubre",
@@ -4320,7 +4320,7 @@ tj8 = data.frame("EQUIPOS" =
                          dtun8_v$GL))
 )
 
-tj9 = data.frame("EQUIPOS" =
+tj24 = data.frame("EQUIPOS" =
                    c("Barcelona SC", "LDU Quito", "Independiente del Valle", "Emelec",
                      "Aucas", "Macará", "Orense SC", "Deportivo Cuenca",
                      "Guayaquil City", "Cumbayá FC", "Universidad Católica", "Nueve de Octubre",
@@ -4463,7 +4463,7 @@ tj9 = data.frame("EQUIPOS" =
                          dtun9_v$GL))
 )
 
-tj10 = data.frame("EQUIPOS" =
+tj25 = data.frame("EQUIPOS" =
                     c("Barcelona SC", "LDU Quito", "Independiente del Valle", "Emelec",
                       "Aucas", "Macará", "Orense SC", "Deportivo Cuenca",
                       "Guayaquil City", "Cumbayá FC", "Universidad Católica", "Nueve de Octubre",
@@ -4606,7 +4606,7 @@ tj10 = data.frame("EQUIPOS" =
                           dtun10_v$GL))
 )
 
-tj11 = data.frame("EQUIPOS" =
+tj26 = data.frame("EQUIPOS" =
                     c("Barcelona SC", "LDU Quito", "Independiente del Valle", "Emelec",
                       "Aucas", "Macará", "Orense SC", "Deportivo Cuenca",
                       "Guayaquil City", "Cumbayá FC", "Universidad Católica", "Nueve de Octubre",
@@ -4749,7 +4749,7 @@ tj11 = data.frame("EQUIPOS" =
                           dtun11_v$GL))
 )
 
-tj12 = data.frame("EQUIPOS" =
+tj27 = data.frame("EQUIPOS" =
                     c("Barcelona SC", "LDU Quito", "Independiente del Valle", "Emelec",
                       "Aucas", "Macará", "Orense SC", "Deportivo Cuenca",
                       "Guayaquil City", "Cumbayá FC", "Universidad Católica", "Nueve de Octubre",
@@ -4892,7 +4892,7 @@ tj12 = data.frame("EQUIPOS" =
                           dtun12_v$GL))
 )
 
-tj13 = data.frame("EQUIPOS" =
+tj28 = data.frame("EQUIPOS" =
                     c("Barcelona SC", "LDU Quito", "Independiente del Valle", "Emelec",
                       "Aucas", "Macará", "Orense SC", "Deportivo Cuenca",
                       "Guayaquil City", "Cumbayá FC", "Universidad Católica", "Nueve de Octubre",
@@ -5035,7 +5035,7 @@ tj13 = data.frame("EQUIPOS" =
                           dtun13_v$GL))
 )
 
-tj14 = data.frame("EQUIPOS" =
+tj29 = data.frame("EQUIPOS" =
                     c("Barcelona SC", "LDU Quito", "Independiente del Valle", "Emelec",
                       "Aucas", "Macará", "Orense SC", "Deportivo Cuenca",
                       "Guayaquil City", "Cumbayá FC", "Universidad Católica", "Nueve de Octubre",
@@ -5178,7 +5178,7 @@ tj14 = data.frame("EQUIPOS" =
                           dtun14_v$GL))
 )
 
-tj15 = data.frame("EQUIPOS" =
+tj30 = data.frame("EQUIPOS" =
                     c("Barcelona SC", "LDU Quito", "Independiente del Valle", "Emelec",
                       "Aucas", "Macará", "Orense SC", "Deportivo Cuenca",
                       "Guayaquil City", "Cumbayá FC", "Universidad Católica", "Nueve de Octubre",
@@ -5321,81 +5321,40 @@ tj15 = data.frame("EQUIPOS" =
                           dtun15_v$GL))
 )
 
-tjlv = data.frame("EQUIPOS" =
-                    c("Barcelona SC", "LDU Quito", "Independiente del Valle", "Emelec",
-                      "Aucas", "Macará", "Orense SC", "Deportivo Cuenca",
-                      "Guayaquil City", "Cumbayá FC", "Universidad Católica", "Nueve de Octubre",
-                      "Delfín SC", "Mushuc Runa", "Gualaceo SC", "Técnico Univ."),
-                  "PJ" =
-                    c(NROW(dbsc15$Jornada), NROW(dldu15$Jornada), NROW(didv15$Jornada), NROW(deme15$Jornada),
-                      NROW(dauc15$Jornada), NROW(dmac15$Jornada), NROW(dore15$Jornada), NROW(dcue15$Jornada),
-                      NROW(dgci15$Jornada), NROW(dcum15$Jornada), NROW(duca15$Jornada), NROW(dnoc15$Jornada),
-                      NROW(ddel15$Jornada), NROW(dmus15$Jornada), NROW(dgsc15$Jornada), NROW(dtun15$Jornada)),
-                  "VL"=
-                    c(sum(dbsc15_l$VL), sum(dldu15_l$VL), sum(didv15_l$VL), sum(deme15_l$VL),
-                      sum(dauc15_l$VL), sum(dmac15_l$VL), sum(dore15_l$VL), sum(dcue15_l$VL),
-                      sum(dgci15_l$VL), sum(dcum15_l$VL), sum(duca15_l$VL), sum(dnoc15_l$VL),
-                      sum(ddel15_l$VL), sum(dmus15_l$VL), sum(dgsc15_l$VL), sum(dtun15_l$VL)),
-                  "EL"=
-                    c(sum(dbsc15_l$EL), sum(dldu15_l$EL), sum(didv15_l$EL), sum(deme15_l$EL),
-                      sum(dauc15_l$EL), sum(dmac15_l$EL), sum(dore15_l$EL), sum(dcue15_l$EL),
-                      sum(dgci15_l$EL), sum(dcum15_l$EL), sum(duca15_l$EL), sum(dnoc15_l$EL),
-                      sum(ddel15_l$EL), sum(dmus15_l$EL), sum(dgsc15_l$EL), sum(dtun15_l$EL)),
-                  "DL"=
-                    c(sum(dbsc15_l$DL), sum(dldu15_l$DL), sum(didv15_l$DL), sum(deme15_l$DL),
-                      sum(dauc15_l$DL), sum(dmac15_l$DL), sum(dore15_l$DL), sum(dcue15_l$DL),
-                      sum(dgci15_l$DL), sum(dcum15_l$DL), sum(duca15_l$DL), sum(dnoc15_l$DL),
-                      sum(ddel15_l$DL), sum(dmus15_l$DL), sum(dgsc15_l$DL), sum(dtun15_l$DL)),
-                  "VV"=
-                    c(sum(dbsc15_v$VV), sum(dldu15_v$VV), sum(didv15_v$VV), sum(deme15_v$VV),
-                      sum(dauc15_v$VV), sum(dmac15_v$VV), sum(dore15_v$VV), sum(dcue15_v$VV),
-                      sum(dgci15_v$VV), sum(dcum15_v$VV), sum(duca15_v$VV), sum(dnoc15_v$VV),
-                      sum(ddel15_v$VV), sum(dmus15_v$VV), sum(dgsc15_v$VV), sum(dtun15_v$VV)),
-                  "EV"=
-                    c(sum(dbsc15_v$EV), sum(dldu15_v$EV), sum(didv15_v$EV), sum(deme15_v$EV),
-                      sum(dauc15_v$EV), sum(dmac15_v$EV), sum(dore15_v$EV), sum(dcue15_v$EV),
-                      sum(dgci15_v$EV), sum(dcum15_v$EV), sum(duca15_v$EV), sum(dnoc15_v$EV),
-                      sum(ddel15_v$EV), sum(dmus15_v$EV), sum(dgsc15_v$EV), sum(dtun15_v$EV)),
-                  "DV"=
-                    c(sum(dbsc15_v$DV), sum(dldu15_v$DV), sum(didv15_v$DV), sum(deme15_v$DV),
-                      sum(dauc15_v$DV), sum(dmac15_v$DV), sum(dore15_v$DV), sum(dcue15_v$DV),
-                      sum(dgci15_v$DV), sum(dcum15_v$DV), sum(duca15_v$DV), sum(dnoc15_v$DV),
-                      sum(ddel15_v$DV), sum(dmus15_v$DV), sum(dgsc15_v$DV), sum(dtun15_v$DV))
-)
 
 # NO. FILAS EN ACUMULADAS
 rownames(tj16) <- 1:nrow(tj16)
 rownames(tj17) <- 1:nrow(tj17)
-rownames(tj3) <- 1:nrow(tj3)
-rownames(tj4) <- 1:nrow(tj4)
-rownames(tj5) <- 1:nrow(tj5)
-rownames(tj6) <- 1:nrow(tj6)
-rownames(tj7) <- 1:nrow(tj7)
-rownames(tj8) <- 1:nrow(tj8)
-rownames(tj9) <- 1:nrow(tj9)
-rownames(tj10) <- 1:nrow(tj10)
-rownames(tj11) <- 1:nrow(tj11)
-rownames(tj12) <- 1:nrow(tj12)
-rownames(tj13) <- 1:nrow(tj13)
-rownames(tj14) <- 1:nrow(tj14)
-rownames(tj15) <- 1:nrow(tj15)
+rownames(tj18) <- 1:nrow(tj18)
+rownames(tj19) <- 1:nrow(tj19)
+rownames(tj20) <- 1:nrow(tj20)
+rownames(tj21) <- 1:nrow(tj21)
+rownames(tj22) <- 1:nrow(tj22)
+rownames(tj23) <- 1:nrow(tj23)
+rownames(tj24) <- 1:nrow(tj24)
+rownames(tj25) <- 1:nrow(tj25)
+rownames(tj26) <- 1:nrow(tj26)
+rownames(tj27) <- 1:nrow(tj27)
+rownames(tj28) <- 1:nrow(tj28)
+rownames(tj29) <- 1:nrow(tj29)
+rownames(tj30) <- 1:nrow(tj30)
 
 # ACUMULADAS - MUTATE "GD"
 tj16 <- mutate(tj16, GD = GF - GC)
 tj17 <- mutate(tj17, GD = GF - GC)
-tj3 <- mutate(tj3, GD = GF - GC)
-tj4 <- mutate(tj4, GD = GF - GC)
-tj5 <- mutate(tj5, GD = GF - GC)
-tj6 <- mutate(tj6, GD = GF - GC)
-tj7 <- mutate(tj7, GD = GF - GC)
-tj8 <- mutate(tj8, GD = GF - GC)
-tj9 <- mutate(tj9, GD = GF - GC)
-tj10 <- mutate(tj10, GD = GF - GC)
-tj11 <- mutate(tj11, GD = GF - GC)
-tj12 <- mutate(tj12, GD = GF - GC)
-tj13 <- mutate(tj13, GD = GF - GC)
-tj14 <- mutate(tj14, GD = GF - GC)
-tj15 <- mutate(tj15, GD = GF - GC)
+tj18 <- mutate(tj18, GD = GF - GC)
+tj19 <- mutate(tj19, GD = GF - GC)
+tj20 <- mutate(tj20, GD = GF - GC)
+tj21 <- mutate(tj21, GD = GF - GC)
+tj22 <- mutate(tj22, GD = GF - GC)
+tj23 <- mutate(tj23, GD = GF - GC)
+tj24 <- mutate(tj24, GD = GF - GC)
+tj25 <- mutate(tj25, GD = GF - GC)
+tj26 <- mutate(tj26, GD = GF - GC)
+tj27 <- mutate(tj27, GD = GF - GC)
+tj28 <- mutate(tj28, GD = GF - GC)
+tj29 <- mutate(tj29, GD = GF - GC)
+tj30 <- mutate(tj30, GD = GF - GC)
 
 # ACUMULADAS - ORDENAR: PTOS-GD-GF 
 # ACUMULADAS - SELECT: EQUIPOS-PTOS-GD
@@ -5406,69 +5365,79 @@ tj16 <- tj16[order(-tj16$PTOS, -tj16$GD, -tj16$GF, tj16$EQUIPOS), ] %>%
 tj17 <- tj17[order(-tj17$PTOS, -tj17$GD, -tj17$GF, tj17$EQUIPOS), ] %>%
   select(EQUIPOS, PTOS, GD) %>%
   mutate(J17 = rownames(tj17))
-tj3 <- tj3[order(-tj3$PTOS, -tj3$GD, -tj3$GF, tj3$EQUIPOS), ] %>%
+tj18 <- tj18[order(-tj18$PTOS, -tj18$GD, -tj18$GF, tj18$EQUIPOS), ] %>%
   select(EQUIPOS, PTOS, GD) %>%
-  mutate(J3 = rownames(tj3))
-tj4 <- tj4[order(-tj4$PTOS, -tj4$GD, -tj4$GF, tj4$EQUIPOS), ] %>%
+  mutate(J18 = rownames(tj18))
+tj19 <- tj19[order(-tj19$PTOS, -tj19$GD, -tj19$GF, tj19$EQUIPOS), ] %>%
   select(EQUIPOS, PTOS, GD) %>%
-  mutate(J4 = rownames(tj4))
-tj5 <- tj5[order(-tj5$PTOS, -tj5$GD, -tj5$GF, tj5$EQUIPOS), ] %>%
+  mutate(J19 = rownames(tj19))
+tj20 <- tj20[order(-tj20$PTOS, -tj20$GD, -tj20$GF, tj20$EQUIPOS), ] %>%
   select(EQUIPOS, PTOS, GD) %>%
-  mutate(J5 = rownames(tj5))
-tj6 <- tj6[order(-tj6$PTOS, -tj6$GD, -tj6$GF, tj6$EQUIPOS), ] %>%
+  mutate(J20 = rownames(tj20))
+tj21 <- tj21[order(-tj21$PTOS, -tj21$GD, -tj21$GF, tj21$EQUIPOS), ] %>%
   select(EQUIPOS, PTOS, GD) %>%
-  mutate(J6 = rownames(tj6))
-tj7 <- tj7[order(-tj7$PTOS, -tj7$GD, -tj7$GF, tj7$EQUIPOS), ] %>%
+  mutate(J21 = rownames(tj21))
+tj22 <- tj22[order(-tj22$PTOS, -tj22$GD, -tj22$GF, tj22$EQUIPOS), ] %>%
   select(EQUIPOS, PTOS, GD) %>%
-  mutate(J7 = rownames(tj7))
-tj8 <- tj8[order(-tj8$PTOS, -tj8$GD, -tj8$GF, tj8$EQUIPOS), ] %>%
+  mutate(J22 = rownames(tj22))
+tj23 <- tj23[order(-tj23$PTOS, -tj23$GD, -tj23$GF, tj23$EQUIPOS), ] %>%
   select(EQUIPOS, PTOS, GD) %>%
-  mutate(J8 = rownames(tj8))
-tj9 <- tj9[order(-tj9$PTOS, -tj9$GD, -tj9$GF, tj9$EQUIPOS), ] %>%
+  mutate(J23 = rownames(tj23))
+tj24 <- tj24[order(-tj24$PTOS, -tj24$GD, -tj24$GF, tj24$EQUIPOS), ] %>%
   select(EQUIPOS, PTOS, GD) %>%
-  mutate(J9 = rownames(tj9))
-tj10 <- tj10[order(-tj10$PTOS, -tj10$GD, -tj10$GF, tj10$EQUIPOS), ] %>%
+  mutate(J24 = rownames(tj24))
+tj25 <- tj25[order(-tj25$PTOS, -tj25$GD, -tj25$GF, tj25$EQUIPOS), ] %>%
   select(EQUIPOS, PTOS, GD) %>%
-  mutate(J10 = rownames(tj10))
-tj11 <- tj11[order(-tj11$PTOS, -tj11$GD, -tj11$GF, tj11$EQUIPOS), ] %>%
+  mutate(J25 = rownames(tj25))
+tj26 <- tj26[order(-tj26$PTOS, -tj26$GD, -tj26$GF, tj26$EQUIPOS), ] %>%
   select(EQUIPOS, PTOS, GD) %>%
-  mutate(J11 = rownames(tj11))
-tj12 <- tj12[order(-tj12$PTOS, -tj12$GD, -tj12$GF, tj12$EQUIPOS), ] %>%
+  mutate(J26 = rownames(tj26))
+tj27 <- tj27[order(-tj27$PTOS, -tj27$GD, -tj27$GF, tj27$EQUIPOS), ] %>%
   select(EQUIPOS, PTOS, GD) %>%
-  mutate(J12 = rownames(tj12))
-tj13 <- tj13[order(-tj13$PTOS, -tj13$GD, -tj13$GF, tj13$EQUIPOS), ] %>%
+  mutate(J27 = rownames(tj27))
+tj28 <- tj28[order(-tj28$PTOS, -tj28$GD, -tj28$GF, tj28$EQUIPOS), ] %>%
   select(EQUIPOS, PTOS, GD) %>%
-  mutate(J13 = rownames(tj13))
-tj14 <- tj14[order(-tj14$PTOS, -tj14$GD, -tj14$GF, tj14$EQUIPOS), ] %>%
+  mutate(J28 = rownames(tj28))
+tj29 <- tj29[order(-tj29$PTOS, -tj29$GD, -tj29$GF, tj29$EQUIPOS), ] %>%
   select(EQUIPOS, PTOS, GD) %>%
-  mutate(J14 = rownames(tj14))
-tj15 <- tj15[order(-tj15$PTOS, -tj15$GD, -tj15$GF, tj15$EQUIPOS), ] %>%
+  mutate(J29 = rownames(tj29))
+tj30 <- tj30[order(-tj30$PTOS, -tj30$GD, -tj30$GF, tj30$EQUIPOS), ] %>%
   #  select(EQUIPOS, PTOS, GD) %>%
-  mutate(J15 = rownames(tj15))
+  mutate(J30 = rownames(tj30))
 
 # ORDENAR TABLAS ACUMULADAS DE JORNADAS
 tjaa = full_join(tj16, tj17, by = "EQUIPOS")
-tjbb = full_join(tjaa, tj3, by = "EQUIPOS")
-tjcc = full_join(tjbb, tj4, by = "EQUIPOS")
-tjdd = full_join(tjcc, tj5, by = "EQUIPOS")
-tjee = full_join(tjdd, tj6, by = "EQUIPOS")
-tjff = full_join(tjee, tj7, by = "EQUIPOS")
-tjgg = full_join(tjff, tj8, by = "EQUIPOS")
-tjhh = full_join(tjgg, tj9, by = "EQUIPOS")
-tjii = full_join(tjhh, tj10, by = "EQUIPOS")
-tjjj = full_join(tjii, tj11, by = "EQUIPOS")
-tjkk = full_join(tjjj, tj12, by = "EQUIPOS")
-tjll = full_join(tjkk, tj13, by = "EQUIPOS")
-tjmm = full_join(tjll, tj14, by = "EQUIPOS")
-tjnn = full_join(tjmm, tj15, by = "EQUIPOS")
-tjxx = select(tjaa, "EQUIPOS", "J16", "J17", "J3", "J4", "J5", "J6","J7", "J8", "J9", "J10", "J11", "J12", "J13", "J14", "J15")
-tjxx <- gather(tjx,
+tjbb = full_join(tjaa, tj18, by = "EQUIPOS")
+tjcc = full_join(tjbb, tj19, by = "EQUIPOS")
+tjdd = full_join(tjcc, tj20, by = "EQUIPOS")
+tjee = full_join(tjdd, tj21, by = "EQUIPOS")
+tjff = full_join(tjee, tj22, by = "EQUIPOS")
+tjgg = full_join(tjff, tj23, by = "EQUIPOS")
+tjhh = full_join(tjgg, tj24, by = "EQUIPOS")
+tjii = full_join(tjhh, tj25, by = "EQUIPOS")
+tjjj = full_join(tjii, tj26, by = "EQUIPOS")
+tjkk = full_join(tjjj, tj27, by = "EQUIPOS")
+tjll = full_join(tjkk, tj28, by = "EQUIPOS")
+tjmm = full_join(tjll, tj29, by = "EQUIPOS")
+tjnn = full_join(tjmm, tj30, by = "EQUIPOS")
+tjxx = select(tjaa, "EQUIPOS", "J16", "J17")
+tjxx <- gather(tjxx,
               key = "variable",
               value = "value",
               J16:J17)
 
-# SAVE "tjx" data.frame as txt file
+# TABLA ACUMULADA FASE 1 (tj15) + FASE 2 (fecha)
+tjzz = full_join(tj15, tj16, by = "EQUIPOS")
+tjzz <- mutate(tjzz, PTOS = tjzz$PTOS.x + tjzz$PTOS.y)
+tjzz <- mutate(tjzz, GD = tjzz$GD.x + tjzz$GD.y)
+tjzz <- select(tjzz, "EQUIPOS", "PTOS", "GD")
+tjzz <- tjzz[order(-tjzz$PTOS, -tjzz$GD, -tjzz$GF, tjzz$EQUIPOS), ] %>%
+  select(EQUIPOS, PTOS, GD)
+
+# SAVE "tjxx" data.frame as txt file
 write.table(tjxx,"jornadas/tj16_17.txt",sep="\t",row.names=FALSE)
+# SAVE "tjzz" data.frame as txt file
+write.table(tjzz,"jornadas/tjacumulada.txt",sep="\t",row.names=FALSE)
 
 
 # GRÁFICO BUMP CHART
