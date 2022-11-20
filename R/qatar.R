@@ -1,5 +1,4 @@
 # QATAR - 2022
-# SCRIPT DE TODAS LAS JORNADAS
 
 # LIBRERIAS
 library(readr)
@@ -20,44 +19,40 @@ library(forcats)
 library(RColorBrewer)
 
 # DATASET 
-datecu <- read_csv("/home/xut/Documents/udaviz/R/studio/udafutec/data/qatar/ecuador.csv")
-datqat <- read_csv("/home/xut/Documents/udaviz/R/studio/udafutec/data/qatar/qatar.csv")
+datqwc <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/qatar/qatar2022.csv")
+
 datmpi <- read_csv("/home/xut/Documents/udaviz/R/studio/udafutec/data/qatar/pi.csv")
+datecu22 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/qatar/ecuador22.csv")
+datqat22 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/qatar/qatar22.csv")
 
-# PARTIDO INAUGURAL
-datmpi <- mutate(datmpi, 
-                 IL = ifelse(GL >= GV,
-                             "SI",
-                             "NO"))
-pi <- ggplot(datmpi,
-             aes(x = Local,
-                 fill = IL)) +
-  geom_bar(position = 'stack') +
-  #geom_line(color = 'grey') +
-  #geom_point(color = 'blue') +
-  facet_wrap(~Mundial) +
-  theme_minimal()
-#+
-#  aes(x = fct_inorder(Mundial))
-  
+# VARIABLE VALORACION CAMBIAR k,m AS NUMERIC
+datqwc$Valoracion <- ifelse(grepl('m', ignore.case = TRUE, datqwc$Valoracion), as.numeric(gsub("[€m]", "", datqwc$Valoracion)) * 10^6,
+                            as.numeric(gsub("[€k]", "", datqwc$Valoracion)) * 10^3)
 
-# TABLA TOTAL ECUADOR - QATAR
-decuqat <- data.frame(
+# ECUADOR
+ecu <- filter(datqwc,
+              Seleccion == 'Ecuador')
+# QATAR
+qat <- filter(datqwc,
+              Seleccion == 'Qatar')
+# TOTAL ECUADOR - QATAR
+ecuqat <- data.frame(
   Seleccion = c("Ecuador", "Qatar"),
-  PromedioEdad = c(mean(datecu$Edad), mean(datqat$Edad)),
-  ValorSeleccion = c(sum(datecu$Valoracion), sum(datqat$Valoracion)),
-  Rank = c(44, 50),
-  PartidosJugados22 = c(10, 7),
-  Victorias22 = c(2, 3),
-  Empates22 = c(7, 3),
-  Derrotas22 = c(1, 1),
-  Goles22 = c(6, 8)
+  PromedioEdad = c(round(mean(ecu$Edad),digits=2), round(mean(qat$Edad),2)),
+  ValorSeleccion = c(sum(ecu$Valoracion), sum(qat$Valoracion)),
+  Ranking = c(44, 50),
+  PartidosJugados = c(10, 7),
+  Victorias = c(2, 3),
+  Empates = c(7, 3),
+  Derrotas = c(1, 1),
+  Goles = c(6, 8)
 )
+write_csv(ecuqat, file = 'data/qatar/ecuadorqatar.csv')
 
-# TABLA PARCIAL ECUADOR - QATAR
-ecqa <- select(decuqat, -PromedioEdad, -ValorSeleccion, -Rank)
+# PARCIAL ECUADOR - QATAR
+ecqa <- select(ecuqat, -PromedioEdad, -ValorSeleccion, -Ranking)
 colnames(ecqa) <- c("EQUIPO", 
-                    "PARTIDOS.2022",
+                    "PARTIDOS22",
                     "VICTORIAS",
                     "EMPATES",
                     "DERROTAS",
@@ -103,7 +98,6 @@ legend(x=1.3, y=1,
 #       text.col = "black", 
 #       cex=1.3)
 
-pi
 #dev.off()
 
 
