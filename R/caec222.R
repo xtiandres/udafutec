@@ -22,7 +22,7 @@ library(RColorBrewer)
 # DATASET - COMPILADO DE TODAS LAS JORNADAS 2022
 dace222 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/ec20222.csv")
 
-# BARCELONA
+# BARCELON
 dbsc16 <- dace222 %>% 
   filter(Local == "Barcelona SC" | Visita == "Barcelona SC") %>%
   filter(Jornada == 16)
