@@ -32,7 +32,7 @@ datecu22 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/qatar/ec
 datqat22 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/qatar/qatar22.csv")
 
 
-# *** DATASET: PLANTILLA DE SELECCIONES ***
+# *** DATASET: PLANTILLA DE SELECCIONES datqwc ***
 # VARIABLE VALORACION CAMBIAR k,m AS NUMERIC
 datqwc$Valoracion <- ifelse(grepl('m', ignore.case = TRUE, datqwc$Valoracion), as.numeric(gsub("[€m]", "", datqwc$Valoracion)) * 10^6,
                             as.numeric(gsub("[€k]", "", datqwc$Valoracion)) * 10^3)
@@ -108,12 +108,15 @@ ecqa <- select(ecqa, -EQUIPO)
 #       cex=1.3)
 
 
-# *** DATASET: CALENDARIO Y RESULTADOS ***
+# *** DATASET: CALENDARIO Y RESULTADOS dqwc22 ***
 # CREAR GANADOS, EMPATADOS Y PERDIDOS EN DATASET dqwc22
 dqwc22 <- dqwc22 %>%
   mutate('G' = ifelse(GSeleccion > GRival, 1, 0)) %>%
   mutate('E' = ifelse(GSeleccion == GRival, 1, 0)) %>%
   mutate('P' = ifelse(GSeleccion < GRival, 1, 0))
+
+dqwc22$Posesion <- as.numeric(dqwc22$Posesion)
+dqwc22$`Precision Pases` <- as.numeric(dqwc22$`Precision Pases`)
 
 # FASE DE GRUPOS 
 # GRUPO A
@@ -483,6 +486,12 @@ grupoh <- data.frame("EQUIPO" =
                          sum(filter(dqwc22, Seleccion == 'Corea del Sur')$G*3) + sum(filter(dqwc22, Seleccion == 'Corea del Sur')$E*1))
 )
 grupoh <- grupoh[order(-grupoh$PTOS, -grupoh$GD, -grupoh$GF, grupoh$EQUIPO), ]
+
+
+# PAISES BAJOS - ECUADOR
+pbavecu <- filter(dqwc22, Seleccion %in% c('Paises Bajos', 'Ecuador'))
+
+
 
 #dev.off()
 
