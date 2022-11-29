@@ -488,10 +488,38 @@ grupoh <- data.frame("EQUIPO" =
 grupoh <- grupoh[order(-grupoh$PTOS, -grupoh$GD, -grupoh$GF, grupoh$EQUIPO), ]
 
 
-# PAISES BAJOS - ECUADOR
-pbavecu <- filter(dqwc22, Seleccion %in% c('Paises Bajos', 'Ecuador'))
-
-
+# ECUADOR - SENEGAL
+dgra <- filter(dqwc22, Seleccion %in% c('Ecuador', 'Senegal'))
+dgec <- dqwc22 %>%
+  filter(Seleccion == 'Ecuador') %>%
+  group_by(Seleccion) %>%
+  summarise(p_gol = mean(GSeleccion, na.rm = TRUE),
+            p_remates = mean(Remates, na.rm = TRUE),
+            p_rem_arco = mean(`Remates arco`, na.rm = TRUE),
+            p_posesion = mean(Posesion, na.rm = TRUE),
+            p_pases = mean(Pases, na.rm = TRUE),
+            p_pre_pases = mean(`Precision Pases`, na.rm = TRUE),
+            p_faltas = mean(Faltas, na.rm = TRUE),
+            p_tar_ama = mean(`Tarjetas Amarillas`, na.rm = TRUE),
+            p_tar_roj = mean(`Tarjetas Rojas`, na.rm = TRUE),
+            p_pos_ade = mean(`Posicion Adelantada`, na.rm = TRUE),
+            p_tir_esq = mean(`Tiros Esquina`, na.rm = TRUE))
+dgse <- dqwc22 %>%
+  filter(Seleccion == 'Senegal') %>%
+  group_by(Seleccion) %>%
+  summarise(p_gol = mean(GSeleccion, na.rm = TRUE),
+            p_remates = mean(Remates, na.rm = TRUE),
+            p_rem_arco = mean(`Remates arco`, na.rm = TRUE),
+            p_posesion = mean(Posesion, na.rm = TRUE),
+            p_pases = mean(Pases, na.rm = TRUE),
+            p_pre_pases = mean(`Precision Pases`, na.rm = TRUE),
+            p_faltas = mean(Faltas, na.rm = TRUE),
+            p_tar_ama = mean(`Tarjetas Amarillas`, na.rm = TRUE),
+            p_tar_roj = mean(`Tarjetas Rojas`, na.rm = TRUE),
+            p_pos_ade = mean(`Posicion Adelantada`, na.rm = TRUE),
+            p_tir_esq = mean(`Tiros Esquina`, na.rm = TRUE))
+dgto <- full_join(dgec, dgse)
+write_csv(dgto, file = 'data/qatar/ecuadorsenegal.csv')
 
 #dev.off()
 
