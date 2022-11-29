@@ -521,6 +521,27 @@ dgse <- dqwc22 %>%
 dgto <- full_join(dgec, dgse)
 write_csv(dgto, file = 'data/qatar/ecuadorsenegal.csv')
 
+ggplot(dgto, 
+       aes(x = Seleccion, 
+           y = mean,
+           color = Seleccion)) +
+  geom_point(size = 3) +
+  geom_errorbar(aes(ymin = mean - se, 
+                    ymax = mean + se),
+                width = .1) +
+  scale_y_continuous(breaks = seq(70000, 140000, 10000),
+                     label = scales::dollar) +
+  facet_grid(. ~ rank + discipline) +
+  theme_bw() +
+  theme(legend.position = "none",
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.y = element_blank()) +
+  labs(x="", 
+       y="", 
+       title="Nine month academic salaries by gender, discipline, and rank",
+       subtitle = "(Means and standard errors)") +
+  scale_color_brewer(palette="Set1")
+
 #dev.off()
 
 
