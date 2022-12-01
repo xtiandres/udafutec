@@ -521,26 +521,51 @@ dgse <- dqwc22 %>%
 dgto <- full_join(dgec, dgse)
 write_csv(dgto, file = 'data/qatar/ecuadorsenegal.csv')
 
-ggplot(dgto, 
-       aes(x = Seleccion, 
-           y = mean,
-           color = Seleccion)) +
-  geom_point(size = 3) +
-  geom_errorbar(aes(ymin = mean - se, 
-                    ymax = mean + se),
-                width = .1) +
-  scale_y_continuous(breaks = seq(70000, 140000, 10000),
-                     label = scales::dollar) +
-  facet_grid(. ~ rank + discipline) +
-  theme_bw() +
-  theme(legend.position = "none",
-        panel.grid.major.x = element_blank(),
-        panel.grid.minor.y = element_blank()) +
-  labs(x="", 
-       y="", 
-       title="Nine month academic salaries by gender, discipline, and rank",
-       subtitle = "(Means and standard errors)") +
-  scale_color_brewer(palette="Set1")
+
+xyz <- rbind(grupoa, grupob)
+long <- gather(grupoa,
+               key = 'variable',
+               value = 'value',
+               PJ:PTOS)
+
+ggplot(long,
+       aes(x = EQUIPO,
+           y = value,
+           fill = variable)) +
+  geom_bar(stat = 'identity', position = position_dodge()) +
+  #geom_text(label = row.names(long$variable)) +
+  aes(x = fct_inorder(EQUIPO)) +
+  scale_fill_brewer(palette = 'Dark2') +
+  theme_minimal() +
+  scale_y_continuous(breaks = seq(-6, 7, 1), 
+                     limits=c(-6, 7)) #+
+  #coord_flip()
+#ggplot(xyz, aes(x = EQUIPO, y = PTOS, size = PTOS)) +
+#  geom_point(alpha = .5, 
+#             fill="cornflowerblue", 
+#             color="black", 
+#             shape=21) +
+#  aes(x = fct_inorder(EQUIPO)) +
+#  scale_y_continuous(breaks = seq(0, 7, 1), 
+#                     limits=c(0, 7))
+
+#ggplot(xyz, aes(x = EQUIPO, y = PTOS, fill = PTOS)) +
+#  geom_bar(position = position_dodge(),
+#           stat = 'identity',
+#           width = .5) +
+#  aes(x = fct_inorder(EQUIPO)) +
+#  scale_y_reverse() +
+#  scale_y_continuous(breaks = seq(0, 7, 1), 
+#                     limits=c(0, 7))
+
+#g2 <- ggplot(grupob, 
+#             aes(x = EQUIPO, y = PTOS)) +
+#  geom_bar(stat = 'identity',
+#           width = .5) +
+#  aes(x = fct_inorder(EQUIPO)) +
+#  scale_y_continuous(breaks = seq(0, 7, 1), 
+#                     limits=c(0, 7))
+
 
 #dev.off()
 
