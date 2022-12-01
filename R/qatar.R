@@ -533,13 +533,17 @@ ggplot(long,
            y = value,
            fill = variable)) +
   geom_bar(stat = 'identity', position = position_dodge()) +
-  #geom_text(label = row.names(long$variable)) +
+#  geom_text(data = long, aes(x=EQUIPO, y=value, label = value),
+#            position = position_stack(vjuts=.5)) +
   aes(x = fct_inorder(EQUIPO)) +
   scale_fill_brewer(palette = 'Dark2') +
   theme_minimal() +
   scale_y_continuous(breaks = seq(-6, 7, 1), 
                      limits=c(-6, 7)) #+
   #coord_flip()
+
+#z + geom_text(check_overlap = TRUE)
+
 #ggplot(xyz, aes(x = EQUIPO, y = PTOS, size = PTOS)) +
 #  geom_point(alpha = .5, 
 #             fill="cornflowerblue", 
