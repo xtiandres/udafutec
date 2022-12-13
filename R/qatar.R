@@ -17,7 +17,8 @@ library(ggridges)
 library(formattable)
 library(forcats)
 library(RColorBrewer)
-
+library(magrittr)
+library(ggpol)
 
 # *** DATASETS ***
 # PLANTILLA DE SELECCIONES
@@ -114,7 +115,7 @@ dqwc22 <- dqwc22 %>%
   mutate('G' = ifelse(GSeleccion > GRival, 1, 0)) %>%
   mutate('E' = ifelse(GSeleccion == GRival, 1, 0)) %>%
   mutate('P' = ifelse(GSeleccion < GRival, 1, 0))
-
+# SETUP FORMATO NUMERICO Posesion y Precision Pases dqwc22
 dqwc22$Posesion <- as.numeric(dqwc22$Posesion)
 dqwc22$`Precision Pases` <- as.numeric(dqwc22$`Precision Pases`)
 
@@ -164,6 +165,7 @@ grupoa <- data.frame("EQUIPO" =
                          sum(filter(dqwc22, Seleccion == 'Paises Bajos')$G*3) + sum(filter(dqwc22, Seleccion == 'Paises Bajos')$E*1))
                      )
 grupoa <- grupoa[order(-grupoa$PTOS, -grupoa$GD, -grupoa$GF, grupoa$EQUIPO), ] 
+rownames(grupoa) <- 1:nrow(grupoa)
 
 # GRUPO B
 grupob <- data.frame("EQUIPO" =
@@ -490,6 +492,7 @@ grupoh <- grupoh[order(-grupoh$PTOS, -grupoh$GD, -grupoh$GF, grupoh$EQUIPO), ]
 
 # ECUADOR - SENEGAL
 dgra <- filter(dqwc22, Seleccion %in% c('Ecuador', 'Senegal'))
+# ECUADOR
 dgec <- dqwc22 %>%
   filter(Seleccion == 'Ecuador') %>%
   group_by(Seleccion) %>%
@@ -504,6 +507,7 @@ dgec <- dqwc22 %>%
             p_tar_roj = mean(`Tarjetas Rojas`, na.rm = TRUE),
             p_pos_ade = mean(`Posicion Adelantada`, na.rm = TRUE),
             p_tir_esq = mean(`Tiros Esquina`, na.rm = TRUE))
+# SENEGAL
 dgse <- dqwc22 %>%
   filter(Seleccion == 'Senegal') %>%
   group_by(Seleccion) %>%
@@ -521,28 +525,64 @@ dgse <- dqwc22 %>%
 dgto <- full_join(dgec, dgse)
 write_csv(dgto, file = 'data/qatar/ecuadorsenegal.csv')
 
-
+# GRUPO A - GRUPO B
+grupoa <- mutate(grupoa, GRUPO = 'A')
+grupob <- mutate(grupob, GRUPO = 'B')
 xyz <- rbind(grupoa, grupob)
-long <- gather(grupoa,
+long <- gather(xyz,
                key = 'variable',
                value = 'value',
                PJ:PTOS)
 
-ggplot(long,
-       aes(x = EQUIPO,
-           y = value,
-           fill = variable)) +
-  geom_bar(stat = 'identity', position = position_dodge()) +
-#  geom_text(data = long, aes(x=EQUIPO, y=value, label = value),
-#            position = position_stack(vjuts=.5)) +
-  aes(x = fct_inorder(EQUIPO)) +
-  scale_fill_brewer(palette = 'Dark2') +
-  theme_minimal() +
-  scale_y_continuous(breaks = seq(-6, 7, 1), 
-                     limits=c(-6, 7)) #+
+# *** OCTAVOS DE FINAL dqwc22 ***
+# CREAR CLASIFICA, NO CLASIFICA
+dqwc22of <- dqwc22 %>%
+  filter(Etapa == 'Octavos de Final')
+
+#ggplot(long,
+#       aes(x = EQUIPO,
+#           y = value,
+#           fill = variable)) +
+#  geom_bar(stat = 'identity', position = position_dodge()) +
+#  aes(x = fct_inorder(EQUIPO)) +
+#  scale_fill_brewer(palette = 'Dark2') +
+#  theme_minimal() +
+#  scale_y_continuous(breaks = seq(-6, 7, 1), 
+#                     limits=c(-6, 7)) #+
   #coord_flip()
 
-#z + geom_text(check_overlap = TRUE)
+# LOLLIPOP CHART - GRUPO A OK1DIC
+#ggplot(xyz,
+#       aes(x = EQUIPO,
+#           y = PTOS,
+#           label = PTOS)) +
+#  geom_point(stat='identity', fill="black", size=6)  +
+#  geom_segment(aes(y = 0, 
+#                   x = EQUIPO, 
+#                   yend = PTOS, 
+#                   xend = EQUIPO), 
+#               color = "black") +
+#  aes(x = fct_inorder(EQUIPO)) +
+#  theme_minimal() +
+#  geom_text(color='white', size=3) #+
+  #coord_flip()
+
+# PYRAMID
+ggplot(long, aes(y = value, x = variable, fill = GRUPO)) +   # Fill column
+  geom_bar(stat = "identity", width = .6) +   # draw the bars
+  coord_flip() +  # Flip axes
+  labs(title="Email Campaign Funnel") +
+  scale_fill_brewer(palette = "Dark2")  # Color palette
+
+#ggplot(long, aes(x = variable, y = value, fill = GRUPO)) +
+#  geom_bar(data = subset(long, EQUIPO == 'Ecuador'), stat = "identity") + 
+#  geom_bar(data = subset(long, EQUIPO == 'Senegal'), stat = "identity") + 
+  #scale_y_continuous(labels = function(z) paste0(abs(z), "%")) +          # CHANGE
+#  ggtitle("Male vs Female Population Comparison") +
+#  labs(x = "Age group", y = "Percentage", fill = 'EQUIPO') +
+#  coord_flip()
+
+
 
 #ggplot(xyz, aes(x = EQUIPO, y = PTOS, size = PTOS)) +
 #  geom_point(alpha = .5, 
