@@ -38,25 +38,20 @@ datqat22 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/qatar/qa
 datqwc$Valoracion <- ifelse(grepl('m', ignore.case = TRUE, datqwc$Valoracion), as.numeric(gsub("[€m]", "", datqwc$Valoracion)) * 10^6,
                             as.numeric(gsub("[€k]", "", datqwc$Valoracion)) * 10^3)
 
-# PLANTILLA ECUADOR
-ecu <- filter(datqwc,
-              Seleccion == 'Ecuador')
-# PLANTILLA QATAR
-qat <- filter(datqwc,
-              Seleccion == 'Qatar')
-# TABLA COMPARATIVA ECUADOR - QATAR
-ecuqat <- data.frame(
-  Seleccion = c("Ecuador", "Qatar"),
-  PromedioEdad = c(round(mean(ecu$Edad),digits=2), round(mean(qat$Edad),2)),
-  ValorSeleccion = c(sum(ecu$Valoracion), sum(qat$Valoracion)),
-  Ranking = c(44, 50),
-  PartidosJugados = c(10, 7),
-  Victorias = c(2, 3),
-  Empates = c(7, 3),
-  Derrotas = c(1, 1),
-  Goles = c(6, 8)
+# PLANTILLA EQUIPO 1
+e1 <- filter(datqwc,
+             Seleccion == 'France')
+# PLANTILLA EQUIPO 2
+e2 <- filter(datqwc,
+             Seleccion == 'Morocco')
+# TABLA COMPARATIVA EQUIPO 1 vs EQUIPO 2
+e1e2 <- data.frame(
+  Seleccion = c("Francia", "Marruecos"),
+  PromedioEdad = c(round(mean(e1$Edad),digits=2), round(mean(e2$Edad),2)),
+  ValorSeleccion = c(sum(e1$Valoracion), sum(e2$Valoracion)),
+  Ranking = c(4, 22)
 )
-write_csv(ecuqat, file = 'data/qatar/ecuadorqatar.csv')
+write_csv(e1e2, file = 'data/qatar/e1e2.csv')
 
 # TABLA PARCIAL ECUADOR - QATAR
 ecqa <- select(ecuqat, -PromedioEdad, -ValorSeleccion, -Ranking)
@@ -67,6 +62,8 @@ colnames(ecqa) <- c("EQUIPO",
                     "DERROTAS",
                     "GOLES")
 ecqa <- select(ecqa, -EQUIPO)
+# TABLA PARCIAL FRANCIA - MARRUECOS
+
 
 #AÑADIR VALORES MAXIMOS Y MINIMOS PARA RADARCHART
 #ecqa <- rbind(rep(10,5) , rep(0,2) , ecqa)
