@@ -53,17 +53,6 @@ e1e2 <- data.frame(
 )
 write_csv(e1e2, file = 'data/qatar/e1e2.csv')
 
-# TABLA PARCIAL ECUADOR - QATAR
-ecqa <- select(ecuqat, -PromedioEdad, -ValorSeleccion, -Ranking)
-colnames(ecqa) <- c("EQUIPO", 
-                    "PARTIDOS22",
-                    "VICTORIAS",
-                    "EMPATES",
-                    "DERROTAS",
-                    "GOLES")
-ecqa <- select(ecqa, -EQUIPO)
-# TABLA PARCIAL FRANCIA - MARRUECOS
-
 
 #AÑADIR VALORES MAXIMOS Y MINIMOS PARA RADARCHART
 #ecqa <- rbind(rep(10,5) , rep(0,2) , ecqa)
@@ -107,11 +96,12 @@ ecqa <- select(ecqa, -EQUIPO)
 
 
 # *** DATASET: CALENDARIO Y RESULTADOS dqwc22 ***
-# CREAR GANADOS, EMPATADOS Y PERDIDOS EN DATASET dqwc22
+# CREAR GANADOS, EMPATADOS, PERDIDOS, GANADOSPENAL EN DATASET dqwc22
 dqwc22 <- dqwc22 %>%
   mutate('G' = ifelse(GSeleccion > GRival, 1, 0)) %>%
   mutate('E' = ifelse(GSeleccion == GRival, 1, 0)) %>%
-  mutate('P' = ifelse(GSeleccion < GRival, 1, 0))
+  mutate('P' = ifelse(GSeleccion < GRival, 1, 0)) %>%
+  mutate('GP' = ifelse(PSeleccion > PRival, 1, 0)) 
 # SETUP FORMATO NUMERICO Posesion y Precision Pases dqwc22
 dqwc22$Posesion <- as.numeric(dqwc22$Posesion)
 dqwc22$`Precision Pases` <- as.numeric(dqwc22$`Precision Pases`)
@@ -486,7 +476,22 @@ grupoh <- data.frame("EQUIPO" =
 )
 grupoh <- grupoh[order(-grupoh$PTOS, -grupoh$GD, -grupoh$GF, grupoh$EQUIPO), ]
 
+# *** OCTAVOS DE FINAL dqwc22 ***
+# CREAR CLASIFICA
+dqwc22of <- dqwc22 %>%
+  filter(Etapa == 'Octavos de Final') %>%
+  mutate('Clasifica' = ifelse(G == 1 | GP == 1, 1, 0))
+# *** CUARTOS DE FINAL dqwc22 ***
+dqwc22cf <- dqwc22 %>%
+  filter(Etapa == 'Cuartos de Final') %>%
+  mutate('Clasifica' = ifelse(G == 1 | GP == 1, 1, 0))
+# *** SEMIFINAL dqwc22 ***
+dqwc22sf <- dqwc22 %>%
+  filter(Etapa == 'Semifinal') %>%
+  mutate('Clasifica' = ifelse(G == 1 | GP == 1, 1, 0))
 
+
+# *** PARTIDOS PARTICULARES dqwc22 ***
 # ECUADOR - SENEGAL
 dgra <- filter(dqwc22, Seleccion %in% c('Ecuador', 'Senegal'))
 # ECUADOR
@@ -531,10 +536,7 @@ long <- gather(xyz,
                value = 'value',
                PJ:PTOS)
 
-# *** OCTAVOS DE FINAL dqwc22 ***
-# CREAR CLASIFICA, NO CLASIFICA
-dqwc22of <- dqwc22 %>%
-  filter(Etapa == 'Octavos de Final')
+
 
 #ggplot(long,
 #       aes(x = EQUIPO,
