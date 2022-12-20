@@ -21,7 +21,7 @@ library(magrittr)
 library(ggpol)
 
 # *** DATASETS ***
-# PLANTILLA DE SELECCIONES
+# SELECCIONES VALORACION JUGADORES
 datqwc <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/qatar/qatar2022.csv")
 # CALENDARIO Y RESULTADOS
 dqwc22 <- read_csv("/home/xut/Documents/udaviz/R/studio/udafutec/data/qatar/seleccione.csv")
@@ -491,8 +491,8 @@ dqwc22sf <- dqwc22 %>%
   mutate('Clasifica' = ifelse(G == 1 | GP == 1, 1, 0))
 
 
-# *** PARTIDOS PARTICULARES dqwc22 ***
-# ECUADOR - SENEGAL
+# *** ESTADISTICAS PARTICULARES dqwc22 ***
+# EQUIPO1 - EQUIPO2
 dgra <- filter(dqwc22, Seleccion %in% c('Ecuador', 'Senegal'))
 # ECUADOR
 dgec <- dqwc22 %>%
