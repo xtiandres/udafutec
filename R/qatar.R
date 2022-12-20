@@ -33,7 +33,7 @@ datecu22 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/qatar/ec
 datqat22 <- read_tsv("/home/xut/Documents/udaviz/R/studio/udafutec/data/qatar/qatar22.csv")
 
 
-# *** DATASET: PLANTILLA DE SELECCIONES datqwc ***
+# *** DATASET: PLANTILLA VALORACION SELECCIONES datqwc ***
 # VARIABLE VALORACION CAMBIAR k,m AS NUMERIC
 datqwc$Valoracion <- ifelse(grepl('m', ignore.case = TRUE, datqwc$Valoracion), as.numeric(gsub("[€m]", "", datqwc$Valoracion)) * 10^6,
                             as.numeric(gsub("[€k]", "", datqwc$Valoracion)) * 10^3)
@@ -95,7 +95,7 @@ write_csv(e1e2, file = 'data/qatar/e1e2.csv')
 #       cex=1.3)
 
 
-# *** DATASET: CALENDARIO Y RESULTADOS dqwc22 ***
+# *** DATASET: RESULTADOS MUNDIAL dqwc22 ***
 # CREAR GANADOS, EMPATADOS, PERDIDOS, GANADOSPENAL EN DATASET dqwc22
 dqwc22 <- dqwc22 %>%
   mutate('G' = ifelse(GSeleccion > GRival, 1, 0)) %>%
@@ -103,8 +103,10 @@ dqwc22 <- dqwc22 %>%
   mutate('P' = ifelse(GSeleccion < GRival, 1, 0)) %>%
   mutate('GP' = ifelse(PSeleccion > PRival, 1, 0)) 
 # SETUP FORMATO NUMERICO Posesion y Precision Pases dqwc22
+# SETUP FORMATO FECHA Fecha dqwc22
 dqwc22$Posesion <- as.numeric(dqwc22$Posesion)
 dqwc22$`Precision Pases` <- as.numeric(dqwc22$`Precision Pases`)
+dqwc22$Fecha <- as.Date(dqwc22$Fecha, format = '%d/%m/%Y')
 
 # FASE DE GRUPOS 
 # GRUPO A
@@ -151,8 +153,9 @@ grupoa <- data.frame("EQUIPO" =
                          sum(filter(dqwc22, Seleccion == 'Senegal')$G*3) + sum(filter(dqwc22, Seleccion == 'Senegal')$E*1),
                          sum(filter(dqwc22, Seleccion == 'Paises Bajos')$G*3) + sum(filter(dqwc22, Seleccion == 'Paises Bajos')$E*1))
                      )
-grupoa <- grupoa[order(-grupoa$PTOS, -grupoa$GD, -grupoa$GF, grupoa$EQUIPO), ] 
-rownames(grupoa) <- 1:nrow(grupoa)
+grupoa <- grupoa[order(-grupoa$PTOS, -grupoa$GD, -grupoa$GF, grupoa$EQUIPO), ] %>%
+  mutate(POS = rownames(grupoa)) 
+#rownames(grupoa) <- 1:nrow(grupoa)
 
 # GRUPO B
 grupob <- data.frame("EQUIPO" =
