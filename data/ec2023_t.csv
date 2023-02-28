@@ -1,0 +1,121 @@
+Jornada	Fecha	Local	GL	GV	Visita	OBS1	OBS2	OBS3	FG
+1	19/02	Emelec	4	0	Macará				FG
+1	19/02	Mushuc Runa	1	2	Universidad Católica				FG
+1	19/02	LDU Quito	1	0	Gualaceo SC				FG
+1	20/02	Delfín SC	0	1	Barcelona SC				FG
+1	20/02	Orense SC	1	1	Aucas				FG
+1	20/02	Guayaquil City	3	0	Deportivo Cuenca				FG
+1	21/02	Cumbayá FC	0	1	Independiente del Valle				FG
+1	22/02	Técnico Univ.	2	1	Nueve de Octubre
+2	26/02	Deportivo Cuenca	2	0	LDU Quito				FG
+2	26/02	Aucas	3	0	Delfín SC				FG
+2	26/02	Universidad Católica	1	1	Guayaquil City				FG
+2	27/02	Barcelona SC	1	0	Técnico Univ.				FG
+2	27/02	Gualaceo SC	0	1	Cumbayá FC				FG
+2	27/02	Nueve de Octubre	2	0	Mushuc Runa				FG
+2	28/02	Independiente del Valle	0	1	Emelec				FG
+2	01/03	Macará	1	0	Orense SC
+3	05/03	Emelec	2	2	Guayaquil City				FG
+3	05/03	Técnico Univ.	1	3	Mushuc Runa				FG
+3	05/03	LDU Quito	2	1	Universidad Católica				FG
+3	06/03	Nueve de Octubre	1	3	Barcelona SC				FG
+3	06/03	Cumbayá FC	1	1	Orense SC				FG
+3	06/03	Delfín SC	1	0	Macará				FG
+3	07/03	Independiente del Valle	1	0	Aucas				FG
+3	08/03	Deportivo Cuenca	2	1	Gualaceo SC
+4	12/03	Aucas	0	0	Deportivo Cuenca				FG
+4	12/03	Mushuc Runa	4	2	Cumbayá FC				FG
+4	12/03	Técnico Univ.	1	2	LDU Quito				FG
+4	13/03	Barcelona SC	2	0	Independiente del Valle				FG
+4	13/03	Orense SC	2	1	Nueve de Octubre				FG
+4	13/03	Universidad Católica	2	2	Macará				FG
+4	14/03	Gualaceo SC	2	1	Emelec				FG
+4	15/03	Guayaquil City	1	1	Delfín SC
+5	19/03	Independiente del Valle	1	1	Orense SC				FG
+5	19/03	Cumbayá FC	2	0	Técnico Univ.				FG
+5	19/03	LDU Quito	4	4	Aucas				FG
+5	20/03	Mushuc Runa	1	1	Barcelona SC				FG
+5	20/03	Nueve de Octubre	1	1	Gualaceo SC				FG
+5	20/03	Macará	2	0	Guayaquil City				FG
+5	21/03	Emelec	1	2	Delfín SC				FG
+5	21/03	Deportivo Cuenca	0	2	Universidad Católica
+6	02/04	Universidad Católica	1	2	Barcelona SC				FG
+6	02/04	Emelec	2	0	LDU Quito				FG
+6	02/04	Gualaceo SC	1	3	Independiente del Valle				FG
+6	03/04	Aucas	1	1	Nueve de Octubre				FG
+6	03/04	Orense SC	0	0	Mushuc Runa				FG
+6	03/04	Guayaquil City	0	1	Técnico Univ.				FG
+6	04/04	Delfín SC	0	0	Deportivo Cuenca				FG
+6	05/04	Macará	0	0	Cumbayá FC				FG
+7	09/04	Técnico Univ.	1	1	Gualaceo SC				FG
+7	09/04	Mushuc Runa	1	2	Delfín SC				FG
+7	09/04	Nueve de Octubre	0	4	Universidad Católica				FG
+7	10/04	Cumbayá FC	0	2	LDU Quito				FG
+7	10/04	Independiente del Valle	0	0	Guayaquil City				FG
+7	10/04	Deportivo Cuenca	2	2	Emelec				FG
+7	11/04	Barcelona SC	2	0	Orense SC				FG
+7	12/04	Aucas	2	0	Macará				FG
+8	16/04	Gualaceo SC	3	2	Mushuc Runa				FG
+8	16/04	Orense SC	0	0	Técnico Univ.				FG
+8	16/04	Delfín SC	1	1	Cumbayá FC				FG
+8	16/04	Guayaquil City	4	0	Aucas				FG
+8	17/04	Universidad Católica	3	1	Independiente del Valle				FG
+8	17/04	Macará	0	1	Deportivo Cuenca				FG
+8	17/04	Emelec	2	1	Nueve de Octubre				FG
+8	18/04	LDU Quito	2	0	Barcelona SC				FG
+9	20/04	Técnico Univ.	1	1	Delfín SC				FG
+9	20/04	Independiente del Valle	2	0	Deportivo Cuenca				FG
+9	20/04	Orense SC	3	0	LDU Quito				FG
+9	21/04	Barcelona SC	0	1	Gualaceo SC				FG
+9	21/04	Mushuc Runa	0	0	Macará				FG
+9	21/04	Aucas	3	2	Universidad Católica				FG
+9	22/04	Cumbayá FC	1	1	Emelec				FG
+9	11/05	Nueve de Octubre	2	2	Guayaquil City				FG
+10	23/04	Gualaceo SC	2	1	Orense SC				FG
+10	23/04	Deportivo Cuenca	1	1	Nueve de Octubre				FG
+10	24/04	Delfín SC	0	1	Independiente del Valle				FG
+10	24/04	Universidad Católica	4	1	Técnico Univ.				FG
+10	24/04	LDU Quito	3	2	Mushuc Runa				FG
+10	24/04	Emelec	1	0	Aucas				FG
+10	25/04	Macará	0	1	Barcelona SC				FG
+10	26/04	Guayaquil City	4	1	Cumbayá FC				FG
+11	30/04	Gualaceo SC	2	1	Macará				FG
+11	30/04	Mushuc Runa	2	0	Guayaquil City				FG
+11	30/04	Nueve de Octubre	0	1	Delfín SC				FG
+11	01/05	Técnico Univ.	0	1	Aucas				FG
+11	01/05	Orense SC	1	0	Universidad Católica				FG
+11	01/05	Cumbayá FC	0	1	Deportivo Cuenca				FG
+11	02/05	Independiente del Valle	1	0	LDU Quito				FG
+11	12/05	Barcelona SC	1	1	Emelec				FG
+12	07/05	Deportivo Cuenca	1	0	Técnico Univ.				FG
+12	07/05	Delfín SC	2	1	Orense SC				FG
+12	07/05	Aucas	1	0	Cumbayá FC				FG
+12	08/05	Emelec	4	0	Mushuc Runa				FG
+12	08/05	Universidad Católica	3	1	Gualaceo SC				FG
+12	08/05	LDU Quito	2	0	Nueve de Octubre				FG
+12	09/05	Guayaquil City	1	4	Barcelona SC				FG
+12	10/05	Macará	0	1	Independiente del Valle				FG
+13	14/05	Universidad Católica	1	0	Cumbayá FC				FG
+13	14/05	Mushuc Runa	1	1	Aucas				FG
+13	14/05	Nueve de Octubre	1	1	Macará				FG
+13	15/05	LDU Quito	3	2	Delfín SC				FG
+13	15/05	Técnico Univ.	2	3	Independiente del Valle				FG
+13	15/05	Orense SC	2	0	Emelec				FG
+13	16/05	Barcelona SC	1	1	Deportivo Cuenca				FG
+13	17/05	Gualaceo SC	2	1	Guayaquil City				FG
+14	21/05	Cumbayá FC	3	2	Nueve de Octubre				FG
+14	21/05	Delfín SC	1	0	Gualaceo SC				FG
+14	21/05	Emelec	0	1	Universidad Católica				FG
+14	22/05	Guayaquil City	2	2	LDU Quito				FG
+14	22/05	Macará	3	1	Técnico Univ.				FG
+14	23/05	Aucas	2	1	Barcelona SC				FG
+14	23/05	Independiente del Valle	0	1	Mushuc Runa				FG
+14	24/05	Deportivo Cuenca	1	1	Orense SC				FG
+15	28/05	Gualaceo SC	1	4	Aucas				FG
+15	28/05	Mushuc Runa	1	0	Deportivo Cuenca				FG
+15	28/05	Orense SC	0	1	Guayaquil City				FG
+15	29/05	Técnico Univ.	1	1	Emelec				FG
+15	30/05	Universidad Católica	4	2	Delfín SC				FG
+15	30/05	Barcelona SC	4	0	Cumbayá FC				FG
+15	30/05	LDU Quito	3	2	Macará				FG
+15	30/05	Nueve de Octubre	1	1	Independiente del Valle
