@@ -5821,16 +5821,16 @@ tjl = full_join(tjk, tj13, by = "EQUIPOS")
 tjm = full_join(tjl, tj14, by = "EQUIPOS")
 tjn = full_join(tjm, tj15, by = "EQUIPOS")
 tjo = full_join(tjn, tj16, by = "EQUIPOS")
+# CHECK JORNADA PARA GRAFICAR
 tjx = select(tjo, "EQUIPOS", 
-             "J1", "J2", "J3", "J4", "J5", "J6","J7", "J8", "J9", "J10", "J11", "J12", "J13", "J14", "J15",
-             "J16")
+             "J1", "J2", "J3", "J4", "J5", "J6")
 tjx <- gather(tjx,
               key = "variable",
               value = "value",
-              J1:J16)
+              J1:J6)
 
 # SAVE "tjx" data.frame as txt file
-write.table(tjx,"jornadas/tj1_15.txt",sep="\t",row.names=FALSE)
+write.table(tjx,"jornadas/tj1_6.txt",sep="\t",row.names=FALSE)
 #write.table(tjx,"jornadas/tj1_16.txt",sep="\t",row.names=FALSE)
 
 
@@ -5886,7 +5886,7 @@ ggplot(tjx, aes(x = variable, y = value, group = EQUIPOS)) +
   labs(title = "CAMPEONATO ECUATORIANO DE FÚTBOL 2023",
        subtitle = "Comportamiento por Jornada de los Equipos",
        caption = "powered by Udaviz",
-       x = "Jornadas de Campeonato 1 - 16",
+       x = "Jornadas de Campeonato 1 - 6",
        y = "Posiciones Tabla Acumulada") +
   my_theme() +
   scale_color_manual(values = c("#FFBF00", "#FFFF00", "#663399", "#2297E6",
